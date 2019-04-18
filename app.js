@@ -10,20 +10,35 @@ const bot = linebot({
 });
 
 //這一段的程式是專門處理當有人傳送文字訊息給LineBot時，我們的處理回應
-bot.on('message', function(event) {
-    if (event.message.type = 'text') {
-      var msg = event.message.text;
-    //收到文字訊息時，直接把收到的訊息傳回去
-      event.reply(msg).then(function(data) {
-        // 傳送訊息成功時，可在此寫程式碼 
-        console.log(msg);
-      }).catch(function(error) {
-        // 傳送訊息失敗時，可在此寫程式碼 
-        console.log('錯誤產生，錯誤碼：'+error);
-      });
-    }
-  });
+// bot.on('message', function(event) {
+//     if (event.message.type = 'text') {
+//       let msg = event.message.text;
+//     //收到文字訊息時，直接把收到的訊息傳回去
+//       event.reply(msg).then(function(data) {
+//         // 傳送訊息成功時，可在此寫程式碼 
+//         console.log(msg);
+//       }).catch(function(error) {
+//         // 傳送訊息失敗時，可在此寫程式碼 
+//         console.log('錯誤產生，錯誤碼：'+error);
+//       });
+//     }
+//   });
 
+bot.on('message', async (event) => {
+   
+        try{
+            if (event.message.type = 'text') {
+                let msg = await event.message.text
+                event.reply(msg)
+                console.log(msg)
+            }
+            
+        }catch(error){
+            console.log(`錯誤產生，錯誤碼為: ${error}`)
+        }
+        
+    
+})
 // Bot所監聽的webhook路徑與port
 const app = express();
 const linebotParser = bot.parser();
