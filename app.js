@@ -1,6 +1,7 @@
 
 // 引用linebot SDK
 const linebot = require('linebot');
+const express = require('express')
 
 // 用於辨識Line Channel的資訊
 const bot = linebot({
@@ -23,6 +24,11 @@ bot.on('message', function (event) {
 });
 
 // Bot所監聽的webhook路徑與port
-bot.listen('/linewebhook', 3000, function () {
-    console.log('[BOT已準備就緒]');
+const app = express();
+const linebotParser = bot.parser();
+app.post('/', linebotParser);
+
+var server = app.listen(process.env.PORT || 8080, function() {
+  var port = server.address().port;
+  console.log('目前的port是', port);
 });
