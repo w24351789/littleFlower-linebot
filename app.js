@@ -52,9 +52,6 @@ bot.on('message', (event) => {
           case 'Confirm':
             event.reply(JSON.parse(confirm));
             break;
-          case 'Multiple':
-            return event.reply(['Line 1', 'Line 2', 'Line 3', 'Line 4', 'Line 5']);
-            break;
           case 'Version':
             event.reply('linebot@' + require('../package.json').version);
             break;
