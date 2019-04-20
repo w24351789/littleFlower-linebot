@@ -1,7 +1,7 @@
 // 引用linebot SDK
 const linebot = require('linebot');
 const express = require('express')
-const confirm = require('./confirm.json')
+
 // 用於辨識Line Channel的資訊
 const bot = linebot({
   channelId: '1566408570',
@@ -64,8 +64,26 @@ bot.on('message', function (event) {
           bot.push(['U17448c796a01b715d293c34810985a4c', 'Cba71ba25dafbd6a1472c655fe22979e2'], 'Multicast!');
           break;
         case 'Confirm':
-          let msgConfirm = JSON.parse(confirm)
-          event.reply(msgConfirm);
+          event.reply({
+            "type": "template",
+            "altText": "this is a confirm template",
+            "template": {
+               "type": "confirm",
+               "text": "Are you sure confirm test?",
+               "actions": [
+                  {
+                     "type": "message",
+                     "label": "Yes we win",
+                     "text": "win"
+                  },
+                  {
+                     "type": "message",
+                     "label": "No",
+                     "text": "no"
+                  }
+               ]
+            }
+          });
           break;
         case 'Version':
           event.reply('linebot@' + require('../package.json').version);
