@@ -141,12 +141,12 @@ bot.listen('/linewebhook', process.env.PORT || 80, function () {
   console.log('LineBot is running.');
 });
 
-// Bot所監聽的webhook路徑與port
 const app = express();
 const linebotParser = bot.parser();
 app.post('/', linebotParser);
 
+//因為 express 預設走 port 3000，而 heroku 上預設卻不是，要透過下列程式轉換
 var server = app.listen(process.env.PORT || 8080, function() {
   var port = server.address().port;
-  console.log('目前的port是', port);
+  console.log("App now running on port", port);
 });
