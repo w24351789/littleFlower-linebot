@@ -1,7 +1,7 @@
 // 引用linebot SDK
 const linebot = require('linebot');
 const express = require('express')
-const confirm = require('confirm.json')
+//const confirm = require('confirm.json')
 // 用於辨識Line Channel的資訊
 const bot = linebot({
   channelId: '1566408570',
