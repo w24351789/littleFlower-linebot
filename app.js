@@ -93,8 +93,9 @@ bot.on('message', async (event) => {
                   }
                 });
                 break;
-        }
+             }
     
+          }
 })
 // Bot所監聽的webhook路徑與port
 const app = express();
