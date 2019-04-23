@@ -1,27 +1,27 @@
-//以下的四列require裡的內容，請確認是否已經用npm裝進node.js
+/以下的四列require裡的內容，請確認是否已經用npm裝進node.js
 var linebot = require('linebot');
 var express = require('express');
-const { google } = require('googleapis');
+var google = require('googleapis');
+var googleAuth = require('google-auth-library');
 
-// 用於辨識Line Channel的資訊
-const bot = linebot({
-  channelId: '1566408570',
-  channelSecret: '8814f04143a31a92c8c113ec5c010258',
-  channelAccessToken: 'gM1zz4xVFGIOudd30703LVOBbp9AwWlkNXFFxAGQXxINXDBQq91RxlsrAWxoQR2mDhKDUFPUNnTMlojAwNSfpgebrKn3NzFLafzh9djn6hIhRhCDNrog1Cqoh9bR+CT9R8OJyBlOhzhv/rTzU6ZLHAdB04t89/1O/w1cDnyilFU='
+//以下的引號內請輸入申請LineBot取得的各項資料，逗號及引號都不能刪掉
+var bot = linebot({
+  channelId: '請輸入LineBot的channelId',
+  channelSecret: '請輸入LineBot的channelSecret',
+  channelAccessToken: '請輸入LineBot的channelAccessToken'
 });
 
-
 //底下輸入client_secret.json檔案的內容
-var myClientSecret = "installed":{"client_id":"724449545250-69efl9n814a920hav1bvab9qu0ke1k4n.apps.googleusercontent.com","project_id":"cobalt-ship-238507","auth_uri":"https://accounts.google.com/o/oauth2/auth","token_uri":"https://oauth2.googleapis.com/token","auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs","client_secret":"XlE838SI-XBVUmLmWDT8IFMF","redirect_uris":["urn:ietf:wg:oauth:2.0:oob","http://localhost"]}}
+var myClientSecret=請將client_secret.json檔案的內容放在這裡，前後不能加引號
 
-
-var oauth2Client = new google.auth.OAuth2(myClientSecret.installed.client_id,myClientSecret.installed.client_secret, myClientSecret.installed.redirect_uris[0]);
+var auth = new googleAuth();
+var oauth2Client = new auth.OAuth2(myClientSecret.installed.client_id,myClientSecret.installed.client_secret, myClientSecret.installed.redirect_uris[0]);
 
 //底下輸入sheetsapi.json檔案的內容
-oauth2Client.credentials = {"access_token":"ya29.Glv0Bj-GvntUwoq1Eiw6h44S5WBTYja65gofkD1WoOiPa_41bFVXs4hjtmMuofXqhGSQbW_f2fZybk_6ZVGHMWIRaAtsBqnAKusbhu8Jyfbe_QRmFEnXwJMyonPv","refresh_token":"1/uvqjDjS62ubNmhDi7C6-wsfGASTJJMTxgtwHYMEgn_U","scope":"https://www.googleapis.com/auth/spreadsheets.readonly","token_type":"Bearer","expiry_date":1556009862658}
+oauth2Client.credentials =請將sheetsapi.json檔案的內容放在這裡，前後不能加引號
 
 //試算表的ID，引號不能刪掉
-var mySheetId='1VLX79AlBmlkqIJgDK2BRDkxK3venpoL1jselGGIhmc4';
+var mySheetId='請輸入試算表的ID編號';
 
 var myQuestions=[];
 var users=[];
