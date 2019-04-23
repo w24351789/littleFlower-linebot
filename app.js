@@ -12,13 +12,24 @@ const bot = linebot({
 
 
 //底下輸入client_secret.json檔案的內容
-var myClientSecret = { "installed":{"client_id":"724449545250-69efl9n814a920hav1bvab9qu0ke1k4n.apps.googleusercontent.com","project_id":"cobalt-ship-238507","auth_uri":"https://accounts.google.com/o/oauth2/auth","token_uri":"https://oauth2.googleapis.com/token","auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs","client_secret":"XlE838SI-XBVUmLmWDT8IFMF","redirect_uris":["urn:ietf:wg:oauth:2.0:oob","http://localhost"]}}
+var myClientSecret = { "installed":
+{"client_id":"724449545250-69efl9n814a920hav1bvab9qu0ke1k4n.apps.googleusercontent.com",
+"project_id":"cobalt-ship-238507",
+"auth_uri":"https://accounts.google.com/o/oauth2/auth",
+"token_uri":"https://oauth2.googleapis.com/token",
+"auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs",
+"client_secret":"XlE838SI-XBVUmLmWDT8IFMF",
+"redirect_uris":["urn:ietf:wg:oauth:2.0:oob","http://localhost"]}}
 
 
-var oauth2Client = new google.auth.OAuth2(myClientSecret.installed.client_id,myClientSecret.installed.client_secret, myClientSecret.installed.redirect_uris[0]);
+const oauth2Client = new google.auth.OAuth2(myClientSecret.installed.client_id,myClientSecret.installed.client_secret, myClientSecret.installed.redirect_uris[0]);
 
 //底下輸入sheetsapi.json檔案的內容
-oauth2Client.credentials = {"access_token":"ya29.Glv0Bj-GvntUwoq1Eiw6h44S5WBTYja65gofkD1WoOiPa_41bFVXs4hjtmMuofXqhGSQbW_f2fZybk_6ZVGHMWIRaAtsBqnAKusbhu8Jyfbe_QRmFEnXwJMyonPv","refresh_token":"1/uvqjDjS62ubNmhDi7C6-wsfGASTJJMTxgtwHYMEgn_U","scope":"https://www.googleapis.com/auth/spreadsheets.readonly","token_type":"Bearer","expiry_date":1556009862658}
+oauth2Client.credentials = {"access_token":"ya29.Glv0Bj-GvntUwoq1Eiw6h44S5WBTYja65gofkD1WoOiPa_41bFVXs4hjtmMuofXqhGSQbW_f2fZybk_6ZVGHMWIRaAtsBqnAKusbhu8Jyfbe_QRmFEnXwJMyonPv",
+"refresh_token":"1/uvqjDjS62ubNmhDi7C6-wsfGASTJJMTxgtwHYMEgn_U",
+"scope":"https://www.googleapis.com/auth/spreadsheets.readonly",
+"token_type":"Bearer",
+"expiry_date":1556009862658}
 
 //試算表的ID，引號不能刪掉
 var mySheetId='1VLX79AlBmlkqIJgDK2BRDkxK3venpoL1jselGGIhmc4';
@@ -34,11 +45,11 @@ getQuestions();
 
 //這是讀取問題的函式
 function getQuestions() {
-  var sheets = google.sheets('v4');
+  const sheets = google.sheets('v4');
   sheets.spreadsheets.values.get({
      auth: oauth2Client,
      spreadsheetId: mySheetId,
-     range:encodeURI('問題'),
+     range:encodeURI('question1'),
   }, function(err, response) {
      if (err) {
         console.log('讀取問題檔的API產生問題：' + err);
