@@ -2,7 +2,7 @@
 var linebot = require('linebot');
 var express = require('express');
 const { google } = require('googleapis');
-
+const { OAuth2Client } = require("google-auth-library")
 // 用於辨識Line Channel的資訊
 const bot = linebot({
   channelId: '1566408570',
@@ -22,7 +22,7 @@ var myClientSecret = { "installed":
 "redirect_uris":["urn:ietf:wg:oauth:2.0:oob","http://localhost"]}}
 
 
-const oauth2Client = new google.auth.OAuth2(myClientSecret.installed.client_id,myClientSecret.installed.client_secret, myClientSecret.installed.redirect_uris[0]);
+const oauth2Client = new OAuth2Client(myClientSecret.installed.client_id,myClientSecret.installed.client_secret, myClientSecret.installed.redirect_uris[0]);
 
 //底下輸入sheetsapi.json檔案的內容
 oauth2Client.credentials = {"access_token":"ya29.Glv0Bj-GvntUwoq1Eiw6h44S5WBTYja65gofkD1WoOiPa_41bFVXs4hjtmMuofXqhGSQbW_f2fZybk_6ZVGHMWIRaAtsBqnAKusbhu8Jyfbe_QRmFEnXwJMyonPv",
