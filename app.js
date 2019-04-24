@@ -103,7 +103,7 @@ bot.on('message', function(event) {
          users[myId].step=-1;
          users[myId].replies=[];
       }
-      const totalSteps=myQuestions[0].length;
+      const totalSteps=myQuestions.length;
       const myStep=users[myId].step;
       if (myStep===-1)
          sendMessage(event,myQuestions[0][0]);
