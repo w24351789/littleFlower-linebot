@@ -39,12 +39,11 @@ var users=[];
 var totalSteps=0;
 var myReplies=[];
 
-//程式啟動後會去讀取試算表內的問題
-getQuestions();
+
 
 
 //這是讀取問題的函式
-const getQuestions = () => {
+function getQuestions(){
   const sheets = google.sheets('v4');
   sheets.spreadsheets.values.get({
      auth: oauth2Client,
@@ -67,6 +66,9 @@ const getQuestions = () => {
      }
   });
 }
+
+//程式啟動後會去讀取試算表內的問題
+getQuestions();
 
 //這是將取得的資料儲存進試算表的函式
 function appendMyRow(userId) {
