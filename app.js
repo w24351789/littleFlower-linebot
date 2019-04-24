@@ -61,7 +61,7 @@ function getQuestions(){
         console.log('No data found.');
      } else {
        myQuestions=rows;
-       totalSteps=myQuestions[0].length;
+       //totalSteps=myQuestions[0].length;
        console.log('要問的問題已下載完畢！');
      }
   });
@@ -103,7 +103,8 @@ bot.on('message', function(event) {
          users[myId].step=-1;
          users[myId].replies=[];
       }
-      var myStep=users[myId].step;
+      const totalSteps=myQuestions[0].length;
+      const myStep=users[myId].step;
       if (myStep===-1)
          sendMessage(event,myQuestions[0][0]);
       else{
