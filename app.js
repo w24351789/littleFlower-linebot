@@ -56,7 +56,7 @@ function getQuestions(){
         console.log('讀取問題檔的API產生問題：' + err);
         return;
      }
-     var rows = response.values;
+     var rows = response.data.values;
      console.log("rows = " + rows)
      //console.log(JSON.stringify(response, null, 2));
      console.log(response.data.values)
