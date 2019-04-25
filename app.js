@@ -25,11 +25,7 @@ const myClientSecret = { "installed":
 const oauth2Client = new google.auth.OAuth2(myClientSecret.installed.client_id,myClientSecret.installed.client_secret, myClientSecret.installed.redirect_uris[0]);
 
 //底下輸入sheetsapi.json檔案的內容
-oauth2Client.credentials = {"access_token":"ya29.Glv0Bj-GvntUwoq1Eiw6h44S5WBTYja65gofkD1WoOiPa_41bFVXs4hjtmMuofXqhGSQbW_f2fZybk_6ZVGHMWIRaAtsBqnAKusbhu8Jyfbe_QRmFEnXwJMyonPv",
-"refresh_token":"1/uvqjDjS62ubNmhDi7C6-wsfGASTJJMTxgtwHYMEgn_U",
-"scope":"https://www.googleapis.com/auth/spreadsheets.readonly",
-"token_type":"Bearer",
-"expiry_date":1556009862658}
+oauth2Client.credentials = {"access_token":"ya29.Glv2Bs2yUnU4M8RZKhQYF7EtbJmTatbidZgyk07nzkH5RRgRx6sbxNvversPLAQrUcd86QeMHfW7HlJHtbyiof5vdvF9OSjgJsGrBpNagiziI7p18_lLVYETH1r_","refresh_token":"1/gm4cVXW3UyQyXTW-w4yXxCb_uPox6YfC_-alP0uPwwM","scope":"https://www.googleapis.com/auth/spreadsheets","token_type":"Bearer","expiry_date":1556211740140}
 
 //試算表的ID，引號不能刪掉
 const mySheetId='1VLX79AlBmlkqIJgDK2BRDkxK3venpoL1jselGGIhmc4';
