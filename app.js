@@ -1,7 +1,8 @@
-// 引用linebot SDK
+//以下的三列require裡的內容，請確認是否已經用npm裝進node.js
 const linebot = require('linebot');
-const express = require('express')
-//const confirm = require('confirm.json')
+const express = require('express');
+const { google } = require('googleapis');
+
 // 用於辨識Line Channel的資訊
 const bot = linebot({
   channelId: '1566408570',
@@ -10,136 +11,131 @@ const bot = linebot({
 });
 
 
-bot.on('message', function (event) {
-  switch (event.message.type) {
-    case 'text':
-      switch (event.message.text) {
-        case 'Me':
-          event.source.profile().then(function (profile) {
-            return event.reply('Hello ' + profile.displayName + ' ' + profile.userId);
-          });
-          break;
-        case 'Member':
-          event.source.member().then(function (member) {
-            return event.reply(JSON.stringify(member));
-          });
-          break;
-        case 'Picture':
-          event.reply({
-            type: 'image',
-            originalContentUrl: 'https://d.line-scdn.net/stf/line-lp/family/en-US/190X190_line_me.png',
-            previewImageUrl: 'https://d.line-scdn.net/stf/line-lp/family/en-US/190X190_line_me.png'
-          });
-          break;
-        case 'Location':
-          event.reply({
-            type: 'location',
-            title: 'LINE Plus Corporation',
-            address: '1 Empire tower, Sathorn, Bangkok 10120, Thailand',
-            latitude: 13.7202068,
-            longitude: 100.5298698
-          });
-          break;
-        case 'Push':
-          bot.push('U17448c796a01b715d293c34810985a4c', ['Hey!', 'สวัสดี ' + String.fromCharCode(0xD83D, 0xDE01)]);
-          break;
-        case 'Push2':
-          bot.push('Cba71ba25dafbd6a1472c655fe22979e2', 'Push to group');
-          break;
-        case 'Multicast':
-          bot.push(['U17448c796a01b715d293c34810985a4c', 'Cba71ba25dafbd6a1472c655fe22979e2'], 'Multicast!');
-          break;
-        case 'Confirm':
-          event.reply({
-            type: 'template',
-            altText: 'this is a confirm template',
-            template: {
-              type: 'confirm',
-              text: 'Are you sure?',
-              actions: [{
-                type: 'message',
-                label: 'Yes',
-                text: 'yes'
-              }, {
-                type: 'message',
-                label: 'No',
-                text: 'no'
-              }]
-            }
-          });
-          break;
-        case 'Multiple':
-          return event.reply(['Line 1', 'Line 2', 'Line 3', 'Line 4', 'Line 5']);
-          break;
-        case 'Version':
-          event.reply('linebot@' + require('../package.json').version);
-          break;
-        default:
-          event.reply(event.message.text).then(function (data) {
-            console.log('Success', data);
-          }).catch(function (error) {
-            console.log('Error', error);
-          });
-          break;
+//底下輸入credentials.json檔案的內容
+const myClientSecret = { "installed":
+{"client_id":"724449545250-69efl9n814a920hav1bvab9qu0ke1k4n.apps.googleusercontent.com",
+"project_id":"cobalt-ship-238507",
+"auth_uri":"https://accounts.google.com/o/oauth2/auth",
+"token_uri":"https://oauth2.googleapis.com/token",
+"auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs",
+"client_secret":"XlE838SI-XBVUmLmWDT8IFMF",
+"redirect_uris":["urn:ietf:wg:oauth:2.0:oob","http://localhost"]}}
+
+
+const oauth2Client = new google.auth.OAuth2(myClientSecret.installed.client_id,myClientSecret.installed.client_secret, myClientSecret.installed.redirect_uris[0]);
+
+//底下輸入sheetsapi.json檔案的內容
+oauth2Client.credentials = {"access_token":"ya29.Glv2Bs2yUnU4M8RZKhQYF7EtbJmTatbidZgyk07nzkH5RRgRx6sbxNvversPLAQrUcd86QeMHfW7HlJHtbyiof5vdvF9OSjgJsGrBpNagiziI7p18_lLVYETH1r_","refresh_token":"1/gm4cVXW3UyQyXTW-w4yXxCb_uPox6YfC_-alP0uPwwM","scope":"https://www.googleapis.com/auth/spreadsheets","token_type":"Bearer","expiry_date":1556211740140}
+
+//試算表的ID，引號不能刪掉
+const mySheetId='1VLX79AlBmlkqIJgDK2BRDkxK3venpoL1jselGGIhmc4';
+
+var myQuestions=[];
+var users=[];
+var totalSteps=0;
+var myReplies=[];
+
+
+
+
+//這是讀取問題的函式
+function getQuestions(){
+  const sheets = google.sheets('v4');
+  sheets.spreadsheets.values.get({
+     auth: oauth2Client,
+     spreadsheetId: mySheetId,
+     //range:encodeURI('question1'),
+     range: 'question1!A1:D2',
+     majorDimension: 'ROWS'
+  }, function(err, response) {
+     if (err) {
+        console.log('讀取問題檔的API產生問題：' + err);
+        return;
+     }
+     const rows = response.data.values;
+     //console.log(JSON.stringify(response, null, 2));
+     console.log(response.data.values)
+     console.log("=============================")
+     if (rows.length == 0) { //有問題TypeError: Cannot read property 'length' of undefined
+        console.log('No data found.');
+     } else {
+       myQuestions=rows;
+       totalSteps=myQuestions[0].length;//有問題 TypeError: Cannot read property '0' of undefined
+       console.log('要問的問題已下載完畢！');
+     }
+  });
+}
+
+//程式啟動後會去讀取試算表內的問題
+getQuestions();
+
+//這是將取得的資料儲存進試算表的函式
+function appendMyRow(userId) {
+   var request = {
+      auth: oauth2Client,
+      spreadsheetId: mySheetId,
+      range:'reponse1',
+      insertDataOption: 'INSERT_ROWS',
+      valueInputOption: 'RAW',
+      resource: {
+        "values": [
+          users[userId].replies
+        ]
       }
-      break;
-    case 'image':
-      event.message.content().then(function (data) {
-        const s = data.toString('hex').substring(0, 32);
-        return event.reply('Nice picture! ' + s);
-      }).catch(function (err) {
-        return event.reply(err.toString());
-      });
-      break;
-    case 'video':
-      event.reply('Nice video!');
-      break;
-    case 'audio':
-      event.reply('Nice audio!');
-      break;
-    case 'location':
-      event.reply(['That\'s a good location!', 'Lat:' + event.message.latitude, 'Long:' + event.message.longitude]);
-      break;
-    case 'sticker':
-      event.reply({
-        type: 'sticker',
-        packageId: 1,
-        stickerId: 1
-      });
-      break;
-    default:
-      event.reply('Unknow message: ' + JSON.stringify(event));
-      break;
-  }
+   };
+   var sheets = google.sheets('v4');
+   sheets.spreadsheets.values.append(request, function(err, response) {
+      if (err) {
+         console.log('The API returned an error: ' + err);
+         return;
+      }
+   });
+}
+
+//LineBot收到user的文字訊息時的處理函式
+bot.on('message', function(event) {
+   if (event.message.type === 'text') {
+      var myId=event.source.userId;
+      if (users[myId]==undefined){
+         users[myId]=[];
+         users[myId].userId=myId;
+         users[myId].step=-1;
+         users[myId].replies=[];
+      }
+     
+      var myStep=users[myId].step;
+      if (myStep===-1)
+         sendMessage(event,myQuestions[0][0]);
+      else{
+         if (myStep==(totalSteps-1))
+            sendMessage(event,myQuestions[1][myStep]);
+         else
+            sendMessage(event,myQuestions[1][myStep]+'\n'+myQuestions[0][myStep+1]);
+         users[myId].replies[myStep+1]=event.message.text;
+      }
+      myStep++;
+      users[myId].step=myStep;
+      if (myStep>=totalSteps){
+         myStep=-1;
+         users[myId].step=myStep;
+         users[myId].replies[0]=new Date();
+         appendMyRow(myId);
+      }
+   }
 });
 
-bot.on('follow', function (event) {
-  event.reply('follow: ' + event.source.userId);
-});
 
-bot.on('unfollow', function (event) {
-  event.reply('unfollow: ' + event.source.userId);
-});
+//這是發送訊息給user的函式
+function sendMessage(eve,msg){
+   eve.reply(msg).then(function(data) {
+      // success 
+      return true;
+   }).catch(function(error) {
+      // error 
+      return false;
+   });
+}
 
-bot.on('join', function (event) {
-  event.reply('join: ' + event.source.groupId);
-});
-
-bot.on('leave', function (event) {
-  event.reply('leave: ' + event.source.groupId);
-});
-
-bot.on('postback', function (event) {
-  event.reply('postback: ' + event.postback.data);
-});
-
-bot.on('beacon', function (event) {
-  event.reply('beacon: ' + event.beacon.hwid);
-});
-
-bot.listen('/linewebhook', process.env.PORT || 80, function () {
-  console.log('LineBot is running.');
-});
 
 const app = express();
 const linebotParser = bot.parser();
