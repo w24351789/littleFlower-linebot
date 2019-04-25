@@ -56,16 +56,15 @@ function getQuestions(){
         console.log('讀取問題檔的API產生問題：' + err);
         return;
      }
-     var rows = response.data.values;
-     console.log(rows[0][0])
+     const rows = response.data.values;
      //console.log(JSON.stringify(response, null, 2));
      console.log(response.data.values)
      console.log("=============================")
-     if (rows == 0) { //有問題TypeError: Cannot read property 'length' of undefined
+     if (rows.length == 0) { //有問題TypeError: Cannot read property 'length' of undefined
         console.log('No data found.');
      } else {
        myQuestions=rows;
-       //totalSteps=myQuestions[0].length;//有問題 TypeError: Cannot read property '0' of undefined
+       totalSteps=myQuestions[0].length;//有問題 TypeError: Cannot read property '0' of undefined
        console.log('要問的問題已下載完畢！');
      }
   });
