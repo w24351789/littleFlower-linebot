@@ -57,11 +57,12 @@ function getQuestions(){
         return;
      }
      var rows = response.values;
-     if (rows == 0) {
+     console.log(rows)
+     if (rows.length == 0) { //有問題TypeError: Cannot read property 'length' of undefined
         console.log('No data found.');
      } else {
        myQuestions=rows;
-       //totalSteps=myQuestions[0].length;
+       totalSteps=myQuestions[0].length;//有問題 TypeError: Cannot read property '0' of undefined
        console.log('要問的問題已下載完畢！');
      }
   });
@@ -103,7 +104,7 @@ bot.on('message', function(event) {
          users[myId].step=-1;
          users[myId].replies=[];
       }
-      const totalSteps=myQuestions.length;
+     
       const myStep=users[myId].step;
       if (myStep===-1)
          sendMessage(event,myQuestions[0][0]);
