@@ -78,7 +78,7 @@ function appendMyRow(userId) {
    var request = {
       auth: oauth2Client,
       spreadsheetId: mySheetId,
-      range:encodeURI('表單回應 1'),
+      range:'reponse1',
       insertDataOption: 'INSERT_ROWS',
       valueInputOption: 'RAW',
       resource: {
