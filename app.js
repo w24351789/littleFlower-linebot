@@ -45,7 +45,7 @@ function getQuestions(){
      auth: oauth2Client,
      spreadsheetId: mySheetId,
      //range:encodeURI('question1'),
-     range: 'question1!A1:D2',
+     range: 'question1!A1:E2',
      majorDimension: 'ROWS'
   }, function(err, response) {
      if (err) {
