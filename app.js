@@ -57,7 +57,7 @@ function getQuestions(){
         return;
      }
      var rows = response.data.values;
-     console.log("rows = " + rows[0][0])
+     console.log(rows[0][0])
      //console.log(JSON.stringify(response, null, 2));
      console.log(response.data.values)
      console.log("=============================")
