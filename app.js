@@ -58,7 +58,7 @@ function getQuestions(){
      }
      var rows = response.values;
      console.log("rows = " + rows)
-     console.log("rows2" = JSON.stringify(response, null, 2));
+     console.log("rows2 = " JSON.stringify(response, null, 2));
      if (rows == 0) { //有問題TypeError: Cannot read property 'length' of undefined
         console.log('No data found.');
      } else {
