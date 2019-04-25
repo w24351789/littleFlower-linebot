@@ -107,7 +107,7 @@ bot.on('message', function(event) {
          users[myId].replies=[];
       }
      
-      const myStep=users[myId].step;
+      let myStep=users[myId].step;
       if (myStep===-1)
          sendMessage(event,myQuestions[0][0]);
       else{
