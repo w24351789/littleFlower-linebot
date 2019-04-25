@@ -1,4 +1,4 @@
-//以下的四列require裡的內容，請確認是否已經用npm裝進node.js
+//以下的三列require裡的內容，請確認是否已經用npm裝進node.js
 const linebot = require('linebot');
 const express = require('express');
 const { google } = require('googleapis');
@@ -11,7 +11,7 @@ const bot = linebot({
 });
 
 
-//底下輸入client_secret.json檔案的內容
+//底下輸入credentials.json檔案的內容
 const myClientSecret = { "installed":
 {"client_id":"724449545250-69efl9n814a920hav1bvab9qu0ke1k4n.apps.googleusercontent.com",
 "project_id":"cobalt-ship-238507",
@@ -45,7 +45,7 @@ function getQuestions(){
      auth: oauth2Client,
      spreadsheetId: mySheetId,
      //range:encodeURI('question1'),
-     range: 'question1!A1:E2',
+     range: 'question1!A1:D2',
      majorDimension: 'ROWS'
   }, function(err, response) {
      if (err) {
