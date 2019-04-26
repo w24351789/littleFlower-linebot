@@ -3,6 +3,8 @@ const linebot = require('linebot');
 const express = require('express');
 const { google } = require('googleapis');
 
+//用於製入location
+let mapLocation = require('./js_modules/location');
 // 用於辨識Line Channel的資訊
 const bot = linebot({
   channelId: '1566408570',
@@ -126,13 +128,7 @@ bot.on('message', function(event) {
             }
          }
          if (event.message.text === 'Location') {
-            event.reply({
-               type: 'location',
-               title: 'LINE Plus Corporation',
-               address: '1 Empire tower, Sathorn, Bangkok 10120, Thailand',
-               latitude: 13.7202068,
-               longitude: 100.5298698
-             });
+            event.reply(mapLocation);
          }
       break;
       case 'sticker':
