@@ -36,8 +36,6 @@ var totalSteps=0;
 var myReplies=[];
 
 
-
-
 //這是讀取問題的函式
 function getQuestions(){
   const sheets = google.sheets('v4');
@@ -55,12 +53,11 @@ function getQuestions(){
      const rows = response.data.values;
      //console.log(JSON.stringify(response, null, 2));
      console.log(response.data.values)
-     console.log("=============================")
-     if (rows.length == 0) { //有問題TypeError: Cannot read property 'length' of undefined
+     if (rows.length == 0) { 
         console.log('No data found.');
      } else {
        myQuestions=rows;
-       totalSteps=myQuestions[0].length;//有問題 TypeError: Cannot read property '0' of undefined
+       totalSteps=myQuestions[0].length;
        console.log('要問的問題已下載完畢！');
      }
   });
@@ -104,16 +101,16 @@ bot.on('message', function(event) {
       }
      
       var myStep=users[myId].step;
-      if (myStep===-1)
+      if (myStep===-1) //第一次觸發問卷
          sendMessage(event,myQuestions[0][0]);
       else{
-         if (myStep==(totalSteps-1))
+         if (myStep==(totalSteps-1)) //最後一題答完後
             sendMessage(event,myQuestions[1][myStep]);
          else
             sendMessage(event,myQuestions[1][myStep]+'\n'+myQuestions[0][myStep+1]);
          users[myId].replies[myStep+1]=event.message.text;
       }
-      myStep++;
+      myStep+=1;
       users[myId].step=myStep;
       if (myStep>=totalSteps){
          myStep=-1;
