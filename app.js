@@ -5,6 +5,8 @@ const { google } = require('googleapis');
 
 //用於製入location
 let mapLocation = require('./js_modules/location');
+//用於製入金鑰beta
+const myClientSecret = require('./user_data/credentials.json');
 // 用於辨識Line Channel的資訊
 const bot = linebot({
   channelId: '1566408570',
@@ -12,17 +14,15 @@ const bot = linebot({
   channelAccessToken: 'gM1zz4xVFGIOudd30703LVOBbp9AwWlkNXFFxAGQXxINXDBQq91RxlsrAWxoQR2mDhKDUFPUNnTMlojAwNSfpgebrKn3NzFLafzh9djn6hIhRhCDNrog1Cqoh9bR+CT9R8OJyBlOhzhv/rTzU6ZLHAdB04t89/1O/w1cDnyilFU='
 });
 
-
 //底下輸入credentials.json檔案的內容
-const myClientSecret = { "installed":
-{"client_id":"724449545250-69efl9n814a920hav1bvab9qu0ke1k4n.apps.googleusercontent.com",
-"project_id":"cobalt-ship-238507",
-"auth_uri":"https://accounts.google.com/o/oauth2/auth",
-"token_uri":"https://oauth2.googleapis.com/token",
-"auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs",
-"client_secret":"XlE838SI-XBVUmLmWDT8IFMF",
-"redirect_uris":["urn:ietf:wg:oauth:2.0:oob","http://localhost"]}}
-
+// const myClientSecret = { "installed":
+// {"client_id":"724449545250-69efl9n814a920hav1bvab9qu0ke1k4n.apps.googleusercontent.com",
+// "project_id":"cobalt-ship-238507",
+// "auth_uri":"https://accounts.google.com/o/oauth2/auth",
+// "token_uri":"https://oauth2.googleapis.com/token",
+// "auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs",
+// "client_secret":"XlE838SI-XBVUmLmWDT8IFMF",
+// "redirect_uris":["urn:ietf:wg:oauth:2.0:oob","http://localhost"]}}
 
 const oauth2Client = new google.auth.OAuth2(myClientSecret.installed.client_id,myClientSecret.installed.client_secret, myClientSecret.installed.redirect_uris[0]);
 
@@ -116,14 +116,14 @@ bot.on('message', function(event) {
             }
             myStep += 1;
             questionnaireKey = myStep + 100;
-            console.log(questionnaireKey);
+            //console.log(questionnaireKey);
             users[myId].step=myStep;
             if (myStep>=totalSteps){
                myStep = -1;
                questionnaireKey = 0;
                users[myId].step=myStep;
                users[myId].replies[0]=new Date();
-               console.log(users[myId])
+               //console.log(users[myId])
                appendMyRow(myId);
             }
          }
