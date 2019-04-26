@@ -143,38 +143,6 @@ bot.on('message', function(event) {
          });
       break;
    }
-   if (event.message.text === '問卷' || questionnaireKey !== 0) {
-      var myId=event.source.userId;
-      if (users[myId]==undefined){
-         users[myId]=[];
-         users[myId].userId=myId;
-         users[myId].step=-1;
-         users[myId].replies=[];
-      }
-     
-      var myStep=users[myId].step;
-      if (myStep === -1) //第一次觸發問卷
-         sendMessage(event,myQuestions[0][0]);
-      else{
-         if (myStep==(totalSteps-1)) //最後一題答完後
-            sendMessage(event,myQuestions[1][myStep]);
-         else
-            sendMessage(event,myQuestions[1][myStep]+'\n'+myQuestions[0][myStep+1]);
-         users[myId].replies[myStep+1]=event.message.text;
-      }
-      myStep += 1;
-      questionnaireKey = myStep + 100;
-      console.log(questionnaireKey);
-      users[myId].step=myStep;
-      if (myStep>=totalSteps){
-         myStep = -1;
-         questionnaireKey = 0;
-         users[myId].step=myStep;
-         users[myId].replies[0]=new Date();
-         console.log(users[myId])
-         appendMyRow(myId);
-      }
-   }
 });
 
 
