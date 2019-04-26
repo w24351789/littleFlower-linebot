@@ -4,7 +4,7 @@ const express = require('express');
 const { google } = require('googleapis');
 
 //用於製入location
-import { mapLocation } from './js_modules/location'
+let mapLocation = require('./js_modules/location');
 // 用於辨識Line Channel的資訊
 const bot = linebot({
   channelId: '1566408570',

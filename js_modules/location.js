@@ -1,4 +1,4 @@
-export default {
+module.exports = {
     type: 'location',
     title: 'LINE Plus Corporation',
     address: '1 Empire tower, Sathorn, Bangkok 10120, Thailand',
