@@ -91,6 +91,58 @@ function appendMyRow(userId) {
 
 //LineBot收到user的文字訊息時的處理函式
 bot.on('message', function(event) {
+   switch (event.message.type) {
+      case 'text':
+         if (event.message.text === '問卷' || questionnaireKey !== 0) {
+            var myId=event.source.userId;
+            if (users[myId]==undefined){
+               users[myId]=[];
+               users[myId].userId=myId;
+               users[myId].step=-1;
+               users[myId].replies=[];
+            }
+         
+            var myStep=users[myId].step;
+            if (myStep === -1) //第一次觸發問卷
+               sendMessage(event,myQuestions[0][0]);
+            else{
+               if (myStep==(totalSteps-1)) //最後一題答完後
+                  sendMessage(event,myQuestions[1][myStep]);
+               else
+                  sendMessage(event,myQuestions[1][myStep]+'\n'+myQuestions[0][myStep+1]);
+               users[myId].replies[myStep+1]=event.message.text;
+            }
+            myStep += 1;
+            questionnaireKey = myStep + 100;
+            console.log(questionnaireKey);
+            users[myId].step=myStep;
+            if (myStep>=totalSteps){
+               myStep = -1;
+               questionnaireKey = 0;
+               users[myId].step=myStep;
+               users[myId].replies[0]=new Date();
+               console.log(users[myId])
+               appendMyRow(myId);
+            }
+         }
+         if (event.message.text === 'Location') {
+            event.reply({
+               type: 'location',
+               title: 'LINE Plus Corporation',
+               address: '1 Empire tower, Sathorn, Bangkok 10120, Thailand',
+               latitude: 13.7202068,
+               longitude: 100.5298698
+             });
+         }
+      break;
+      case 'sticker':
+         event.reply({
+         type: 'sticker',
+         packageId: 1,
+         stickerId: 1
+         });
+      break;
+   }
    if (event.message.text === '問卷' || questionnaireKey !== 0) {
       var myId=event.source.userId;
       if (users[myId]==undefined){
