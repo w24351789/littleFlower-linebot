@@ -95,7 +95,7 @@ bot.on('message', function(event) {
             else{
                if (myStep==(totalSteps-1)) //最後一題答完後
                   {
-                     sendMessage(event,myQuestions[1][myStep]);
+                     //sendMessage(event,myQuestions[1][myStep]);
                      event.reply(mapLocation);
                   }
                else
