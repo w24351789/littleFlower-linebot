@@ -2,13 +2,12 @@
 const linebot = require('linebot');
 const express = require('express');
 const { google } = require('googleapis');
-
-//用於製入location
-let mapLocation = require('./js_modules/location');
 //用於製入金鑰beta
 const myClientSecret = require('./user_data/credentials.json');
 const sheetsAuth = require('./user_data/sheetsapi.json');
 const lineInfo = require('./user_data/linebot_info');
+//用於製入location
+let mapLocation = require('./js_modules/location');
 // 用於辨識Line Channel的資訊
 const bot = linebot(lineInfo);
 
@@ -95,7 +94,10 @@ bot.on('message', function(event) {
                sendMessage(event,myQuestions[0][0]);
             else{
                if (myStep==(totalSteps-1)) //最後一題答完後
-                  sendMessage(event,myQuestions[1][myStep]);
+                  {
+                     sendMessage(event,myQuestions[1][myStep]);
+                     event.reply(mapLocation);
+                  }
                else
                   sendMessage(event,myQuestions[1][myStep]+'\n'+myQuestions[0][myStep+1]);
                users[myId].replies[myStep+1]=event.message.text;
