@@ -8,6 +8,8 @@ const sheetsAuth = require('./user_data/sheetsapi.json');
 const lineInfo = require('./user_data/linebot_info');
 //用於製入location
 let mapLocation = require('./js_modules/location');
+//引入line模板
+let giftCard = require('./bot_templates/giftCard.json');
 // 用於辨識Line Channel的資訊
 const bot = linebot(lineInfo);
 
@@ -96,7 +98,7 @@ bot.on('message', function(event) {
                if (myStep==(totalSteps-1)) //最後一題答完後
                   {
                      //sendMessage(event,myQuestions[1][myStep]);
-                     event.reply(mapLocation);
+                     event.reply(giftCard);
                   }
                else
                   sendMessage(event,myQuestions[1][myStep]+'\n'+myQuestions[0][myStep+1]);
