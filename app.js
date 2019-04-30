@@ -17,8 +17,8 @@ const oauth2Client = new google.auth.OAuth2(myClientSecret.installed.client_id,m
 //底下輸入sheetsapi.json檔案的內容
 oauth2Client.credentials = sheetsAuth;
 //試算表的ID，引號不能刪掉
-const mySheetId='1VLX79AlBmlkqIJgDK2BRDkxK3venpoL1jselGGIhmc4';
-
+//const mySheetId='1VLX79AlBmlkqIJgDK2BRDkxK3venpoL1jselGGIhmc4';
+const mySheetId='13lzb_GiuEVYaJxJmE8nQyEwBw-zeijeV5HtELCHzmdk';
 var myQuestions=[];
 var users=[];
 var totalSteps=0;
@@ -32,7 +32,7 @@ function getQuestions(){
      auth: oauth2Client,
      spreadsheetId: mySheetId,
      //range:encodeURI('question1'),
-     range: 'question1!A1:D2',
+     range: 'question1!A1:M2',
      majorDimension: 'ROWS'
   }, function(err, response) {
      if (err) {
