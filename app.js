@@ -82,7 +82,7 @@ function appendMyRow(userId) {
 bot.on('message', function(event) {
    switch (event.message.type) {
       case 'text':
-         if (event.message.text === '問卷' || questionnaireKey !== 0) {
+         if (event.message.text === '@意見回饋@' || questionnaireKey !== 0) {
             var myId=event.source.userId;
             if (users[myId]==undefined){
                users[myId]=[];
@@ -119,9 +119,7 @@ bot.on('message', function(event) {
                appendMyRow(myId);
             }
          }
-         if (event.message.text === 'Location') {
-            event.reply(mapLocation);
-         }
+         
       break;
       case 'sticker':
          event.reply({
