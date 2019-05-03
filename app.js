@@ -93,7 +93,9 @@ bot.on('message', function(event) {
          
             var myStep=users[myId].step;
             if (myStep === -1) //第一次觸發問卷
-               sendMessage(event,myQuestions[0][0]);
+               {sendMessage(event,myQuestions[0][0]);
+               console.log(myQuestions[0][0])
+            }
             else{
                if (myStep==(totalSteps-1)) //最後一題答完後
                   {
@@ -113,7 +115,7 @@ bot.on('message', function(event) {
                questionnaireKey = 0;
                users[myId].step=myStep;
                users[myId].replies[0]=new Date();
-               //console.log(users[myId])
+               console.log(users[myId])
                appendMyRow(myId);
             }
          }
