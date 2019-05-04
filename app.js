@@ -98,23 +98,29 @@ bot.on('message', function(event) {
                console.log(myQuestions[0][0])
             }
             else{
-               if (myStep==(totalSteps-1)) //最後一題答完後
-                  {
-                     //sendMessage(event,myQuestions[1][myStep]);
-                     event.reply(giftCard);
-                  }
-               else
+               //最後一題答完後
+               if (myStep==(totalSteps-1)) {
+                  //sendMessage(event,myQuestions[1][myStep]);
+                  event.reply(giftCard);
+               }else if (myStep>= 0 || myStep <= 4){
                   //sendMessage(event,myQuestions[1][myStep]+'\n'+myQuestions[0][myStep+1]);
                   questionAns = myQuestions[1][myStep]+'\n'+myQuestions[0][myStep+1];
                   questionChosen.text = questionAns;
+                  delete questionChosen.quickReply;
                   event.reply(questionChosen);
                   
                   console.log(questionChosen);
                   users[myId].replies[myStep+1]=event.message.text;
+               }else{
+                  questionAns = myQuestions[1][myStep]+'\n'+myQuestions[0][myStep+1];
+                  questionChosen.text = questionAns;
+                  event.reply(questionChosen);
+                  
+                  users[myId].replies[myStep+1]=event.message.text;
+               }
             }
             myStep += 1;
             questionnaireKey = myStep + 100;
-            //console.log(questionnaireKey);
             users[myId].step=myStep;
             if (myStep>=totalSteps){
                myStep = -1;
