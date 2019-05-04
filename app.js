@@ -19,6 +19,7 @@ let badMoodTea2 = require('./bot_templates/badMoodTea2.json');
 let twFlowerTea = require('./bot_templates/twFlowerTea.json');
 let brandMind = require('./bot_templates/brandMind.json');
 let contactUs = require('./bot_templates/contactUs.json');
+let rawMaterial = require('./bot_templates/rawMaterial.json');
 // 用於辨識Line Channel的資訊
 const bot = linebot(lineInfo);
 
@@ -110,6 +111,9 @@ bot.on('message', function(event) {
             break;
             case '@聯絡我們@':
                event.reply(contactUs);
+            break;
+            case '@原料介紹@':
+               event.reply(rawMaterial);
             break;
 
          }
