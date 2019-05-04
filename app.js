@@ -93,9 +93,11 @@ bot.on('message', function(event) {
             }
          
             var myStep=users[myId].step;
-            let questionAns;
-            if (myStep === -1) //第一次觸發問卷
-               {sendMessage(event,myQuestions[0][0]);
+            let questionAns1;
+            let questionAns2;
+            //第一次觸發問卷
+            if (myStep === -1) {
+               sendMessage(event,myQuestions[0][0]);
                console.log(myQuestions[0][0])
             }
             else{
@@ -103,17 +105,17 @@ bot.on('message', function(event) {
                if (myStep==(totalSteps-1)) {
                   //sendMessage(event,myQuestions[1][myStep]);
                   event.reply(giftCard);
-               }else if (myStep>= 0 || myStep <= 4){
+               }else if (myStep > -1 && myStep < 5){
                   //sendMessage(event,myQuestions[1][myStep]+'\n'+myQuestions[0][myStep+1]);
-                  questionAns = myQuestions[1][myStep]+'\n'+myQuestions[0][myStep+1];
-                  questionText.text = questionAns;
+                  questionAns1 = myQuestions[1][myStep]+'\n'+myQuestions[0][myStep+1];
+                  questionText.text = questionAns1;
                   event.reply(questionChosen);
                   
                   console.log(questionChosen);
                   users[myId].replies[myStep+1]=event.message.text;
                }else{
-                  questionAns = myQuestions[1][myStep]+'\n'+myQuestions[0][myStep+1];
-                  questionChosen.text = questionAns;
+                  questionAns2 = myQuestions[1][myStep]+'\n'+myQuestions[0][myStep+1];
+                  questionChosen.text = questionAns2;
                   event.reply(questionChosen);
                   
                   users[myId].replies[myStep+1]=event.message.text;
