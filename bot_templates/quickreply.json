@@ -7,40 +7,40 @@
           "type": "action", 
           "action": {
             "type": "message",
-            "label": "1",
-            "text": "1"
+            "label": "非常滿意",
+            "text": "非常滿意"
           }
         },
         {
           "type": "action",
           "action": {
             "type": "message",
-            "label": "2",
-            "text": "2"
+            "label": "滿意",
+            "text": "滿意"
           }
         },
         {
           "type": "action", 
           "action": {
             "type": "message",
-            "label": "3",
-            "text": "3"
+            "label": "普通",
+            "text": "普通"
           }
         },
         {
           "type": "action", 
           "action": {
             "type": "message",
-            "label": "4",
-            "text": "4"
+            "label": "不滿意",
+            "text": "不滿意"
           }
         },
         {
           "type": "action", 
           "action": {
             "type": "message",
-            "label": "5",
-            "text": "5"
+            "label": "非常不滿意",
+            "text": "非常不滿意"
           }
         }
       ]

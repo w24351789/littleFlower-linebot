@@ -12,6 +12,7 @@ let mapLocation = require('./js_modules/location');
 let giftCard = require('./bot_templates/giftCard.json');
 let questionChosen = require('./bot_templates/quickreply.json');
 let questionText = require('./bot_templates/textReply.json');
+let teaShop = require('./bot_templates/shopping.json');
 // 用於辨識Line Channel的資訊
 const bot = linebot(lineInfo);
 
@@ -52,7 +53,6 @@ function getQuestions(){
      }
   });
 }
-
 //程式啟動後會去讀取試算表內的問題
 getQuestions();
 
@@ -83,6 +83,11 @@ function appendMyRow(userId) {
 bot.on('message', function(event) {
    switch (event.message.type) {
       case 'text':
+         switch (event.message.text) {
+            case '@購買商品@':
+               event.reply(teaShop);
+            break;
+         }
          if (event.message.text === '@意見回饋@' || questionnaireKey !== 0) {
             var myId=event.source.userId;
             if (users[myId]==undefined){
@@ -107,7 +112,6 @@ bot.on('message', function(event) {
                   event.reply(giftCard);
                }
                else if (myStep > -1 && myStep < 4){
-                  //sendMessage(event,myQuestions[1][myStep]+'\n'+myQuestions[0][myStep+1]);
                   questionAns1 = myQuestions[1][myStep]+'\n'+myQuestions[0][myStep+1];
                   questionText.text = questionAns1;
                   event.reply(questionText);
