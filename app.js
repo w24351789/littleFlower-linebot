@@ -10,6 +10,7 @@ const lineInfo = require('./user_data/linebot_info');
 let mapLocation = require('./js_modules/location');
 //引入line模板
 let giftCard = require('./bot_templates/giftCard.json');
+let questionChosen = require('./bot_templates/quickreply.json');
 // 用於辨識Line Channel的資訊
 const bot = linebot(lineInfo);
 
@@ -18,11 +19,10 @@ const oauth2Client = new google.auth.OAuth2(myClientSecret.installed.client_id,m
 oauth2Client.credentials = sheetsAuth;
 //試算表的ID，引號不能刪掉
 //const mySheetId='1VLX79AlBmlkqIJgDK2BRDkxK3venpoL1jselGGIhmc4';
-const mySheetId='13lzb_GiuEVYaJxJmE8nQyEwBw-zeijeV5HtELCHzmdk';
+const questionSheetId='13lzb_GiuEVYaJxJmE8nQyEwBw-zeijeV5HtELCHzmdk';
 var myQuestions=[];
 var users=[];
 var totalSteps=0;
-var myReplies=[];
 var questionnaireKey=0;
 
 //這是讀取問題的函式
@@ -30,7 +30,7 @@ function getQuestions(){
   const sheets = google.sheets('v4');
   sheets.spreadsheets.values.get({
      auth: oauth2Client,
-     spreadsheetId: mySheetId,
+     spreadsheetId: questionSheetId,
      //range:encodeURI('question1'),
      range: 'question1!A1:M2',
      majorDimension: 'ROWS'
@@ -59,7 +59,7 @@ getQuestions();
 function appendMyRow(userId) {
    var request = {
       auth: oauth2Client,
-      spreadsheetId: mySheetId,
+      spreadsheetId: questionSheetId,
       range:'reponse1',
       insertDataOption: 'INSERT_ROWS',
       valueInputOption: 'RAW',
@@ -92,6 +92,7 @@ bot.on('message', function(event) {
             }
          
             var myStep=users[myId].step;
+            let questionAns;
             if (myStep === -1) //第一次觸發問卷
                {sendMessage(event,myQuestions[0][0]);
                console.log(myQuestions[0][0])
@@ -103,8 +104,13 @@ bot.on('message', function(event) {
                      event.reply(giftCard);
                   }
                else
-                  sendMessage(event,myQuestions[1][myStep]+'\n'+myQuestions[0][myStep+1]);
-               users[myId].replies[myStep+1]=event.message.text;
+                  //sendMessage(event,myQuestions[1][myStep]+'\n'+myQuestions[0][myStep+1]);
+                  questionAns = myQuestions[1][myStep]+'\n'+myQuestions[0][myStep+1];
+                  questionChosen.text = questionAns;
+                  event.reply(questionChosen);
+                  
+                  console.log(questionChosen);
+                  users[myId].replies[myStep+1]=event.message.text;
             }
             myStep += 1;
             questionnaireKey = myStep + 100;
