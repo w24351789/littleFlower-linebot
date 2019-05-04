@@ -95,25 +95,27 @@ bot.on('message', function(event) {
             var myStep=users[myId].step;
             let questionAns1;
             let questionAns2;
+            console.log(myStep);
             //第一次觸發問卷
             if (myStep === -1) {
                sendMessage(event,myQuestions[0][0]);
-               console.log(myQuestions[0][0])
             }
             else{
                //最後一題答完後
                if (myStep==(totalSteps-1)) {
                   //sendMessage(event,myQuestions[1][myStep]);
                   event.reply(giftCard);
-               }else if (myStep > -1 && myStep < 5){
+               }
+               else if (myStep > -1 && myStep < 5){
                   //sendMessage(event,myQuestions[1][myStep]+'\n'+myQuestions[0][myStep+1]);
                   questionAns1 = myQuestions[1][myStep]+'\n'+myQuestions[0][myStep+1];
                   questionText.text = questionAns1;
-                  event.reply(questionChosen);
+                  event.reply(questionText);
                   
-                  console.log(questionChosen);
+                  console.log(questionText);
                   users[myId].replies[myStep+1]=event.message.text;
-               }else{
+               }
+               else {
                   questionAns2 = myQuestions[1][myStep]+'\n'+myQuestions[0][myStep+1];
                   questionChosen.text = questionAns2;
                   event.reply(questionChosen);
@@ -129,7 +131,7 @@ bot.on('message', function(event) {
                questionnaireKey = 0;
                users[myId].step=myStep;
                users[myId].replies[0]=new Date();
-               console.log(users[myId])
+               //console.log(users[myId])
                appendMyRow(myId);
             }
          }
