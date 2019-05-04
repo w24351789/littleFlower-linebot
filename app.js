@@ -13,6 +13,10 @@ let giftCard = require('./bot_templates/giftCard.json');
 let questionChosen = require('./bot_templates/quickreply.json');
 let questionText = require('./bot_templates/textReply.json');
 let teaShop = require('./bot_templates/shopping.json');
+let weekTeaShop = require('./bot_templates/weekTeaShop.json');
+let badMoodTea = require('./bot_templates/badMoodTea.json');
+let badMoodTea2 = require('./bot_templates/badMoodTea2.json');
+let twFlowerTea = require('./bot_templates/twFlowerTea.json');
 // 用於辨識Line Channel的資訊
 const bot = linebot(lineInfo);
 
@@ -87,6 +91,19 @@ bot.on('message', function(event) {
             case '@購買商品@':
                event.reply(teaShop);
             break;
+            case '購買周而復始系列花茶':
+               event.reply(weekTeaShop);
+            break;
+            case '進一步了解負能量系列花茶':
+               event.reply(badMoodTea);
+            break;
+            case '看更多負能量茶飲':
+               event.reply(badMoodTea2);
+            break;
+            case '進一步了解台灣特色花茶':
+               event.reply(twFlowerTea);
+            break;
+
          }
          if (event.message.text === '@意見回饋@' || questionnaireKey !== 0) {
             var myId=event.source.userId;

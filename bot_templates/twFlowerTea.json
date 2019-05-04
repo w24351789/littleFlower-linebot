@@ -1,0 +1,403 @@
+{
+    "type": "flex",
+    "altText": "Flex Message",
+    "contents": {
+      "type": "carousel",
+      "contents": [
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "url": "https://i.imgur.com/SQzNHbV.jpg",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "台灣花茶  桂花美人茶",
+                "size": "lg",
+                "weight": "bold",
+                "wrap": true
+              },
+              {
+                "type": "text",
+                "text": "NTD127 ",
+                "size": "md"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "spacer"
+                  },
+                  {
+                    "type": "text",
+                    "text": "原料：台北石碇桂花+台北木柵白毫烏龍茶",
+                    "size": "xs",
+                    "color": "#535151",
+                    "wrap": true
+                  },
+                  {
+                    "type": "spacer"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "十字身形橙黃桂花，一嗅似果香二嗅似紅茶香，佐東方美人茶工藝技法使蜜黃茶湯添上一抹赭紅，入喉口鼻流香，隨口飲下，隨口優雅。",
+                    "flex": 0,
+                    "size": "xs",
+                    "wrap": true
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "url": "https://i.imgur.com/52D2ukd.jpg",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "台灣花茶  玫瑰紅茶",
+                "size": "lg",
+                "weight": "bold",
+                "wrap": true
+              },
+              {
+                "type": "text",
+                "text": "NTD127 ",
+                "size": "md"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "spacer"
+                  },
+                  {
+                    "type": "text",
+                    "text": "原料：南投埔里玫瑰+南頭日月潭紅茶(台茶18號)",
+                    "size": "xs",
+                    "color": "#535151",
+                    "wrap": true
+                  },
+                  {
+                    "type": "spacer"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "湊近鼻尖才嗅見的清淡玫瑰花香，淡雅香甜，輔以日月潭紅玉，茶湯豐潤透紅，帶有熟果清香，入喉回甘悠久，舒爽宜人。",
+                    "flex": 0,
+                    "size": "xs",
+                    "wrap": true
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "url": "https://i.imgur.com/I4WSj3S.jpg",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "台灣花茶  杭菊金萱茶 ",
+                "size": "lg",
+                "weight": "bold",
+                "wrap": true
+              },
+              {
+                "type": "text",
+                "text": "NTD127 ",
+                "size": "md"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "spacer"
+                  },
+                  {
+                    "type": "text",
+                    "text": "原料：苗栗銅鑼杭菊、宜蘭大同金萱茶",
+                    "size": "xs",
+                    "color": "#535151",
+                    "wrap": true
+                  },
+                  {
+                    "type": "spacer"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "杭菊秋末綻放的小毛球，氣息似薄荷也似野薑花，伴以金萱為人熟知的淡淡乳香，甘醇而芬芳，湯質甘潤順口，濃濃熟果蜜香漫延齒頰，清香滿溢。",
+                    "flex": 0,
+                    "size": "xs",
+                    "wrap": true
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "url": "https://i.imgur.com/I4WSj3S.jpg",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "台灣花茶  杭菊金萱茶 ",
+                "size": "lg",
+                "weight": "bold",
+                "wrap": true
+              },
+              {
+                "type": "text",
+                "text": "NTD127 ",
+                "size": "md"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "spacer"
+                  },
+                  {
+                    "type": "text",
+                    "text": "原料：苗栗銅鑼杭菊、宜蘭大同金萱茶",
+                    "size": "xs",
+                    "color": "#535151",
+                    "wrap": true
+                  },
+                  {
+                    "type": "spacer"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "杭菊秋末綻放的小毛球，氣息似薄荷也似野薑花，伴以金萱為人熟知的淡淡乳香，甘醇而芬芳，湯質甘潤順口，濃濃熟果蜜香漫延齒頰，清香滿溢。",
+                    "flex": 0,
+                    "size": "xs",
+                    "wrap": true
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "url": "https://i.imgur.com/8fQfQ3f.jpg",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "台灣花茶  洛神紅茶",
+                "size": "lg",
+                "weight": "bold",
+                "wrap": true
+              },
+              {
+                "type": "text",
+                "text": "NTD127 ",
+                "size": "md"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "spacer"
+                  },
+                  {
+                    "type": "text",
+                    "text": "原料：台東太麻里洛神+南投日月潭紅茶(台茶18號)",
+                    "size": "xs",
+                    "color": "#535151",
+                    "wrap": true
+                  },
+                  {
+                    "type": "spacer"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "洛神，色艷紅狀似鈴鐺，帶有獨特的微酸甘甜香味，結合琥珀色澤、帶有肉桂香氣的台茶18號，入喉回甘，果香若有似無，完美點綴。",
+                    "flex": 0,
+                    "size": "xs",
+                    "wrap": true
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "url": "https://i.imgur.com/9xtTE9s.jpg",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "台灣花茶  洛神金萱茶",
+                "size": "lg",
+                "weight": "bold",
+                "wrap": true
+              },
+              {
+                "type": "text",
+                "text": "NTD127 ",
+                "size": "md"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "spacer"
+                  },
+                  {
+                    "type": "text",
+                    "text": "原料：台東太麻里洛神+宜蘭大同金萱茶",
+                    "size": "xs",
+                    "color": "#535151",
+                    "wrap": true
+                  },
+                  {
+                    "type": "spacer"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "嫣紅洛神似芙蓉，粉紅色澤帶有果香的酸甜氣息，如游龍般翻騰於清黃澈綠茶湯中，融於金萱甘甜乳香，香氣活潑，穠纖得衷，脩短合度。",
+                    "flex": 0,
+                    "size": "xs",
+                    "wrap": true
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "url": "https://i.imgur.com/F1q7iUt.jpg",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "backgroundColor": "#FFFFFF"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "button",
+                "action": {
+                  "type": "message",
+                  "label": "看更多",
+                  "text": "購買商品"
+                },
+                "color": "#A2A8A4",
+                "height": "sm",
+                "style": "primary"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }

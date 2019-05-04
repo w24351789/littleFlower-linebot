@@ -1,0 +1,387 @@
+{
+    "type": "flex",
+    "altText": "Flex Message",
+    "contents": {
+      "type": "carousel",
+      "contents": [
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "url": "https://i.imgur.com/gMRw3L5.jpg",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "輕鬆窈窕茶",
+                "size": "lg",
+                "weight": "bold",
+                "wrap": true
+              },
+              {
+                "type": "text",
+                "text": "小時候胖不是胖（明明就是",
+                "size": "xs",
+                "weight": "regular",
+                "color": "#EEDD5C"
+              },
+              {
+                "type": "text",
+                "text": "NTD108",
+                "size": "md",
+                "color": "#1F2124"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "spacer"
+                  },
+                  {
+                    "type": "text",
+                    "text": "配方 : 馬鞭草+檸檬草",
+                    "size": "xs",
+                    "color": "#1F2124",
+                    "wrap": true
+                  },
+                  {
+                    "type": "spacer"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "針對容易肥胖的下半身，有苗條瘦身的作用；促進血液迴圈，幫助腸道淨化",
+                    "flex": 0,
+                    "size": "xs",
+                    "color": "#1F2124",
+                    "wrap": true
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "url": "https://i.imgur.com/wAGxbci.jpg",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "養肝花草茶",
+                "size": "lg",
+                "weight": "bold",
+                "wrap": true
+              },
+              {
+                "type": "text",
+                "text": "能者多勞Ｘ能者過勞Ｏ",
+                "size": "xs",
+                "weight": "regular",
+                "color": "#EEDD5C"
+              },
+              {
+                "type": "text",
+                "text": "NTD108",
+                "size": "md",
+                "color": "#1F2124"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "spacer"
+                  },
+                  {
+                    "type": "text",
+                    "text": "配方 : 檸檬草+迷迭香",
+                    "size": "xs",
+                    "color": "#1F2124",
+                    "wrap": true
+                  },
+                  {
+                    "type": "spacer"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "加強肝臟代謝、解毒",
+                    "flex": 0,
+                    "size": "xs",
+                    "color": "#1F2124",
+                    "wrap": true
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "url": "https://i.imgur.com/29pounA.jpg",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "養腎花草茶",
+                "size": "lg",
+                "weight": "bold",
+                "wrap": true
+              },
+              {
+                "type": "text",
+                "text": "我吃過的鹽比你吃過的米還多（難怪台灣洗腎人口名列前茅",
+                "size": "xs",
+                "weight": "regular",
+                "color": "#EEDD5C"
+              },
+              {
+                "type": "text",
+                "text": "NTD108",
+                "size": "md",
+                "color": "#1F2124"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "spacer"
+                  },
+                  {
+                    "type": "text",
+                    "text": "配方 : 迷迭香+蒲公英",
+                    "size": "xs",
+                    "color": "#1F2124",
+                    "wrap": true
+                  },
+                  {
+                    "type": "spacer"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "具利尿效果，並能強化腎臟的運作",
+                    "flex": 0,
+                    "size": "xs",
+                    "color": "#1F2124",
+                    "wrap": true
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "url": "https://i.imgur.com/0SlCQeH.jpg",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "養腸花草茶",
+                "size": "lg",
+                "weight": "bold",
+                "wrap": true
+              },
+              {
+                "type": "text",
+                "text": "吃虧就是占便宜（我不占人便宜，你吃就好",
+                "size": "xs",
+                "weight": "regular",
+                "color": "#EEDD5C"
+              },
+              {
+                "type": "text",
+                "text": "NTD108",
+                "size": "md",
+                "color": "#1F2124"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "spacer"
+                  },
+                  {
+                    "type": "text",
+                    "text": "配方 : 洋甘菊、薄荷",
+                    "size": "xs",
+                    "color": "#1F2124",
+                    "wrap": true
+                  },
+                  {
+                    "type": "spacer"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "增加腸胃蠕動、改善胃脹氣的效果，治療便秘",
+                    "flex": 0,
+                    "size": "xs",
+                    "color": "#1F2124",
+                    "wrap": true
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "url": "https://i.imgur.com/byKTvCh.jpg",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "體內SPA花茶",
+                "size": "lg",
+                "weight": "bold",
+                "wrap": true
+              },
+              {
+                "type": "text",
+                "text": "吃苦當吃補（可是我不想",
+                "size": "xs",
+                "weight": "regular",
+                "color": "#EEDD5C"
+              },
+              {
+                "type": "text",
+                "text": "NTD108",
+                "size": "md",
+                "color": "#1F2124"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "spacer"
+                  },
+                  {
+                    "type": "text",
+                    "text": "配方 : 桂花、菩提子花",
+                    "size": "xs",
+                    "color": "#1F2124",
+                    "wrap": true
+                  },
+                  {
+                    "type": "spacer"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "能淨化腸胃、清除體內毒素，改善便秘的情況，從而減肥瘦身",
+                    "flex": 0,
+                    "size": "xs",
+                    "color": "#1F2124",
+                    "wrap": true
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "url": "https://i.imgur.com/F1q7iUt.jpg",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "backgroundColor": "#FFFFFF"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "button",
+                "action": {
+                  "type": "message",
+                  "label": "看更多",
+                  "text": "購買商品"
+                },
+                "color": "#A2A8A4",
+                "height": "sm",
+                "style": "primary"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
