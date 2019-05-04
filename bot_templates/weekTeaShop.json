@@ -106,6 +106,7 @@
                   "uri": "https://linecorp.com"
                 },
                 "color": "#AF4B69",
+                "height": "sm",
                 "style": "primary"
               }
             ]
@@ -183,6 +184,7 @@
                   "uri": "https://linecorp.com"
                 },
                 "color": "#AF4B69",
+                "height": "sm",
                 "style": "primary"
               }
             ]
@@ -259,6 +261,7 @@
                   "uri": "https://linecorp.com"
                 },
                 "color": "#AF4B69",
+                "height": "sm",
                 "style": "primary"
               }
             ]
@@ -334,6 +337,7 @@
                   "uri": "https://linecorp.com"
                 },
                 "color": "#AF4B69",
+                "height": "sm",
                 "style": "primary"
               }
             ]
@@ -409,6 +413,7 @@
                   "uri": "https://linecorp.com"
                 },
                 "color": "#AF4B69",
+                "height": "sm",
                 "style": "primary"
               }
             ]
@@ -484,6 +489,7 @@
                   "uri": "https://linecorp.com"
                 },
                 "color": "#AF4B69",
+                "height": "sm",
                 "style": "primary"
               }
             ]
@@ -559,6 +565,7 @@
                   "uri": "https://linecorp.com"
                 },
                 "color": "#AF4B69",
+                "height": "sm",
                 "style": "primary"
               }
             ]
@@ -638,6 +645,7 @@
                   "uri": "https://linecorp.com"
                 },
                 "color": "#AF4B69",
+                "height": "sm",
                 "style": "primary"
               }
             ]
@@ -645,26 +653,27 @@
         },
         {
           "type": "bubble",
-          "direction": "ltr",
           "hero": {
             "type": "image",
-            "url": "https://developers.line.biz/assets/images/services/bot-designer-icon.png",
+            "url": "https://i.imgur.com/F1q7iUt.jpg",
             "size": "full",
-            "aspectRatio": "1.51:1",
-            "aspectMode": "fit"
+            "aspectRatio": "20:13",
+            "backgroundColor": "#FFFFFF"
           },
-          "footer": {
+          "body": {
             "type": "box",
-            "layout": "horizontal",
+            "layout": "vertical",
+            "spacing": "sm",
             "contents": [
               {
                 "type": "button",
                 "action": {
                   "type": "message",
                   "label": "看更多",
-                  "text": "購買商品"
+                  "text": "@購買商品@"
                 },
-                "color": "#AF4B69",
+                "color": "#A2A8A4",
+                "height": "sm",
                 "style": "primary"
               }
             ]

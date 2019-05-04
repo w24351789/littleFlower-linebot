@@ -1,206 +1,206 @@
 {
-    "type": "flex",
-    "altText": "Flex Message",
-    "contents": {
-      "type": "carousel",
-      "contents": [
-        {
-          "type": "bubble",
-          "direction": "ltr",
-          "hero": {
-            "type": "image",
-            "url": "https://developers.line.biz/assets/images/services/bot-designer-icon.png",
-            "size": "full",
-            "aspectRatio": "1.51:1",
-            "aspectMode": "fit"
-          },
-          "body": {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "text",
-                "text": "周而復始系列花茶",
-                "flex": 8,
-                "size": "lg",
-                "align": "center",
-                "color": "#AF4B69"
-              },
-              {
-                "type": "text",
-                "text": "相傳，古巴比倫人將年分成星期來計算，使得生活規律且更有效率，周而復始的沿用至今。人的一生從求學到退休約五十年歲月，2600多個星期，除了鮮有的假期之外，都堅守在自己的崗位。於是小花集推出周而復始系列花茶，致力於陪伴所有為生活付出的人們，一週七天，每天都有不同功效與花香的天然在地花茶，期許所有品飲此花茶的人，在規律不變的星期中，每天都活得獨一無二。  ",
-                "flex": 8,
-                "size": "xs",
-                "align": "center",
-                "gravity": "center",
-                "weight": "regular",
-                "color": "#AF4B69",
-                "wrap": true
-              }
-            ]
-          },
-          "footer": {
-            "type": "box",
-            "layout": "vertical",
-            "spacing": "sm",
-            "contents": [
-              {
-                "type": "button",
-                "action": {
-                  "type": "message",
-                  "label": "購買",
-                  "text": "購買周而復始系列花茶"
-                },
-                "color": "#AF4B69",
-                "height": "sm",
-                "style": "primary"
-              }
-            ]
-          }
+  "type": "flex",
+  "altText": "Flex Message",
+  "contents": {
+    "type": "carousel",
+    "contents": [
+      {
+        "type": "bubble",
+        "direction": "ltr",
+        "hero": {
+          "type": "image",
+          "url": "https://developers.line.biz/assets/images/services/bot-designer-icon.png",
+          "size": "full",
+          "aspectRatio": "1.51:1",
+          "aspectMode": "fit"
         },
-        {
-          "type": "bubble",
-          "direction": "ltr",
-          "hero": {
-            "type": "image",
-            "url": "https://i.imgur.com/9MKIq5o.jpg",
-            "size": "full",
-            "aspectRatio": "20:13",
-            "aspectMode": "cover",
-            "action": {
-              "type": "uri",
-              "label": "Action",
-              "uri": "https://linecorp.com"
-            }
-          },
-          "body": {
-            "type": "box",
-            "layout": "vertical",
-            "spacing": "md",
-            "action": {
-              "type": "uri",
-              "label": "Action",
-              "uri": "https://linecorp.com"
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": "周而復始系列花茶",
+              "flex": 8,
+              "size": "lg",
+              "align": "center",
+              "color": "#AF4B69"
             },
-            "contents": [
-              {
-                "type": "text",
-                "text": "小花集台灣特色花茶",
-                "size": "xl",
-                "weight": "bold"
-              },
-              {
-                "type": "text",
-                "text": "共6款優質在地茶飲",
-                "size": "xs",
-                "color": "#AAAAAA",
-                "wrap": true
-              }
-            ]
-          },
-          "footer": {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "button",
-                "action": {
-                  "type": "message",
-                  "label": "進一步了解",
-                  "text": "進一步了解台灣特色花茶"
-                },
-                "color": "#F0B0B0",
-                "height": "sm",
-                "style": "primary"
-              }
-            ]
-          }
-        },
-        {
-          "type": "bubble",
-          "hero": {
-            "type": "image",
-            "url": "https://i.imgur.com/nTxRWr1.jpg",
-            "size": "full",
-            "aspectRatio": "20:13",
-            "aspectMode": "cover",
-            "action": {
-              "type": "uri",
-              "label": "Action",
-              "uri": "https://linecorp.com"
+            {
+              "type": "text",
+              "text": "相傳，古巴比倫人將年分成星期來計算，使得生活規律且更有效率，周而復始的沿用至今。人的一生從求學到退休約五十年歲月，2600多個星期，除了鮮有的假期之外，都堅守在自己的崗位。於是小花集推出周而復始系列花茶，致力於陪伴所有為生活付出的人們，一週七天，每天都有不同功效與花香的天然在地花茶，期許所有品飲此花茶的人，在規律不變的星期中，每天都活得獨一無二。  ",
+              "flex": 8,
+              "size": "xs",
+              "align": "center",
+              "gravity": "center",
+              "weight": "regular",
+              "color": "#AF4B69",
+              "wrap": true
             }
-          },
-          "body": {
-            "type": "box",
-            "layout": "vertical",
-            "spacing": "md",
-            "action": {
-              "type": "uri",
-              "label": "Action",
-              "uri": "https://linecorp.com"
-            },
-            "contents": [
-              {
-                "type": "text",
-                "text": "負能量系列花茶",
-                "size": "xl",
-                "weight": "bold"
-              },
-              {
-                "type": "text",
-                "text": "全系列共11款充滿負能量之產品",
-                "size": "xs",
-                "color": "#AAAAAA",
-                "wrap": true
-              }
-            ]
-          },
-          "footer": {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "button",
-                "action": {
-                  "type": "message",
-                  "label": "進一步了解",
-                  "text": "進一步了解負能量系列花茶"
-                },
-                "color": "#6A6866",
-                "height": "sm",
-                "style": "primary"
-              }
-            ]
-          }
+          ]
         },
-        {
-          "type": "bubble",
-          "hero": {
-            "type": "image",
-            "url": "https://i.imgur.com/F1q7iUt.jpg",
-            "size": "full",
-            "aspectRatio": "20:13",
-            "backgroundColor": "#FFFFFF"
-          },
-          "body": {
-            "type": "box",
-            "layout": "vertical",
-            "spacing": "sm",
-            "contents": [
-              {
-                "type": "button",
-                "action": {
-                  "type": "message",
-                  "label": "看更多",
-                  "text": "購買商品"
-                },
-                "color": "#A2A8A4",
-                "height": "sm",
-                "style": "primary"
-              }
-            ]
-          }
+        "footer": {
+          "type": "box",
+          "layout": "vertical",
+          "spacing": "sm",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "message",
+                "label": "購買",
+                "text": "購買周而復始系列花茶"
+              },
+              "color": "#AF4B69",
+              "height": "sm",
+              "style": "primary"
+            }
+          ]
         }
-      ]
-    }
+      },
+      {
+        "type": "bubble",
+        "direction": "ltr",
+        "hero": {
+          "type": "image",
+          "url": "https://i.imgur.com/9MKIq5o.jpg",
+          "size": "full",
+          "aspectRatio": "20:13",
+          "aspectMode": "cover",
+          "action": {
+            "type": "uri",
+            "label": "Action",
+            "uri": "https://linecorp.com"
+          }
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "spacing": "md",
+          "action": {
+            "type": "uri",
+            "label": "Action",
+            "uri": "https://linecorp.com"
+          },
+          "contents": [
+            {
+              "type": "text",
+              "text": "小花集台灣特色花茶",
+              "size": "xl",
+              "weight": "bold"
+            },
+            {
+              "type": "text",
+              "text": "共6款優質在地茶飲",
+              "size": "xs",
+              "color": "#AAAAAA",
+              "wrap": true
+            }
+          ]
+        },
+        "footer": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "message",
+                "label": "進一步了解",
+                "text": "進一步了解台灣特色花茶"
+              },
+              "color": "#F0B0B0",
+              "height": "sm",
+              "style": "primary"
+            }
+          ]
+        }
+      },
+      {
+        "type": "bubble",
+        "hero": {
+          "type": "image",
+          "url": "https://i.imgur.com/nTxRWr1.jpg",
+          "size": "full",
+          "aspectRatio": "20:13",
+          "aspectMode": "cover",
+          "action": {
+            "type": "uri",
+            "label": "Action",
+            "uri": "https://linecorp.com"
+          }
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "spacing": "md",
+          "action": {
+            "type": "uri",
+            "label": "Action",
+            "uri": "https://linecorp.com"
+          },
+          "contents": [
+            {
+              "type": "text",
+              "text": "負能量系列花茶",
+              "size": "xl",
+              "weight": "bold"
+            },
+            {
+              "type": "text",
+              "text": "全系列共11款充滿負能量之產品",
+              "size": "xs",
+              "color": "#AAAAAA",
+              "wrap": true
+            }
+          ]
+        },
+        "footer": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "message",
+                "label": "進一步了解",
+                "text": "進一步了解負能量系列花茶"
+              },
+              "color": "#6A6866",
+              "height": "sm",
+              "style": "primary"
+            }
+          ]
+        }
+      },
+      {
+        "type": "bubble",
+        "hero": {
+          "type": "image",
+          "url": "https://i.imgur.com/F1q7iUt.jpg",
+          "size": "full",
+          "aspectRatio": "20:13",
+          "backgroundColor": "#FFFFFF"
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "spacing": "sm",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "message",
+                "label": "看更多",
+                "text": "@購買商品@"
+              },
+              "color": "#A2A8A4",
+              "height": "sm",
+              "style": "primary"
+            }
+          ]
+        }
+      }
+    ]
   }
+}

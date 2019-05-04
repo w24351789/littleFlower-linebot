@@ -389,7 +389,7 @@
                 "action": {
                   "type": "message",
                   "label": "看更多",
-                  "text": "購買商品"
+                  "text": "@購買商品@"
                 },
                 "color": "#A2A8A4",
                 "height": "sm",

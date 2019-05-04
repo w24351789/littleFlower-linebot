@@ -17,6 +17,8 @@ let weekTeaShop = require('./bot_templates/weekTeaShop.json');
 let badMoodTea = require('./bot_templates/badMoodTea.json');
 let badMoodTea2 = require('./bot_templates/badMoodTea2.json');
 let twFlowerTea = require('./bot_templates/twFlowerTea.json');
+let brandMind = require('./bot_templates/brandMind.json');
+let contactUs = require('./bot_templates/contactUs.json');
 // 用於辨識Line Channel的資訊
 const bot = linebot(lineInfo);
 
@@ -102,6 +104,12 @@ bot.on('message', function(event) {
             break;
             case '進一步了解台灣特色花茶':
                event.reply(twFlowerTea);
+            break;
+            case '@品牌理念@':
+               event.reply(brandMind);
+            break;
+            case '@聯絡我們@':
+               event.reply(contactUs);
             break;
 
          }
