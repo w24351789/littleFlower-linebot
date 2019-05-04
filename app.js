@@ -106,7 +106,7 @@ bot.on('message', function(event) {
                   //sendMessage(event,myQuestions[1][myStep]);
                   event.reply(giftCard);
                }
-               else if (myStep > -1 && myStep < 5){
+               else if (myStep > -1 && myStep < 4){
                   //sendMessage(event,myQuestions[1][myStep]+'\n'+myQuestions[0][myStep+1]);
                   questionAns1 = myQuestions[1][myStep]+'\n'+myQuestions[0][myStep+1];
                   questionText.text = questionAns1;
