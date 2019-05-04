@@ -11,6 +11,7 @@ let mapLocation = require('./js_modules/location');
 //引入line模板
 let giftCard = require('./bot_templates/giftCard.json');
 let questionChosen = require('./bot_templates/quickreply.json');
+let questionText = require('./bot_templates/textReply.json');
 // 用於辨識Line Channel的資訊
 const bot = linebot(lineInfo);
 
@@ -105,8 +106,7 @@ bot.on('message', function(event) {
                }else if (myStep>= 0 || myStep <= 4){
                   //sendMessage(event,myQuestions[1][myStep]+'\n'+myQuestions[0][myStep+1]);
                   questionAns = myQuestions[1][myStep]+'\n'+myQuestions[0][myStep+1];
-                  questionChosen.text = questionAns;
-                  delete questionChosen.quickReply;
+                  questionText.text = questionAns;
                   event.reply(questionChosen);
                   
                   console.log(questionChosen);
