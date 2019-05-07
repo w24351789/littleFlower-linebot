@@ -1,0 +1,458 @@
+{
+    "type": "flex",
+    "altText": "Flex Message",
+    "contents": {
+      "type": "carousel",
+      "contents": [
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "url": "https://i.imgur.com/rPWBYKI.jpg",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "一夜安眠茶",
+                "size": "lg",
+                "weight": "bold",
+                "wrap": true
+              },
+              {
+                "type": "text",
+                "text": "天下無不是的父母(尚有教化可能",
+                "size": "xs",
+                "weight": "regular",
+                "color": "#EEDD5C"
+              },
+              {
+                "type": "text",
+                "text": "NTD108",
+                "size": "md",
+                "color": "#1F2124"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "spacer"
+                  },
+                  {
+                    "type": "text",
+                    "text": "配方 : 菩提子花+熏衣草",
+                    "size": "xs",
+                    "color": "#1F2124",
+                    "wrap": true
+                  },
+                  {
+                    "type": "spacer"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "細碎金黃桂花，獨特花蜜香味，甘甜止渴，搭配較清爽的烏龍生茶，茶湯清澈碧綠，口感清爽恬淡，十分解暑，暢快。",
+                    "flex": 0,
+                    "size": "xs",
+                    "color": "#1F2124",
+                    "wrap": true
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "url": "https://i.imgur.com/AJBmSKa.jpg",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "心靈雞湯茶",
+                "size": "lg",
+                "weight": "bold",
+                "wrap": true
+              },
+              {
+                "type": "text",
+                "text": "不聽老人言，吃虧在眼前",
+                "size": "xs",
+                "weight": "regular",
+                "color": "#EEDD5C"
+              },
+              {
+                "type": "text",
+                "text": "NTD108",
+                "size": "md",
+                "color": "#1F2124"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "spacer"
+                  },
+                  {
+                    "type": "text",
+                    "text": "配方 : 玫瑰花+薄荷",
+                    "size": "xs",
+                    "color": "#1F2124",
+                    "wrap": true
+                  },
+                  {
+                    "type": "spacer"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "能強化心臟及大腦功能，提神醒腦，增強活力，強化中樞神經並能促進血液迴圈；適合腦力勞動者飲用",
+                    "flex": 0,
+                    "size": "xs",
+                    "color": "#1F2124",
+                    "wrap": true
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "url": "https://i.imgur.com/4nbISUs.jpg",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "日安陽光茶",
+                "size": "lg",
+                "weight": "bold",
+                "wrap": true
+              },
+              {
+                "type": "text",
+                "text": "退一步，海闊天空（為什麼是我退而不是你退",
+                "size": "xs",
+                "weight": "regular",
+                "color": "#EEDD5C"
+              },
+              {
+                "type": "text",
+                "text": "NTD108",
+                "size": "md",
+                "color": "#1F2124"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "spacer"
+                  },
+                  {
+                    "type": "text",
+                    "text": "配方 : 金盞花+馬鞭草",
+                    "size": "xs",
+                    "color": "#1F2124",
+                    "wrap": true
+                  },
+                  {
+                    "type": "spacer"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "金盞花的花型如小太陽般召喚你起床，而黃色的茶湯有如亮橙橙的陽光般溫暖，馬鞭草幫你提神一掃睡意，薔薇果給你一天所需要的維生素C",
+                    "flex": 0,
+                    "size": "xs",
+                    "color": "#1F2124",
+                    "wrap": true
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "url": "https://i.imgur.com/Xkikbf4.jpg",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "青春不老茶",
+                "size": "lg",
+                "weight": "bold",
+                "wrap": true
+              },
+              {
+                "type": "text",
+                "text": "想當年齁．．．現在的年輕人真的是過太爽了",
+                "size": "xs",
+                "weight": "regular",
+                "color": "#EEDD5C"
+              },
+              {
+                "type": "text",
+                "text": "NTD108",
+                "size": "md",
+                "color": "#1F2124"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "spacer"
+                  },
+                  {
+                    "type": "text",
+                    "text": "配方 : 玫瑰花+洋甘菊",
+                    "size": "xs",
+                    "color": "#1F2124",
+                    "wrap": true
+                  },
+                  {
+                    "type": "spacer"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "為肌膚補水，增強肌膚彈力，促進肌膚新陳代謝，增強肌膚抵抗力和修復能力，適合需要防止肌膚老化，延緩衰老的人士",
+                    "flex": 0,
+                    "size": "xs",
+                    "color": "#1F2124",
+                    "wrap": true
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "url": "https://i.imgur.com/cgT1fuJ.jpg",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "真的為你好茶",
+                "size": "lg",
+                "weight": "bold",
+                "wrap": true
+              },
+              {
+                "type": "text",
+                "text": "我這樣做是為你好（謝謝，但不用了",
+                "size": "xs",
+                "weight": "regular",
+                "color": "#EEDD5C"
+              },
+              {
+                "type": "text",
+                "text": "NTD108",
+                "size": "md",
+                "color": "#1F2124"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "spacer"
+                  },
+                  {
+                    "type": "text",
+                    "text": "配方 : 玫瑰花+芙蓉花",
+                    "size": "xs",
+                    "color": "#1F2124",
+                    "wrap": true
+                  },
+                  {
+                    "type": "spacer"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "提供豐富的維生素C,能增強身體的抵抗力和免疫系統，美容補血效果顯著",
+                    "flex": 0,
+                    "size": "xs",
+                    "color": "#1F2124",
+                    "wrap": true
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "url": "https://i.imgur.com/5EIRxAB.jpg",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "減壓花草茶",
+                "size": "lg",
+                "weight": "bold",
+                "wrap": true
+              },
+              {
+                "type": "text",
+                "text": "有錢買不到快樂，但沒錢是絕對的痛苦",
+                "size": "xs",
+                "weight": "regular",
+                "color": "#EEDD5C"
+              },
+              {
+                "type": "text",
+                "text": "NTD108",
+                "size": "md",
+                "color": "#1F2124"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "spacer"
+                  },
+                  {
+                    "type": "text",
+                    "text": "配方 : 紫羅蘭+金盞花",
+                    "size": "xs",
+                    "color": "#1F2124",
+                    "wrap": true
+                  },
+                  {
+                    "type": "spacer"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "沖泡後呈淡藍紫色，鮮活的顏色充滿陽光與自然對話的氣息，舒緩情緒",
+                    "flex": 0,
+                    "size": "xs",
+                    "color": "#1F2124",
+                    "wrap": true
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "url": "https://i.imgur.com/pbSatGm.jpg",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover",
+            "backgroundColor": "#FFFFFF"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "button",
+                "action": {
+                  "type": "message",
+                  "label": "看更多負能量茶飲",
+                  "text": "看更多負能量茶飲"
+                },
+                "color": "#EEDD5C",
+                "height": "sm",
+                "style": "primary"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }

@@ -12,6 +12,14 @@ let mapLocation = require('./js_modules/location');
 let giftCard = require('./bot_templates/giftCard.json');
 let questionChosen = require('./bot_templates/quickreply.json');
 let questionText = require('./bot_templates/textReply.json');
+let teaShop = require('./bot_templates/shopping.json');
+let weekTeaShop = require('./bot_templates/weekTeaShop.json');
+let badMoodTea = require('./bot_templates/badMoodTea.json');
+let badMoodTea2 = require('./bot_templates/badMoodTea2.json');
+let twFlowerTea = require('./bot_templates/twFlowerTea.json');
+let brandMind = require('./bot_templates/brandMind.json');
+let contactUs = require('./bot_templates/contactUs.json');
+let rawMaterial = require('./bot_templates/rawMaterial.json');
 // 用於辨識Line Channel的資訊
 const bot = linebot(lineInfo);
 
@@ -52,7 +60,6 @@ function getQuestions(){
      }
   });
 }
-
 //程式啟動後會去讀取試算表內的問題
 getQuestions();
 
@@ -83,6 +90,33 @@ function appendMyRow(userId) {
 bot.on('message', function(event) {
    switch (event.message.type) {
       case 'text':
+         switch (event.message.text) {
+            case '@購買商品@':
+               event.reply(teaShop);
+            break;
+            case '購買周而復始系列花茶':
+               event.reply(weekTeaShop);
+            break;
+            case '進一步了解負能量系列花茶':
+               event.reply(badMoodTea);
+            break;
+            case '看更多負能量茶飲':
+               event.reply(badMoodTea2);
+            break;
+            case '進一步了解台灣特色花茶':
+               event.reply(twFlowerTea);
+            break;
+            case '@品牌理念@':
+               event.reply(brandMind);
+            break;
+            case '@聯絡我們@':
+               event.reply(contactUs);
+            break;
+            case '@原料介紹@':
+               event.reply(rawMaterial);
+            break;
+
+         }
          if (event.message.text === '@意見回饋@' || questionnaireKey !== 0) {
             var myId=event.source.userId;
             if (users[myId]==undefined){
@@ -107,7 +141,6 @@ bot.on('message', function(event) {
                   event.reply(giftCard);
                }
                else if (myStep > -1 && myStep < 4){
-                  //sendMessage(event,myQuestions[1][myStep]+'\n'+myQuestions[0][myStep+1]);
                   questionAns1 = myQuestions[1][myStep]+'\n'+myQuestions[0][myStep+1];
                   questionText.text = questionAns1;
                   event.reply(questionText);
