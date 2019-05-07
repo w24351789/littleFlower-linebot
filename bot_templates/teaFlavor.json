@@ -1,0 +1,61 @@
+{
+    "type": "flex",
+    "altText": "Flex Message",
+    "contents": {
+      "type": "carousel",
+      "contents": [
+        {
+          "type": "bubble",
+          "direction": "ltr",
+          "hero": {
+            "type": "image",
+            "url": "https://developers.line.biz/assets/images/services/bot-designer-icon.png",
+            "size": "full",
+            "aspectRatio": "1.51:1",
+            "aspectMode": "fit"
+          },
+          "footer": {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "button",
+                "action": {
+                  "type": "message",
+                  "label": "茶韻深厚",
+                  "text": "茶韻深厚"
+                },
+                "style": "primary"
+              }
+            ]
+          }
+        },
+        {
+          "type": "bubble",
+          "direction": "ltr",
+          "hero": {
+            "type": "image",
+            "url": "https://developers.line.biz/assets/images/services/bot-designer-icon.png",
+            "size": "full",
+            "aspectRatio": "1.51:1",
+            "aspectMode": "fit"
+          },
+          "footer": {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "button",
+                "action": {
+                  "type": "message",
+                  "label": "花香濃郁",
+                  "text": "花香濃郁"
+                },
+                "style": "primary"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }

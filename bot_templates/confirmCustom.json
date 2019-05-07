@@ -1,0 +1,41 @@
+{
+    "type": "flex",
+    "altText": "Flex Message",
+    "contents": {
+      "type": "bubble",
+      "direction": "ltr",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "Body",
+            "align": "center"
+          }
+        ]
+      },
+      "footer": {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "確認購買",
+              "text": "確認購買以上客製項目"
+            }
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "重新選擇",
+              "text": "重新選擇客製化花茶"
+            }
+          }
+        ]
+      }
+    }
+  }
