@@ -39,7 +39,7 @@ var users=[];
 var totalSteps = 0;
 var questionnaireKey = 0;
 var customteaKey = 0;
-var customteaStep = 4;
+var customteaStep = 5;
 //這是讀取問題的函式
 function getQuestions(){
   const sheets = google.sheets('v4');
@@ -200,7 +200,7 @@ bot.on('message', function(event) {
                      users[myId].replies[myStep+1]=event.message.text;
                   break;
                   case 2:
-                     const confirmText =  '您的客製化項目為：' + users[myId].replies[0] + users[myId].replies[1] +users[myId].replies[2]; 
+                     const confirmText =  '您的客製化項目為：' + users[myId].replies[1] + users[myId].replies[2] +users[myId].replies[3]; 
                      confirmCustom.contents.body.contents[0].text = confirmText;
                      event.reply(confirmCustom);//確認or重選
                      users[myId].replies[myStep+1]=event.message.text;
@@ -213,10 +213,10 @@ bot.on('message', function(event) {
                      users[myId].replies[myStep+1]=event.message.text;
                   break;
                   case 4:
-                     const customItem = users[myId].replies[0] + users[myId].replies[1] +users[myId].replies[2];
+                     const customItem = users[myId].replies[1] + users[myId].replies[2] +users[myId].replies[3];;
                      customLink.contents.body.contents[3].text = customItem;
                      event.reply(customLink);//購買連結
-                     users[myId].replies[myStep+1]=event.message.text;
+                     //users[myId].replies[myStep+1]=event.message.text;
                   break;
                   
                }

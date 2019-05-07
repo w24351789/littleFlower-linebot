@@ -33,7 +33,8 @@
           },
           {
             "type": "text",
-            "text": "Text"
+            "text": "Textdasfdsafsadfsadfsdafsdafdsafsadfdsaf",
+            "wrap": true
           }
         ]
       },

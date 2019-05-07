@@ -10,8 +10,9 @@
         "contents": [
           {
             "type": "text",
-            "text": "Body",
-            "align": "center"
+            "text": "Bodyqwerwqerqwerqwerqwerqewrewqrwerewqr",
+            "align": "center",
+            "wrap": true
           }
         ]
       },
