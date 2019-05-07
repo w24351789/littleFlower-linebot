@@ -44,9 +44,10 @@
           {
             "type": "button",
             "action": {
-              "type": "message",
+              "type": "postback",
               "label": "取消訂單",
-              "text": "取消此客製化花茶"
+              "text": "取消此客製化花茶",
+              "data": "users[myId].step=5"
             },
             "color": "#C36A7C",
             "style": "primary"

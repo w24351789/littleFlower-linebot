@@ -210,7 +210,7 @@ bot.on('message', function(event) {
                      const confirmText = users[myId].replies[1] + users[myId].replies[2] +users[myId].replies[3]; 
                      confirmCustom.contents.body.contents[1].text = confirmText;
                      event.reply(confirmCustom);//確認or重選
-                     users[myId].replies[myStep+1]=event.message.text;
+                     //users[myId].replies[myStep+1]=event.message.text;
                   break;
                   // case 3:
                   //    event.reply({
