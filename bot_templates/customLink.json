@@ -19,21 +19,27 @@
           {
             "type": "text",
             "text": "【小花集】客製化花茶",
-            "align": "center"
+            "align": "center",
+            "weight": "bold",
+            "color": "#AF4B69"
           },
           {
             "type": "text",
             "text": "NTD 200",
-            "align": "center"
+            "align": "center",
+            "color": "#AF4B69"
           },
           {
             "type": "text",
             "text": "（內含客製化茶包五入）",
-            "align": "center"
+            "align": "center",
+            "color": "#CB7C8B"
           },
           {
             "type": "text",
-            "text": "Textdasfdsafsadfsadfsdafsdafdsafsadfdsaf",
+            "text": "Text",
+            "align": "center",
+            "color": "#CB7C8B",
             "wrap": true
           }
         ]
@@ -49,6 +55,7 @@
               "label": "立即購買",
               "uri": "https://linecorp.com"
             },
+            "color": "#AF4B69",
             "style": "primary"
           }
         ]

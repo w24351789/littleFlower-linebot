@@ -39,7 +39,7 @@ var users=[];
 var totalSteps = 0;
 var questionnaireKey = 0;
 var customteaKey = 0;
-var customteaStep = 5;
+var customteaStep = 4;
 //這是讀取問題的函式
 function getQuestions(){
   const sheets = google.sheets('v4');
@@ -174,9 +174,16 @@ bot.on('message', function(event) {
                appendMyRow(myId);
             }
          }
-         if (event.message.text === '@客製化花茶@' || customteaKey !== 0) {
+         if (event.message.text === '@客製化花茶@' || customteaKey > 100) {
             var myId=event.source.userId;
-            if (users[myId]==undefined || event.message.text === '重新選擇客製化花茶'){
+            if (event.message.text === '取消此客製化花茶') {
+               myStep = 5;
+               event.reply({
+                  "type": "text",
+                  "text": "取消成功"
+               })
+            }
+            if (users[myId]==undefined){
                users[myId]=[];
                users[myId].userId=myId;
                users[myId].step=-1;
@@ -200,19 +207,19 @@ bot.on('message', function(event) {
                      users[myId].replies[myStep+1]=event.message.text;
                   break;
                   case 2:
-                     const confirmText =  '您的客製化項目為：' + users[myId].replies[1] + users[myId].replies[2] +users[myId].replies[3]; 
-                     confirmCustom.contents.body.contents[0].text = confirmText;
+                     const confirmText = users[myId].replies[1] + users[myId].replies[2] +users[myId].replies[3]; 
+                     confirmCustom.contents.body.contents[1].text = confirmText;
                      event.reply(confirmCustom);//確認or重選
                      users[myId].replies[myStep+1]=event.message.text;
                   break;
+                  // case 3:
+                  //    event.reply({
+                  //       "type": "text",
+                  //       "text": "請輸入您的蝦皮帳號，下單後將為您出貨"
+                  //    });//蝦皮帳號
+                  //    users[myId].replies[myStep+1]=event.message.text;
+                  // break;
                   case 3:
-                     event.reply({
-                        "type": "text",
-                        "text": "請輸入您的蝦皮帳號，下單後將為您出貨"
-                     });//蝦皮帳號
-                     users[myId].replies[myStep+1]=event.message.text;
-                  break;
-                  case 4:
                      const customItem = users[myId].replies[1] + users[myId].replies[2] +users[myId].replies[3];;
                      customLink.contents.body.contents[3].text = customItem;
                      event.reply(customLink);//購買連結
