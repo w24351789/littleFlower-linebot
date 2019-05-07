@@ -174,7 +174,7 @@ bot.on('message', function(event) {
                appendMyRow(myId);
             }
          }
-         if (event.message.text === '@客製化花茶@' || customteaKey > 100) {
+         if (event.message.text === '@客製化花茶@' || customteaKey !== 0) {
             var myId=event.source.userId;
             if (event.message.text === '取消此客製化花茶') {
                myStep = 5;
