@@ -176,6 +176,13 @@ bot.on('message', function(event) {
          }
          if (event.message.text === '@客製化花茶@' || customteaKey !== 0) {
             var myId=event.source.userId;
+            if (users[myId]==undefined){
+               users[myId]=[];
+               users[myId].userId=myId;
+               users[myId].step=-1;
+               users[myId].replies=[];
+            }
+            var myStep=users[myId].step;
             if (event.message.text === '取消此客製化花茶') {
                myStep = 5;
                event.reply({
@@ -183,34 +190,26 @@ bot.on('message', function(event) {
                   "text": "取消成功"
                })
             }
-            if (users[myId]==undefined){
-               users[myId]=[];
-               users[myId].userId=myId;
-               users[myId].step=-1;
-               users[myId].replies=[];
-            }
-            
-            var myStep=users[myId].step;
-
             if (myStep === -1) {
                event.reply(chooseFlower);//選花chooseFlower
-               users[myId].replies[myStep+1]=event.message.text;
+               //users[myId].replies[myStep+1]=event.message.text;
             }
             else{
                switch (myStep){
                   case 0:
                      event.reply(chooseTea);//選茶
-                     users[myId].replies[myStep+1]=event.message.text;
+                     users[myId].replies[myStep+1]=event.message.text;//花結果
                   break;
                   case 1:
                      event.reply(teaFlavor);//選風味
-                     users[myId].replies[myStep+1]=event.message.text;
+                     users[myId].replies[myStep+1]=event.message.text;//茶結果
                   break;
                   case 2:
+                     users[myId].replies[myStep+1]=event.message.text;//風味結果
                      const confirmText = users[myId].replies[1] + users[myId].replies[2] +users[myId].replies[3]; 
                      confirmCustom.contents.body.contents[1].text = confirmText;
                      event.reply(confirmCustom);//確認or重選
-                     //users[myId].replies[myStep+1]=event.message.text;
+                     users[myId].replies[myStep+1]=event.message.text;
                   break;
                   // case 3:
                   //    event.reply({
