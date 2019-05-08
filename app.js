@@ -1,5 +1,6 @@
 //以下的三列require裡的內容，請確認是否已經用npm裝進node.js
 const linebot = require('linebot');
+const line = require('@line/bot-sdk');
 const express = require('express');
 const { google } = require('googleapis');
 //用於製入金鑰beta
@@ -25,7 +26,10 @@ let confirmCustom = require('./bot_templates/confirmCustom.json');
 let customLink = require('./bot_templates/customLink.json');
 // 用於辨識Line Channel的資訊
 const bot = linebot(lineInfo);
-
+const client = new line.Client({
+   channelAccessToken: 'gM1zz4xVFGIOudd30703LVOBbp9AwWlkNXFFxAGQXxINXDBQq91RxlsrAWxoQR2mDhKDUFPUNnTMlojAwNSfpgebrKn3NzFLafzh9djn6hIhRhCDNrog1Cqoh9bR+CT9R8OJyBlOhzhv/rTzU6ZLHAdB04t89/1O/w1cDnyilFU='
+ });
+ 
 const oauth2Client = new google.auth.OAuth2(myClientSecret.installed.client_id,myClientSecret.installed.client_secret, myClientSecret.installed.redirect_uris[0]);
 //底下輸入sheetsapi.json檔案的內容
 oauth2Client.credentials = sheetsAuth;
@@ -122,6 +126,17 @@ bot.on('message', function(event) {
          }
          if (event.message.text === '@意見回饋@' || questionnaireKey !== 0) {
             var myId=event.source.userId;
+            client.getProfile(myId)
+               .then((profile) => {
+                  console.log(profile.displayName);
+                  console.log(profile.userId);
+                  console.log(profile.pictureUrl);
+                  console.log(profile.statusMessage);
+               })
+               .catch((err) => {
+                  // error handling
+                  console.log(err);
+               });
             if (users[myId]==undefined){
                users[myId]=[];
                users[myId].userId=myId;
