@@ -188,7 +188,7 @@ bot.on('message', function(event) {
                   "text": "取消成功，再看看有沒有其他喜歡的花茶吧~~"
                })
             }
-            const confirmText
+            
             if (myStep === -1) {
                event.reply(chooseFlower);//選花chooseFlower
             }
@@ -204,7 +204,7 @@ bot.on('message', function(event) {
                   break;
                   case 2:
                      users[myId].replies[myStep+1]=event.message.text;//風味結果
-                     confirmText = users[myId].replies[1] + users[myId].replies[2] +users[myId].replies[3]; 
+                     const confirmText = users[myId].replies[1] + users[myId].replies[2] +users[myId].replies[3]; 
                      confirmCustom.contents.body.contents[1].text = confirmText;
                      event.reply(confirmCustom);//確認or重選
                   break;
@@ -216,8 +216,8 @@ bot.on('message', function(event) {
                   //    users[myId].replies[myStep+1]=event.message.text;
                   // break;
                   case 3:
-                     //const customItem = users[myId].replies[1] + users[myId].replies[2] +users[myId].replies[3];;
-                     customLink.contents.body.contents[3].text = confirmText;
+                     const customItem = users[myId].replies[1] + users[myId].replies[2] +users[myId].replies[3];;
+                     customLink.contents.body.contents[3].text = customItem;
                      event.reply(customLink);//購買連結
                   break;
                   
