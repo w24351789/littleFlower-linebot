@@ -136,27 +136,27 @@ bot.on('message', function(event) {
             console.log(myStep);
             //第一次觸發問卷
             if (myStep === -1) {
-               sendMessage(event,myQuestions[0][0]);
+               //sendMessage(event,myQuestions[0][0]);
+               questionAns1 = myQuestions[0][0];
+               questionText.text = questionAns1;
+               event.reply(questionText);
             }
             else{
                //最後一題答完後
                if (myStep==(totalSteps-1)) {
-                  //sendMessage(event,myQuestions[1][myStep]);
+                  users[myId].replies[myStep+1]=event.message.text;
                   event.reply(giftCard);
                }
                else if (myStep > -1 && myStep < 4){
                   questionAns1 = myQuestions[1][myStep]+'\n'+myQuestions[0][myStep+1];
                   questionText.text = questionAns1;
                   event.reply(questionText);
-                  
-                  console.log(questionText);
                   users[myId].replies[myStep+1]=event.message.text;
                }
                else {
                   questionAns2 = myQuestions[1][myStep]+'\n'+myQuestions[0][myStep+1];
                   questionChosen.text = questionAns2;
                   event.reply(questionChosen);
-                  
                   users[myId].replies[myStep+1]=event.message.text;
                }
             }
@@ -241,23 +241,23 @@ bot.on('message', function(event) {
          event.reply({
          type: 'sticker',
          packageId: 1,
-         stickerId: 1
+         stickerId: 9
          });
       break;
    }
 });
 
 
-//這是發送訊息給user的函式
-function sendMessage(eve,msg){
-   eve.reply(msg).then(function(data) {
-      // success 
-      return true;
-   }).catch(function(error) {
-      // error 
-      return false;
-   });
-}
+// //這是發送訊息給user的函式
+// function sendMessage(eve,msg){
+//    eve.reply(msg).then(function(data) {
+//       // success 
+//       return true;
+//    }).catch(function(error) {
+//       // error 
+//       return false;
+//    });
+// }
 
 
 const app = express();
