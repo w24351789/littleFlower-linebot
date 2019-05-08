@@ -27,7 +27,7 @@ let customLink = require('./bot_templates/customLink.json');
 // 用於辨識Line Channel的資訊
 const bot = linebot(lineInfo);
 const client = new line.Client({
-   channelAccessToken: 'gM1zz4xVFGIOudd30703LVOBbp9AwWlkNXFFxAGQXxINXDBQq91RxlsrAWxoQR2mDhKDUFPUNnTMlojAwNSfpgebrKn3NzFLafzh9djn6hIhRhCDNrog1Cqoh9bR+CT9R8OJyBlOhzhv/rTzU6ZLHAdB04t89/1O/w1cDnyilFU='
+   channelAccessToken: lineInfo.channelAccessToken
  });
  
 const oauth2Client = new google.auth.OAuth2(myClientSecret.installed.client_id,myClientSecret.installed.client_secret, myClientSecret.installed.redirect_uris[0]);
@@ -95,6 +95,17 @@ function appendMyRow(userId, sheetId) {
 
 //LineBot收到user的文字訊息時的處理函式
 bot.on('message', function(event) {
+   const myId=event.source.userId;
+            client.getProfile(myId)
+               .then((profile) => {
+                  console.log(profile.displayName);
+                  console.log(profile.pictureUrl);
+                  userName = profile.displayName;
+               })
+               .catch((err) => {
+                  // error handling
+                  console.log(err);
+               });
    switch (event.message.type) {
       case 'text':
          switch (event.message.text) {
@@ -125,17 +136,7 @@ bot.on('message', function(event) {
 
          }
          if (event.message.text === '@意見回饋@' || questionnaireKey !== 0) {
-            var myId=event.source.userId;
-            client.getProfile(myId)
-               .then((profile) => {
-                  console.log(profile.displayName);
-                  console.log(profile.pictureUrl);
-                  userName = profile.displayName;
-               })
-               .catch((err) => {
-                  // error handling
-                  console.log(err);
-               });
+            //const myId=event.source.userId;
             if (users[myId]==undefined){
                users[myId]=[];
                users[myId].userId=myId;
@@ -149,7 +150,7 @@ bot.on('message', function(event) {
             console.log(myStep);
             //第一次觸發問卷
             if (myStep === -1) {
-               questionAns1 = myQuestions[0][0];
+               questionAns1 = userName + myQuestions[0][0];
                questionText.text = questionAns1;
                event.reply(questionText);
             }
@@ -157,7 +158,7 @@ bot.on('message', function(event) {
                //最後一題答完後
                if (myStep==(totalSteps-1)) {
                   users[myId].replies[myStep+1]=event.message.text;
-                  users[myId].replies[myStep+2] = userName;
+                  users[myId].replies[myStep+2] = userName;//自動讀取使用者的名字
                   event.reply(giftCard);
                }
                else if (myStep > -1 && myStep < 4){
@@ -185,7 +186,7 @@ bot.on('message', function(event) {
             }
          }
          if (event.message.text === '@客製化花茶@' || customteaKey !== 0) {
-            var myId=event.source.userId;
+            //const myId=event.source.userId;
             if (users[myId]==undefined){
                users[myId]=[];
                users[myId].userId=myId;
@@ -202,6 +203,7 @@ bot.on('message', function(event) {
             }
             
             if (myStep === -1) {
+               chooseFlower.text = `${userName}，您好請選擇您想要的花`
                event.reply(chooseFlower);//選花chooseFlower
             }
             else{
