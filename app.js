@@ -6,8 +6,6 @@ const { google } = require('googleapis');
 const myClientSecret = require('./user_data/credentials.json');
 const sheetsAuth = require('./user_data/sheetsapi.json');
 const lineInfo = require('./user_data/linebot_info');
-//用於製入location
-let mapLocation = require('./js_modules/location');
 //引入line模板
 let giftCard = require('./bot_templates/giftCard.json');
 let questionChosen = require('./bot_templates/quickreply.json');
@@ -32,8 +30,8 @@ const oauth2Client = new google.auth.OAuth2(myClientSecret.installed.client_id,m
 //底下輸入sheetsapi.json檔案的內容
 oauth2Client.credentials = sheetsAuth;
 //試算表的ID，引號不能刪掉
-//const mySheetId='1VLX79AlBmlkqIJgDK2BRDkxK3venpoL1jselGGIhmc4';
-const questionSheetId='13lzb_GiuEVYaJxJmE8nQyEwBw-zeijeV5HtELCHzmdk';
+const questionSheetId = '13lzb_GiuEVYaJxJmE8nQyEwBw-zeijeV5HtELCHzmdk';
+//const customSheetId = ''
 var myQuestions=[];
 var users=[];
 var totalSteps = 0;
@@ -70,10 +68,10 @@ function getQuestions(){
 getQuestions();
 
 //這是將取得的資料儲存進試算表的函式
-function appendMyRow(userId) {
+function appendMyRow(userId, sheetId) {
    var request = {
       auth: oauth2Client,
-      spreadsheetId: questionSheetId,
+      spreadsheetId: sheetId,
       range:'reponse1',
       insertDataOption: 'INSERT_ROWS',
       valueInputOption: 'RAW',
@@ -171,7 +169,7 @@ bot.on('message', function(event) {
                users[myId].step=myStep;
                users[myId].replies[0]=new Date();
                //console.log(users[myId])
-               appendMyRow(myId);
+               appendMyRow(myId, questionSheetId);
             }
          }
          if (event.message.text === '@客製化花茶@' || customteaKey !== 0) {
@@ -187,12 +185,11 @@ bot.on('message', function(event) {
                myStep = 5;
                event.reply({
                   "type": "text",
-                  "text": "取消成功"
+                  "text": "取消成功，再看看有沒有其他喜歡的花茶吧~~"
                })
             }
             if (myStep === -1) {
                event.reply(chooseFlower);//選花chooseFlower
-               //users[myId].replies[myStep+1]=event.message.text;
             }
             else{
                switch (myStep){
@@ -209,7 +206,6 @@ bot.on('message', function(event) {
                      const confirmText = users[myId].replies[1] + users[myId].replies[2] +users[myId].replies[3]; 
                      confirmCustom.contents.body.contents[1].text = confirmText;
                      event.reply(confirmCustom);//確認or重選
-                     users[myId].replies[myStep+1]=event.message.text;
                   break;
                   // case 3:
                   //    event.reply({
@@ -219,10 +215,9 @@ bot.on('message', function(event) {
                   //    users[myId].replies[myStep+1]=event.message.text;
                   // break;
                   case 3:
-                     const customItem = users[myId].replies[1] + users[myId].replies[2] +users[myId].replies[3];;
-                     customLink.contents.body.contents[3].text = customItem;
+                     //const customItem = users[myId].replies[1] + users[myId].replies[2] +users[myId].replies[3];;
+                     customLink.contents.body.contents[3].text = confirmText;
                      event.reply(customLink);//購買連結
-                     //users[myId].replies[myStep+1]=event.message.text;
                   break;
                   
                }
@@ -235,9 +230,8 @@ bot.on('message', function(event) {
                myStep = -1;
                customteaKey = 0;
                users[myId].step=myStep;
-               //users[myId].replies[0]=new Date();
-               //console.log(users[myId])
-               //appendMyRow(myId);
+               users[myId].replies[0]=new Date();
+               //appendMyRow(myId, customSheetId);
             }
          }
          
