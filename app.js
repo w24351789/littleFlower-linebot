@@ -31,7 +31,7 @@ const oauth2Client = new google.auth.OAuth2(myClientSecret.installed.client_id,m
 oauth2Client.credentials = sheetsAuth;
 //試算表的ID，引號不能刪掉
 const questionSheetId = '13lzb_GiuEVYaJxJmE8nQyEwBw-zeijeV5HtELCHzmdk';
-//const customSheetId = ''
+const customSheetId = '1-QfBSutaowKE7H-NQBQVs39wsQ9_4I3lnwDM9aMm1iI'
 var myQuestions=[];
 var users=[];
 var totalSteps = 0;
@@ -188,6 +188,7 @@ bot.on('message', function(event) {
                   "text": "取消成功，再看看有沒有其他喜歡的花茶吧~~"
                })
             }
+            const confirmText
             if (myStep === -1) {
                event.reply(chooseFlower);//選花chooseFlower
             }
@@ -203,7 +204,7 @@ bot.on('message', function(event) {
                   break;
                   case 2:
                      users[myId].replies[myStep+1]=event.message.text;//風味結果
-                     const confirmText = users[myId].replies[1] + users[myId].replies[2] +users[myId].replies[3]; 
+                     confirmText = users[myId].replies[1] + users[myId].replies[2] +users[myId].replies[3]; 
                      confirmCustom.contents.body.contents[1].text = confirmText;
                      event.reply(confirmCustom);//確認or重選
                   break;
@@ -231,7 +232,7 @@ bot.on('message', function(event) {
                customteaKey = 0;
                users[myId].step=myStep;
                users[myId].replies[0]=new Date();
-               //appendMyRow(myId, customSheetId);
+               appendMyRow(myId, customSheetId);
             }
          }
          
