@@ -32,19 +32,18 @@ oauth2Client.credentials = sheetsAuth;
 //試算表的ID，引號不能刪掉
 const questionSheetId = '13lzb_GiuEVYaJxJmE8nQyEwBw-zeijeV5HtELCHzmdk';
 const customSheetId = '1-QfBSutaowKE7H-NQBQVs39wsQ9_4I3lnwDM9aMm1iI'
-var myQuestions=[];
-var users=[];
-var totalSteps = 0;
-var questionnaireKey = 0;
-var customteaKey = 0;
-var customteaStep = 4;
+let myQuestions=[];
+let users=[];
+let totalSteps = 0;
+let questionnaireKey = 0;
+let customteaKey = 0;
+let customteaStep = 4;
 //這是讀取問題的函式
 function getQuestions(){
   const sheets = google.sheets('v4');
   sheets.spreadsheets.values.get({
      auth: oauth2Client,
      spreadsheetId: questionSheetId,
-     //range:encodeURI('question1'),
      range: 'question1!A1:M2',
      majorDimension: 'ROWS'
   }, function(err, response) {
@@ -69,7 +68,7 @@ getQuestions();
 
 //這是將取得的資料儲存進試算表的函式
 function appendMyRow(userId, sheetId) {
-   var request = {
+   const request = {
       auth: oauth2Client,
       spreadsheetId: sheetId,
       range:'reponse1',
@@ -81,7 +80,7 @@ function appendMyRow(userId, sheetId) {
         ]
       }
    };
-   var sheets = google.sheets('v4');
+   const sheets = google.sheets('v4');
    sheets.spreadsheets.values.append(request, function(err, response) {
       if (err) {
          console.log('The API returned an error: ' + err);
@@ -136,7 +135,6 @@ bot.on('message', function(event) {
             console.log(myStep);
             //第一次觸發問卷
             if (myStep === -1) {
-               //sendMessage(event,myQuestions[0][0]);
                questionAns1 = myQuestions[0][0];
                questionText.text = questionAns1;
                event.reply(questionText);
@@ -168,7 +166,6 @@ bot.on('message', function(event) {
                questionnaireKey = 0;
                users[myId].step=myStep;
                users[myId].replies[0]=new Date();
-               //console.log(users[myId])
                appendMyRow(myId, questionSheetId);
             }
          }
@@ -246,18 +243,6 @@ bot.on('message', function(event) {
       break;
    }
 });
-
-
-// //這是發送訊息給user的函式
-// function sendMessage(eve,msg){
-//    eve.reply(msg).then(function(data) {
-//       // success 
-//       return true;
-//    }).catch(function(error) {
-//       // error 
-//       return false;
-//    });
-// }
 
 
 const app = express();
