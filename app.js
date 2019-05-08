@@ -20,6 +20,11 @@ let twFlowerTea = require('./bot_templates/twFlowerTea.json');
 let brandMind = require('./bot_templates/brandMind.json');
 let contactUs = require('./bot_templates/contactUs.json');
 let rawMaterial = require('./bot_templates/rawMaterial.json');
+let chooseFlower = require('./bot_templates/chooseFlower.json');
+let chooseTea = require('./bot_templates/chooseTea.json');
+let teaFlavor = require('./bot_templates/teaFlavor.json');
+let confirmCustom = require('./bot_templates/confirmCustom.json');
+let customLink = require('./bot_templates/customLink.json');
 // 用於辨識Line Channel的資訊
 const bot = linebot(lineInfo);
 
@@ -31,9 +36,10 @@ oauth2Client.credentials = sheetsAuth;
 const questionSheetId='13lzb_GiuEVYaJxJmE8nQyEwBw-zeijeV5HtELCHzmdk';
 var myQuestions=[];
 var users=[];
-var totalSteps=0;
-var questionnaireKey=0;
-
+var totalSteps = 0;
+var questionnaireKey = 0;
+var customteaKey = 0;
+var customteaStep = 4;
 //這是讀取問題的函式
 function getQuestions(){
   const sheets = google.sheets('v4');
@@ -166,6 +172,72 @@ bot.on('message', function(event) {
                users[myId].replies[0]=new Date();
                //console.log(users[myId])
                appendMyRow(myId);
+            }
+         }
+         if (event.message.text === '@客製化花茶@' || customteaKey !== 0) {
+            var myId=event.source.userId;
+            if (users[myId]==undefined){
+               users[myId]=[];
+               users[myId].userId=myId;
+               users[myId].step=-1;
+               users[myId].replies=[];
+            }
+            var myStep=users[myId].step;
+            if (event.message.text === '取消此客製化花茶') {
+               myStep = 5;
+               event.reply({
+                  "type": "text",
+                  "text": "取消成功"
+               })
+            }
+            if (myStep === -1) {
+               event.reply(chooseFlower);//選花chooseFlower
+               //users[myId].replies[myStep+1]=event.message.text;
+            }
+            else{
+               switch (myStep){
+                  case 0:
+                     event.reply(chooseTea);//選茶
+                     users[myId].replies[myStep+1]=event.message.text;//花結果
+                  break;
+                  case 1:
+                     event.reply(teaFlavor);//選風味
+                     users[myId].replies[myStep+1]=event.message.text;//茶結果
+                  break;
+                  case 2:
+                     users[myId].replies[myStep+1]=event.message.text;//風味結果
+                     const confirmText = users[myId].replies[1] + users[myId].replies[2] +users[myId].replies[3]; 
+                     confirmCustom.contents.body.contents[1].text = confirmText;
+                     event.reply(confirmCustom);//確認or重選
+                     users[myId].replies[myStep+1]=event.message.text;
+                  break;
+                  // case 3:
+                  //    event.reply({
+                  //       "type": "text",
+                  //       "text": "請輸入您的蝦皮帳號，下單後將為您出貨"
+                  //    });//蝦皮帳號
+                  //    users[myId].replies[myStep+1]=event.message.text;
+                  // break;
+                  case 3:
+                     const customItem = users[myId].replies[1] + users[myId].replies[2] +users[myId].replies[3];;
+                     customLink.contents.body.contents[3].text = customItem;
+                     event.reply(customLink);//購買連結
+                     //users[myId].replies[myStep+1]=event.message.text;
+                  break;
+                  
+               }
+            }
+            myStep += 1;
+            customteaKey = myStep + 100;
+            users[myId].step=myStep;
+
+            if (myStep>=customteaStep){
+               myStep = -1;
+               customteaKey = 0;
+               users[myId].step=myStep;
+               //users[myId].replies[0]=new Date();
+               //console.log(users[myId])
+               //appendMyRow(myId);
             }
          }
          

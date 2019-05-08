@@ -1,0 +1,64 @@
+{
+    "type": "text", 
+    "text": "請選擇您想要的花",
+    "quickReply": { 
+      "items": [
+        {
+          "type": "action", 
+          "action": {
+            "type": "message",
+            "label": "紫錐花",
+            "text": "紫錐花"
+          }
+        },
+        {
+          "type": "action",
+          "action": {
+            "type": "message",
+            "label": "小油菊",
+            "text": "小油菊"
+          }
+        },
+        {
+          "type": "action", 
+          "action": {
+            "type": "message",
+            "label": "柚花",
+            "text": "柚花"
+          }
+        },
+        {
+          "type": "action", 
+          "action": {
+            "type": "message",
+            "label": "杭菊",
+            "text": "杭菊"
+          }
+        },
+        {
+          "type": "action", 
+          "action": {
+            "type": "message",
+            "label": "玫瑰",
+            "text": "玫瑰"
+          }
+        },
+        {
+            "type": "action", 
+            "action": {
+              "type": "message",
+              "label": "蝶豆花",
+              "text": "蝶豆花"
+            }
+          },
+          {
+            "type": "action", 
+            "action": {
+              "type": "message",
+              "label": "洛神花",
+              "text": "洛神花"
+            }
+          }
+      ]
+    }
+  }

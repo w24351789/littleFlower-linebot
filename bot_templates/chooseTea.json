@@ -1,0 +1,72 @@
+{
+    "type": "text", 
+    "text": "請選擇您想要的茶",
+    "quickReply": { 
+      "items": [
+        {
+          "type": "action", 
+          "action": {
+            "type": "message",
+            "label": "烏龍生茶",
+            "text": "烏龍生茶"
+          }
+        },
+        {
+            "type": "action", 
+            "action": {
+              "type": "message",
+              "label": "烏龍熟茶",
+              "text": "烏龍熟茶"
+            }
+          },
+        {
+          "type": "action",
+          "action": {
+            "type": "message",
+            "label": "紅茶",
+            "text": "紅茶"
+          }
+        },
+        {
+          "type": "action", 
+          "action": {
+            "type": "message",
+            "label": "東方美人茶",
+            "text": "東方美人茶"
+          }
+        },
+        {
+          "type": "action", 
+          "action": {
+            "type": "message",
+            "label": "綠茶",
+            "text": "綠茶"
+          }
+        },
+        {
+            "type": "action", 
+            "action": {
+              "type": "message",
+              "label": "金萱茶",
+              "text": "金萱茶"
+            }
+          },
+          {
+            "type": "action", 
+            "action": {
+              "type": "message",
+              "label": "翠玉茶",
+              "text": "翠玉茶"
+            }
+          },
+          {
+            "type": "action", 
+            "action": {
+              "type": "message",
+              "label": "四季春",
+              "text": "四季春"
+            }
+          }
+      ]
+    }
+  }

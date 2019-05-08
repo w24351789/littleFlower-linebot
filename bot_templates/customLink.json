@@ -1,0 +1,64 @@
+{
+    "type": "flex",
+    "altText": "Flex Message",
+    "contents": {
+      "type": "bubble",
+      "direction": "ltr",
+      "hero": {
+        "type": "image",
+        "url": "https://developers.line.biz/assets/images/services/bot-designer-icon.png",
+        "size": "full",
+        "aspectRatio": "1.51:1",
+        "aspectMode": "fit"
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "md",
+        "contents": [
+          {
+            "type": "text",
+            "text": "【小花集】客製化花茶",
+            "align": "center",
+            "weight": "bold",
+            "color": "#AF4B69"
+          },
+          {
+            "type": "text",
+            "text": "NTD 200",
+            "align": "center",
+            "color": "#AF4B69"
+          },
+          {
+            "type": "text",
+            "text": "（內含客製化茶包五入）",
+            "align": "center",
+            "color": "#CB7C8B"
+          },
+          {
+            "type": "text",
+            "text": "Text",
+            "align": "center",
+            "color": "#CB7C8B",
+            "wrap": true
+          }
+        ]
+      },
+      "footer": {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "立即購買",
+              "uri": "https://linecorp.com"
+            },
+            "color": "#AF4B69",
+            "style": "primary"
+          }
+        ]
+      }
+    }
+  }
