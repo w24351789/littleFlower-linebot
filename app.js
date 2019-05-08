@@ -129,9 +129,8 @@ bot.on('message', function(event) {
             client.getProfile(myId)
                .then((profile) => {
                   console.log(profile.displayName);
-                  console.log(profile.userId);
                   console.log(profile.pictureUrl);
-                  console.log(profile.statusMessage);
+                  userName = profile.displayName;
                })
                .catch((err) => {
                   // error handling
@@ -158,6 +157,7 @@ bot.on('message', function(event) {
                //最後一題答完後
                if (myStep==(totalSteps-1)) {
                   users[myId].replies[myStep+1]=event.message.text;
+                  users[myId].replies[myStep+2] = userName;
                   event.reply(giftCard);
                }
                else if (myStep > -1 && myStep < 4){
@@ -179,8 +179,8 @@ bot.on('message', function(event) {
             if (myStep>=totalSteps){
                myStep = -1;
                questionnaireKey = 0;
-               users[myId].step=myStep;
-               users[myId].replies[0]=new Date();
+               users[myId].step = myStep;
+               users[myId].replies[0] = new Date();
                appendMyRow(myId, questionSheetId);
             }
          }
