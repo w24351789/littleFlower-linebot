@@ -104,7 +104,7 @@ const adjustMessage = (customerChoose, customProduct) => {
 }
 //LineBot收到user的文字訊息時的處理函式
 bot.on('message', function(event) {
-   
+   let userName = "text"
    switch (event.message.type) {
       case 'text':
          switch (event.message.text) {
@@ -196,16 +196,6 @@ bot.on('message', function(event) {
          }
          if (event.message.text === '@客製化花茶@' || customteaKey !== 0) {
             const myId=event.source.userId;
-            client.getProfile(myId)
-               .then((profile) => {
-                  console.log(profile.displayName);
-                  console.log(profile.pictureUrl);
-                  userName = profile.displayName;
-               })
-               .catch((err) => {
-                  // error handling
-                  console.log(err);
-               });
             if (users[myId]==undefined){
                users[myId]=[];
                users[myId].userId=myId;
@@ -222,7 +212,7 @@ bot.on('message', function(event) {
             }
             
             if (myStep === -1) {
-               chooseFlower.text = `${userName}，您好請選擇您想要的花`
+               chooseFlower.text = "您好請選擇您想要的花"
                event.reply(chooseFlower);//選花chooseFlower
             }
             else{
