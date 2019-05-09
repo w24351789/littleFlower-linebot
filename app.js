@@ -92,20 +92,19 @@ function appendMyRow(userId, sheetId) {
       }
    });
 }
-
+//判斷訊息是否符合條件
+const adjustMessage = (customerChoose, customProduct) => {
+   adjustSuccess = 0;
+   for (let i = 0; i < customProduct.length; i++){
+      if (customerChoose === customProduct[i].text){
+         adjustSuccess += 1;
+      }
+   }
+   return adjustSuccess;
+}
 //LineBot收到user的文字訊息時的處理函式
 bot.on('message', function(event) {
-   const myId=event.source.userId;
-            client.getProfile(myId)
-               .then((profile) => {
-                  console.log(profile.displayName);
-                  console.log(profile.pictureUrl);
-                  userName = profile.displayName;
-               })
-               .catch((err) => {
-                  // error handling
-                  console.log(err);
-               });
+   
    switch (event.message.type) {
       case 'text':
          switch (event.message.text) {
@@ -136,7 +135,17 @@ bot.on('message', function(event) {
 
          }
          if (event.message.text === '@意見回饋@' || questionnaireKey !== 0) {
-            //const myId=event.source.userId;
+            const myId=event.source.userId;
+            client.getProfile(myId)
+               .then((profile) => {
+                  console.log(profile.displayName);
+                  console.log(profile.pictureUrl);
+                  userName = profile.displayName;
+               })
+               .catch((err) => {
+                  // error handling
+                  console.log(err);
+               });
             if (users[myId]==undefined){
                users[myId]=[];
                users[myId].userId=myId;
@@ -186,7 +195,17 @@ bot.on('message', function(event) {
             }
          }
          if (event.message.text === '@客製化花茶@' || customteaKey !== 0) {
-            //const myId=event.source.userId;
+            const myId=event.source.userId;
+            client.getProfile(myId)
+               .then((profile) => {
+                  console.log(profile.displayName);
+                  console.log(profile.pictureUrl);
+                  userName = profile.displayName;
+               })
+               .catch((err) => {
+                  // error handling
+                  console.log(err);
+               });
             if (users[myId]==undefined){
                users[myId]=[];
                users[myId].userId=myId;
@@ -209,8 +228,19 @@ bot.on('message', function(event) {
             else{
                switch (myStep){
                   case 0:
-                     event.reply(chooseTea);//選茶
-                     users[myId].replies[myStep+1]=event.message.text;//花結果
+                     flowerProduct = chooseFlower.quickReply.items;
+                     adjustMessage(event.message.text, flowerProduct)
+                     if(adjustSuccess === 0) {
+                        myStep -= 1;
+                        event.reply({
+                              "type": "text",
+                              "text": "輸入錯誤"
+                         });
+                     }else{
+                        event.reply(chooseTea);//選茶
+                        users[myId].replies[myStep+1]=event.message.text;//花結果
+                     }
+                     
                   break;
                   case 1:
                      event.reply(teaFlavor);//選風味
