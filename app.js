@@ -98,13 +98,25 @@ const adjustMessage = (customerChoose, customProduct) => {
    for (let i = 0; i < customProduct.length; i++){
       if (customerChoose === customProduct[i].text){
          adjustSuccess += 1;
+         console.log(customerChoose)
+         console.log(customProduct[i].text)
       }
    }
    return adjustSuccess;
 }
 //LineBot收到user的文字訊息時的處理函式
 bot.on('message', function(event) {
-   let userName = "text"
+   const myId=event.source.userId;
+            client.getProfile(myId)
+               .then((profile) => {
+                  console.log(profile.displayName);
+                  console.log(profile.pictureUrl);
+                  userName = profile.displayName;
+               })
+               .catch((err) => {
+                  // error handling
+                  console.log(err);
+               });
    switch (event.message.type) {
       case 'text':
          switch (event.message.text) {
