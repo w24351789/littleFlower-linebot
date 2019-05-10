@@ -96,8 +96,8 @@ function appendMyRow(userId, sheetId) {
 function adjustMessage(adjustSuccess, customerChoose, customProduct) {
    for (let i = 0; i < customProduct.length; i++){
       console.log(customerChoose);
-      console.log(customProduct[i].text);
-      if (customerChoose === customProduct[i].text){
+      console.log(customProduct[i].action.text);
+      if (customerChoose === customProduct[i].action.text){
          adjustSuccess += 1;
 
       }
