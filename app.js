@@ -93,7 +93,7 @@ function appendMyRow(userId, sheetId) {
    });
 }
 //判斷訊息是否符合條件
-const adjustMessage = (adjustSuccess, customerChoose, customProduct) => {
+function adjustMessage(adjustSuccess, customerChoose, customProduct) {
    for (let i = 0; i < customProduct.length; i++){
       if (customerChoose === customProduct[i].text){
          adjustSuccess += 1;
