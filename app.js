@@ -93,7 +93,7 @@ function appendMyRow(userId, sheetId) {
    });
 }
 //判斷訊息是否符合條件
-const adjustMessage = (customerChoose, customProduct) => {
+const adjustMessage = (adjustSuccess, customerChoose, customProduct) => {
    adjustSuccess = 0;
    for (let i = 0; i < customProduct.length; i++){
       if (customerChoose === customProduct[i].text){
@@ -231,7 +231,7 @@ bot.on('message', function(event) {
                switch (myStep){
                   case 0:
                      flowerProduct = chooseFlower.quickReply.items;
-                     adjustMessage(event.message.text, flowerProduct)
+                     adjustMessage(0, event.message.text, flowerProduct)
                      if(adjustSuccess === 0) {
                         myStep -= 1;
                         event.reply({
