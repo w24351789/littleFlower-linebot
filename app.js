@@ -99,9 +99,9 @@ function adjustMessage(adjustSuccess, customerChoose, customProduct) {
       console.log(customProduct[i].action.text);
       if (customerChoose === customProduct[i].action.text){
          adjustSuccess += 1;
-
       }
    }
+   console.log(adjustSuccess);
    return adjustSuccess;
 }
 //LineBot收到user的文字訊息時的處理函式
@@ -232,7 +232,8 @@ bot.on('message', function(event) {
                   case 0:
                      flowerProduct = chooseFlower.quickReply.items;
                      adjustSuccess = 0;
-                     adjustMessage(adjustSuccess, event.message.text, flowerProduct)
+                     adjustMessage(adjustSuccess, event.message.text, flowerProduct);
+                     console.log(adjustSuccess);
                      if(adjustSuccess === 0) {
                         myStep = -2;
                         event.reply({
