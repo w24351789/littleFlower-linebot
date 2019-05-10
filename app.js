@@ -216,9 +216,9 @@ bot.on('message', function(event) {
                   break;
                   case 1:
                      teaProduct = chooseTea.quickReply.items;
-                     let adjustResult = adjustMessage(0, event.message.text, teaProduct);
-                     console.log(adjustResult);
-                     if(adjustResult === 0) {
+                     let adjustResult1 = adjustMessage(0, event.message.text, teaProduct);
+                     console.log(adjustResult1);
+                     if(adjustResult1 === 0) {
                         myStep = -2;
                         event.reply(chooseError);
                      }else{
