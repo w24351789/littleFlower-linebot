@@ -119,7 +119,7 @@ bot.on('message', function(event) {
    switch (event.message.type) {
       case 'text':
 
-         if (event.message.text === '@意見回饋@' || questionnaireKey !== 0) {
+         if (event.message.text === '@意見回饋@' || questionnaireKey !== 0 && customteaKey === 0) {
             const myId=event.source.userId;
             client.getProfile(myId)
                .then((profile) => {
@@ -259,7 +259,7 @@ bot.on('message', function(event) {
                appendMyRow(myId, customSheetId);
             }
          }
-         if (questionnaireKey === 0 && customteaKey === 0) {
+         if (customteaKey === 0) {
             switch (event.message.text) {
                case '@購買商品@':
                   event.reply(teaShop);
@@ -288,8 +288,6 @@ bot.on('message', function(event) {
    
             }
          }
-         
-         
       break;
       case 'sticker':
          event.reply({
