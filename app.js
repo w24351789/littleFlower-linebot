@@ -259,33 +259,36 @@ bot.on('message', function(event) {
                appendMyRow(myId, customSheetId);
             }
          }
-         switch (event.message.text) {
-            case '@購買商品@':
-               event.reply(teaShop);
-            break;
-            case '購買周而復始系列花茶':
-               event.reply(weekTeaShop);
-            break;
-            case '進一步了解負能量系列花茶':
-               event.reply(badMoodTea);
-            break;
-            case '看更多負能量茶飲':
-               event.reply(badMoodTea2);
-            break;
-            case '進一步了解台灣特色花茶':
-               event.reply(twFlowerTea);
-            break;
-            case '@品牌理念@':
-               event.reply(brandMind);
-            break;
-            case '@聯絡我們@':
-               event.reply(contactUs);
-            break;
-            case '@原料介紹@':
-               event.reply(rawMaterial);
-            break;
-
+         if (questionnaireKey === 0 && customteaKey === 0) {
+            switch (event.message.text) {
+               case '@購買商品@':
+                  event.reply(teaShop);
+               break;
+               case '購買周而復始系列花茶':
+                  event.reply(weekTeaShop);
+               break;
+               case '進一步了解負能量系列花茶':
+                  event.reply(badMoodTea);
+               break;
+               case '看更多負能量茶飲':
+                  event.reply(badMoodTea2);
+               break;
+               case '進一步了解台灣特色花茶':
+                  event.reply(twFlowerTea);
+               break;
+               case '@品牌理念@':
+                  event.reply(brandMind);
+               break;
+               case '@聯絡我們@':
+                  event.reply(contactUs);
+               break;
+               case '@原料介紹@':
+                  event.reply(rawMaterial);
+               break;
+   
+            }
          }
+         
          
       break;
       case 'sticker':
