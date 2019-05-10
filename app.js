@@ -94,7 +94,6 @@ function appendMyRow(userId, sheetId) {
 }
 //判斷訊息是否符合條件
 const adjustMessage = (adjustSuccess, customerChoose, customProduct) => {
-   adjustSuccess = 0;
    for (let i = 0; i < customProduct.length; i++){
       if (customerChoose === customProduct[i].text){
          adjustSuccess += 1;
@@ -231,12 +230,25 @@ bot.on('message', function(event) {
                switch (myStep){
                   case 0:
                      flowerProduct = chooseFlower.quickReply.items;
-                     adjustMessage(0, event.message.text, flowerProduct)
+                     adjustSuccess = 0;
+                     adjustMessage(adjustSuccess, event.message.text, flowerProduct)
                      if(adjustSuccess === 0) {
-                        myStep -= 1;
+                        myStep = -2;
                         event.reply({
                               "type": "text",
-                              "text": "輸入錯誤"
+                              "text": "輸入錯誤",
+                              "quickReply": { 
+                                 "items": [
+                                   {
+                                     "type": "action", 
+                                     "action": {
+                                       "type": "message",
+                                       "label": "客製化花茶",
+                                       "text": "@客製化花茶@"
+                                     }
+                                   }
+                                 ]
+                               }
                          });
                      }else{
                         event.reply(chooseTea);//選茶
