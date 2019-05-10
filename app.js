@@ -95,10 +95,11 @@ function appendMyRow(userId, sheetId) {
 //判斷訊息是否符合條件
 function adjustMessage(adjustSuccess, customerChoose, customProduct) {
    for (let i = 0; i < customProduct.length; i++){
+      console.log(customerChoose);
+      console.log(customProduct[i].text);
       if (customerChoose === customProduct[i].text){
          adjustSuccess += 1;
-         console.log(customerChoose)
-         console.log(customProduct[i].text)
+
       }
    }
    return adjustSuccess;
