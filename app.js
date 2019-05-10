@@ -24,6 +24,7 @@ let chooseTea = require('./bot_templates/chooseTea.json');
 let teaFlavor = require('./bot_templates/teaFlavor.json');
 let confirmCustom = require('./bot_templates/confirmCustom.json');
 let customLink = require('./bot_templates/customLink.json');
+let chooseError = require('./bot_templates/chooseError.json');
 // 用於辨識Line Channel的資訊
 const bot = linebot(lineInfo);
 const client = new line.Client({
@@ -95,8 +96,6 @@ function appendMyRow(userId, sheetId) {
 //判斷訊息是否符合條件
 function adjustMessage(adjustSuccess, customerChoose, customProduct) {
    for (let i = 0; i < customProduct.length; i++){
-      console.log(customerChoose);
-      console.log(customProduct[i].action.text);
       if (customerChoose === customProduct[i].action.text){
          adjustSuccess += 1;
       }
@@ -119,33 +118,7 @@ bot.on('message', function(event) {
                });
    switch (event.message.type) {
       case 'text':
-         switch (event.message.text) {
-            case '@購買商品@':
-               event.reply(teaShop);
-            break;
-            case '購買周而復始系列花茶':
-               event.reply(weekTeaShop);
-            break;
-            case '進一步了解負能量系列花茶':
-               event.reply(badMoodTea);
-            break;
-            case '看更多負能量茶飲':
-               event.reply(badMoodTea2);
-            break;
-            case '進一步了解台灣特色花茶':
-               event.reply(twFlowerTea);
-            break;
-            case '@品牌理念@':
-               event.reply(brandMind);
-            break;
-            case '@聯絡我們@':
-               event.reply(contactUs);
-            break;
-            case '@原料介紹@':
-               event.reply(rawMaterial);
-            break;
 
-         }
          if (event.message.text === '@意見回饋@' || questionnaireKey !== 0) {
             const myId=event.source.userId;
             client.getProfile(myId)
@@ -235,31 +208,23 @@ bot.on('message', function(event) {
                      console.log(adjustResult);
                      if(adjustResult === 0) {
                         myStep = -2;
-                        event.reply({
-                              "type": "text",
-                              "text": "輸入錯誤",
-                              "quickReply": { 
-                                 "items": [
-                                   {
-                                     "type": "action", 
-                                     "action": {
-                                       "type": "message",
-                                       "label": "客製化花茶",
-                                       "text": "@客製化花茶@"
-                                     }
-                                   }
-                                 ]
-                               }
-                         });
+                        event.reply(chooseError);
                      }else{
                         event.reply(chooseTea);//選茶
                         users[myId].replies[myStep+1]=event.message.text;//花結果
                      }
-                     
                   break;
                   case 1:
-                     event.reply(teaFlavor);//選風味
-                     users[myId].replies[myStep+1]=event.message.text;//茶結果
+                     teaProduct = chooseTea.quickReply.items;
+                     let adjustResult = adjustMessage(0, event.message.text, teaProduct);
+                     console.log(adjustResult);
+                     if(adjustResult === 0) {
+                        myStep = -2;
+                        event.reply(chooseError);
+                     }else{
+                        event.reply(teaFlavor);//選風味
+                        users[myId].replies[myStep+1]=event.message.text;//茶結果
+                     }
                   break;
                   case 2:
                      users[myId].replies[myStep+1]=event.message.text;//風味結果
@@ -293,6 +258,33 @@ bot.on('message', function(event) {
                users[myId].replies[0]=new Date();
                appendMyRow(myId, customSheetId);
             }
+         }
+         switch (event.message.text) {
+            case '@購買商品@':
+               event.reply(teaShop);
+            break;
+            case '購買周而復始系列花茶':
+               event.reply(weekTeaShop);
+            break;
+            case '進一步了解負能量系列花茶':
+               event.reply(badMoodTea);
+            break;
+            case '看更多負能量茶飲':
+               event.reply(badMoodTea2);
+            break;
+            case '進一步了解台灣特色花茶':
+               event.reply(twFlowerTea);
+            break;
+            case '@品牌理念@':
+               event.reply(brandMind);
+            break;
+            case '@聯絡我們@':
+               event.reply(contactUs);
+            break;
+            case '@原料介紹@':
+               event.reply(rawMaterial);
+            break;
+
          }
          
       break;

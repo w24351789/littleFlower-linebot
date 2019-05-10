@@ -1,0 +1,16 @@
+{
+    "type": "text",
+    "text": "輸入錯誤",
+    "quickReply": { 
+       "items": [
+         {
+           "type": "action", 
+           "action": {
+             "type": "message",
+             "label": "請重新選擇您的客製化花茶",
+             "text": "@客製化花茶@"
+           }
+         }
+       ]
+     }
+}
