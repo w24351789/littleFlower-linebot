@@ -231,10 +231,9 @@ bot.on('message', function(event) {
                switch (myStep){
                   case 0:
                      flowerProduct = chooseFlower.quickReply.items;
-                     adjustSuccess = 0;
-                     adjustMessage(adjustSuccess, event.message.text, flowerProduct);
-                     console.log(adjustSuccess);
-                     if(adjustSuccess === 0) {
+                     let adjustResult = adjustMessage(0, event.message.text, flowerProduct);
+                     console.log(adjustResult);
+                     if(adjustResult === 0) {
                         myStep = -2;
                         event.reply({
                               "type": "text",
