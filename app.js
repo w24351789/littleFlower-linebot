@@ -151,8 +151,8 @@ bot.on('message', function(event) {
             else{
                //最後一題答完後
                if (myStep==(totalSteps-1)) {
-                  users[myId].replies[myStep+1]=event.message.text;
-                  users[myId].replies[myStep+2] = userName;//自動讀取使用者的名字
+                  //users[myId].replies[myStep+1]=event.message.text;
+                  //users[myId].replies[myStep+2] = userName;//自動讀取使用者的名字
                   event.reply(giftCard);
                }
                else if (myStep > -1 && myStep < 7){//A至H
