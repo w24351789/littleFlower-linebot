@@ -144,8 +144,8 @@ bot.on('message', function(event) {
             console.log(myStep);
             //第一次觸發問卷
             if (myStep === -1) {
-               questionAns1 = userName + myQuestions[0][0];
-               questionText.text = questionAns1;
+               //questionAns1 = userName + myQuestions[0][0];
+               //questionText.text = questionAns1;
                event.reply(questionText);
             }
             else{
