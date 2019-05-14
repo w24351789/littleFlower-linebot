@@ -18,55 +18,46 @@
         {
           "type": "text",
           "text": "指導教授：",
+          "size": "sm",
           "align": "start",
           "color": "#575757"
         },
         {
           "type": "text",
           "text": "林義斌、林展立、王維元、朱盈樺",
+          "size": "sm",
           "color": "#575757"
         },
         {
           "type": "text",
-          "text": "組員：",
-          "margin": "lg",
+          "text": "團隊成員：",
+          "margin": "sm",
+          "size": "sm",
           "align": "start",
           "color": "#575757"
         },
         {
           "type": "text",
           "text": "李晉丞、戴瑋德、林世昕",
+          "size": "sm",
           "color": "#575757",
           "wrap": true
         },
         {
           "type": "text",
-          "text": "Text",
-          "color": "#FFFFFF"
-        },
-        {
-          "type": "text",
-          "text": "國立臺北教育大學 ",
-          "size": "sm"
-        },
-        {
-          "type": "text",
-          "text": "文化創意產業經營學系 ",
-          "size": "sm"
+          "text": "國立臺北教育大學  文化創意產業經營學系 ",
+          "margin": "sm",
+          "size": "xs"
         },
         {
           "type": "text",
           "text": "第十屆畢業製作",
-          "size": "sm"
-        },
-        {
-          "type": "text",
-          "text": "Text",
-          "color": "#FFFEFE"
+          "size": "xs"
         },
         {
           "type": "text",
           "text": "小花集 Since 2018",
+          "margin": "md",
           "align": "center",
           "weight": "bold",
           "color": "#AF4B69",
