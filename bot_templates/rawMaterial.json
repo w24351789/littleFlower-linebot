@@ -9,10 +9,10 @@
         "direction": "ltr",
         "hero": {
           "type": "image",
-          "url": "https://developers.line.biz/assets/images/services/bot-designer-icon.png",
+          "url": "https://imgur.com/WIUKTJc.jpg",
           "size": "full",
           "aspectRatio": "1.51:1",
-          "aspectMode": "fit"
+          "aspectMode": "cover"
         },
         "body": {
           "type": "box",
@@ -22,7 +22,7 @@
             {
               "type": "text",
               "text": "花蓮吉安紫錐花",
-              "size": "xl",
+              "size": "lg",
               "align": "center",
               "weight": "bold",
               "color": "#C36A7C"
@@ -30,8 +30,9 @@
             {
               "type": "text",
               "text": "花蓮吉安，中央山脈下，兄弟同心，一起栽種珍品紫錐菊，不 用農藥與化肥，只用對故鄉土地的真誠；三合院稻埕日曬烘乾，總要 和夏日午後的雷雨躲貓貓，用日光，保留紫錐菊的色澤與風味。",
+              "size": "xs",
               "align": "center",
-              "color": "#B16574",
+              "color": "#575757",
               "wrap": true
             }
           ]
@@ -42,10 +43,10 @@
         "direction": "ltr",
         "hero": {
           "type": "image",
-          "url": "https://developers.line.biz/assets/images/services/bot-designer-icon.png",
+          "url": "https://imgur.com/HKLUXBS.jpg",
           "size": "full",
           "aspectRatio": "1.51:1",
-          "aspectMode": "fit"
+          "aspectMode": "cover"
         },
         "body": {
           "type": "box",
@@ -55,7 +56,7 @@
             {
               "type": "text",
               "text": "花蓮吉安小油菊",
-              "size": "xl",
+              "size": "lg",
               "align": "center",
               "weight": "bold",
               "color": "#C36A7C"
@@ -63,7 +64,8 @@
             {
               "type": "text",
               "text": "小油菊香氣濃郁優雅，一大壺熱 水只需要少少幾朵香氣就非常濃郁，自然栽種不使用任何農藥，有機驗證，加工過程完全不添加任何添加物。",
-              "color": "#B16574",
+              "size": "xs",
+              "color": "#575757",
               "wrap": true
             }
           ]
@@ -74,74 +76,10 @@
         "direction": "ltr",
         "hero": {
           "type": "image",
-          "url": "https://developers.line.biz/assets/images/services/bot-designer-icon.png",
+          "url": "https://imgur.com/hUyjvsU.jpg",
           "size": "full",
           "aspectRatio": "1.51:1",
-          "aspectMode": "fit"
-        },
-        "body": {
-          "type": "box",
-          "layout": "vertical",
-          "spacing": "md",
-          "contents": [
-            {
-              "type": "text",
-              "text": "花蓮玉里柚花",
-              "size": "xl",
-              "align": "center",
-              "weight": "bold",
-              "color": "#C36A7C"
-            },
-            {
-              "type": "text",
-              "text": "香氣迷人的上品柚花茶，採擷一年才綻開一次的新鮮柚花與茶 葉共同烘培而成，數量稀少珍貴，淡淡的柚花香及回甘的茶葉香蘊釀 於口腔中柔和，創造出不同的神奇感受",
-              "color": "#B16574",
-              "wrap": true
-            }
-          ]
-        }
-      },
-      {
-        "type": "bubble",
-        "direction": "ltr",
-        "hero": {
-          "type": "image",
-          "url": "https://developers.line.biz/assets/images/services/bot-designer-icon.png",
-          "size": "full",
-          "aspectRatio": "1.51:1",
-          "aspectMode": "fit"
-        },
-        "body": {
-          "type": "box",
-          "layout": "vertical",
-          "spacing": "md",
-          "contents": [
-            {
-              "type": "text",
-              "text": "苗栗銅鑼杭菊",
-              "size": "xl",
-              "align": "center",
-              "weight": "bold",
-              "color": "#C36A7C"
-            },
-            {
-              "type": "text",
-              "text": "細碎金黃桂花，獨特花蜜香味，甘甜止渴，搭配較清爽的烏龍 金萱，茶湯清澈碧綠，口感清爽恬淡，十分解暑，暢快。",
-              "color": "#B16574",
-              "wrap": true
-            }
-          ]
-        }
-      },
-      {
-        "type": "bubble",
-        "direction": "ltr",
-        "hero": {
-          "type": "image",
-          "url": "https://developers.line.biz/assets/images/services/bot-designer-icon.png",
-          "size": "full",
-          "aspectRatio": "1.51:1",
-          "aspectMode": "fit"
+          "aspectMode": "cover"
         },
         "body": {
           "type": "box",
@@ -151,7 +89,7 @@
             {
               "type": "text",
               "text": "南投埔里玫瑰",
-              "size": "xl",
+              "size": "lg",
               "align": "center",
               "weight": "bold",
               "color": "#C36A7C"
@@ -159,7 +97,107 @@
             {
               "type": "text",
               "text": "湊近鼻尖才嗅見的清淡玫瑰花香，淡雅香甜，輔以日月潭紅玉 ，茶湯豐潤透紅，帶有熟果清香，入喉回甘悠久，舒爽宜人。",
-              "color": "#B16574",
+              "size": "xs",
+              "color": "#575757",
+              "wrap": true
+            }
+          ]
+        }
+      },
+      {
+        "type": "bubble",
+        "direction": "ltr",
+        "hero": {
+          "type": "image",
+          "url": "https://imgur.com/A4AcR4n.jpg",
+          "size": "full",
+          "aspectRatio": "1.51:1",
+          "aspectMode": "cover"
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "spacing": "md",
+          "contents": [
+            {
+              "type": "text",
+              "text": "花蓮玉里柚花",
+              "size": "lg",
+              "align": "center",
+              "weight": "bold",
+              "color": "#C36A7C"
+            },
+            {
+              "type": "text",
+              "text": "香氣迷人的上品柚花茶，採擷一年才綻開一次的新鮮柚花與茶 葉共同烘培而成，數量稀少珍貴，淡淡的柚花香及回甘的茶葉香蘊釀 於口腔中柔和，創造出不同的神奇感受",
+              "size": "xs",
+              "color": "#575757",
+              "wrap": true
+            }
+          ]
+        }
+      },
+      {
+        "type": "bubble",
+        "direction": "ltr",
+        "hero": {
+          "type": "image",
+          "url": "https://imgur.com/9UClJLu.jpg",
+          "size": "full",
+          "aspectRatio": "1.51:1",
+          "aspectMode": "cover"
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "spacing": "md",
+          "contents": [
+            {
+              "type": "text",
+              "text": "苗栗銅鑼杭菊",
+              "size": "lg",
+              "align": "center",
+              "weight": "bold",
+              "color": "#C36A7C"
+            },
+            {
+              "type": "text",
+              "text": "細碎金黃桂花，獨特花蜜香味，甘甜止渴，搭配較清爽的烏龍 金萱，茶湯清澈碧綠，口感清爽恬淡，十分解暑，暢快。",
+              "size": "xs",
+              "color": "#575757",
+              "wrap": true
+            }
+          ]
+        }
+      },
+      {
+        "type": "bubble",
+        "direction": "ltr",
+        "hero": {
+          "type": "image",
+          "url": "https://imgur.com/qmQzcWS.jpg",
+          "size": "full",
+          "aspectRatio": "1.51:1",
+          "aspectMode": "cover"
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "spacing": "md",
+          "contents": [
+            {
+              "type": "text",
+              "text": "新北石碇桂花",
+              "size": "lg",
+              "align": "center",
+              "weight": "bold",
+              "color": "#C36A7C"
+            },
+            {
+              "type": "text",
+              "text": "十字身形橙黃桂花，一嗅似果香二嗅似紅茶香，佐東方美人茶工藝技法使蜜黃茶湯添上一抹赭紅，入喉口鼻流香，隨口飲下，隨口優雅。",
+              "size": "xs",
+              "color": "#575757",
               "wrap": true
             }
           ]

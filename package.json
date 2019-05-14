@@ -4,6 +4,7 @@
   "description": "littleFlower",
   "main": "app.js",
   "dependencies": {
+    "@line/bot-sdk": "^6.7.0",
     "express": "^4.16.4",
     "google-auth-library": "^3.1.2",
     "googleapis": "^39.2.0",

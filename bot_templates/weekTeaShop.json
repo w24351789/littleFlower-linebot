@@ -1,684 +1,666 @@
 {
-    "type": "flex",
-    "altText": "Flex Message",
-    "contents": {
-      "type": "carousel",
-      "contents": [
-        {
-          "type": "bubble",
-          "direction": "ltr",
-          "hero": {
-            "type": "image",
-            "url": "https://developers.line.biz/assets/images/services/bot-designer-icon.png",
-            "size": "full",
-            "aspectRatio": "1.51:1",
-            "aspectMode": "fit",
-            "backgroundColor": "#F8F4F4"
-          },
-          "body": {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "text",
-                "text": "【小花集】周而復始系列花茶",
-                "size": "md",
-                "align": "center",
-                "gravity": "top",
-                "weight": "bold",
-                "color": "#AF4B69",
-                "wrap": true
-              },
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "spacer"
-                  },
-                  {
-                    "type": "text",
-                    "text": "NTD 300",
-                    "align": "center",
-                    "color": "#AF4B69"
-                  },
-                  {
-                    "type": "text",
-                    "text": "內含：       ",
-                    "margin": "md",
-                    "color": "#CB7C8B",
-                    "wrap": true
-                  },
-                  {
-                    "type": "text",
-                    "text": "去憂解膩茶－杭菊金萱",
-                    "margin": "md",
-                    "color": "#CB7C8B"
-                  },
-                  {
-                    "type": "text",
-                    "text": "勇於挑戰茶－紫錐菊花",
-                    "color": "#CB7C8B"
-                  },
-                  {
-                    "type": "text",
-                    "text": "光合作用茶－小油菊生茶",
-                    "color": "#CB7C8B"
-                  },
-                  {
-                    "type": "text",
-                    "text": "養生持久茶－桂花美人",
-                    "color": "#CB7C8B"
-                  },
-                  {
-                    "type": "text",
-                    "text": "激情四射茶－玫瑰紅茶",
-                    "color": "#CB7C8B"
-                  },
-                  {
-                    "type": "text",
-                    "text": "東區下午茶－桂花烏龍",
-                    "color": "#CB7C8B"
-                  },
-                  {
-                    "type": "text",
-                    "text": "憂喜參半茶－柚花茶 ",
-                    "color": "#CB7C8B"
-                  },
-                  {
-                    "type": "text",
-                    "text": "七種花茶，各一包",
-                    "color": "#CB7C8B"
-                  }
-                ]
-              }
-            ]
-          },
-          "footer": {
-            "type": "box",
-            "layout": "horizontal",
-            "contents": [
-              {
-                "type": "button",
-                "action": {
-                  "type": "uri",
-                  "label": "立即購買",
-                  "uri": "line://app/1566408570-xLJ5jdzk"
-                },
-                "color": "#AF4B69",
-                "height": "sm",
-                "style": "primary"
-              }
-            ]
-          }
+  "type": "flex",
+  "altText": "Flex Message",
+  "contents": {
+    "type": "carousel",
+    "contents": [
+      {
+        "type": "bubble",
+        "direction": "ltr",
+        "hero": {
+          "type": "image",
+          "url": "https://imgur.com/0PhEX3C.jpg",
+          "size": "full",
+          "aspectRatio": "1.51:1",
+          "aspectMode": "cover"
         },
-        {
-          "type": "bubble",
-          "direction": "ltr",
-          "hero": {
-            "type": "image",
-            "url": "https://developers.line.biz/assets/images/services/bot-designer-icon.png",
-            "size": "full",
-            "aspectRatio": "1.51:1",
-            "aspectMode": "fit"
-          },
-          "body": {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "text",
-                "text": "杭菊金萱 - MON.去憂解膩茶",
-                "size": "md",
-                "align": "center",
-                "weight": "bold",
-                "color": "#AF4B69"
-              },
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "spacer"
-                  },
-                  {
-                    "type": "text",
-                    "text": "NTD 200",
-                    "align": "center",
-                    "weight": "regular",
-                    "color": "#AF4B69"
-                  },
-                  {
-                    "type": "text",
-                    "text": "原料：",
-                    "margin": "md",
-                    "color": "#CB7C8B",
-                    "wrap": true
-                  },
-                  {
-                    "type": "text",
-                    "text": "苗栗銅鑼杭菊、宜蘭大同金萱茶 （內含茶包五入）  ",
-                    "color": "#CB7C8B",
-                    "wrap": true
-                  },
-                  {
-                    "type": "text",
-                    "text": "杭菊，秋末綻放的小毛球，氣息似薄荷也似野薑花，伴以金萱為人熟知的淡淡乳香，甘醇而芬芳，湯質甘潤順口，濃濃熟果蜜香漫延齒頰，清香滿溢。",
-                    "margin": "xl",
-                    "color": "#CB7C8B",
-                    "wrap": true
-                  }
-                ]
-              }
-            ]
-          },
-          "footer": {
-            "type": "box",
-            "layout": "horizontal",
-            "contents": [
-              {
-                "type": "button",
-                "action": {
-                  "type": "uri",
-                  "label": "立即購買",
-                  "uri": "https://linecorp.com"
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": "杭菊金萱 - MON.去憂解膩茶",
+              "size": "md",
+              "align": "center",
+              "weight": "bold",
+              "color": "#AF4B69"
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "spacer"
                 },
-                "color": "#AF4B69",
-                "height": "sm",
-                "style": "primary"
-              }
-            ]
-          }
-        },
-        {
-          "type": "bubble",
-          "direction": "ltr",
-          "hero": {
-            "type": "image",
-            "url": "https://developers.line.biz/assets/images/services/bot-designer-icon.png",
-            "size": "full",
-            "aspectRatio": "1.51:1",
-            "aspectMode": "fit"
-          },
-          "body": {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "text",
-                "text": "紫錐菊花 - TUE.勇於挑戰茶",
-                "size": "md",
-                "align": "center",
-                "weight": "bold",
-                "color": "#AF4B69"
-              },
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "spacer"
-                  },
-                  {
-                    "type": "text",
-                    "text": "NTD 200",
-                    "align": "center",
-                    "weight": "regular",
-                    "color": "#AF4B69"
-                  },
-                  {
-                    "type": "text",
-                    "text": "原料：",
-                    "margin": "md",
-                    "color": "#CB7C8B"
-                  },
-                  {
-                    "type": "text",
-                    "text": "花蓮吉安紫錐花、花蓮吉安菊花（內含茶包五入）",
-                    "color": "#CB7C8B",
-                    "wrap": true
-                  },
-                  {
-                    "type": "text",
-                    "text": "花蓮吉安，中央山脈下，兄弟同心，一起栽種珍品紫錐菊，不用農藥與化肥，只用對故鄉土地的真誠；三合院稻埕日曬烘乾，總要和夏日午後的雷雨躲貓貓，用日光，保留紫錐菊的色澤與風味。",
-                    "margin": "xl",
-                    "color": "#CB7C8B",
-                    "wrap": true
-                  }
-                ]
-              }
-            ]
-          },
-          "footer": {
-            "type": "box",
-            "layout": "horizontal",
-            "contents": [
-              {
-                "type": "button",
-                "action": {
-                  "type": "uri",
-                  "label": "立即購買",
-                  "uri": "https://linecorp.com"
+                {
+                  "type": "text",
+                  "text": "NTD 200",
+                  "align": "center",
+                  "weight": "regular",
+                  "color": "#AF4B69"
                 },
-                "color": "#AF4B69",
-                "height": "sm",
-                "style": "primary"
-              }
-            ]
-          }
-        },
-        {
-          "type": "bubble",
-          "direction": "ltr",
-          "hero": {
-            "type": "image",
-            "url": "https://developers.line.biz/assets/images/services/bot-designer-icon.png",
-            "size": "full",
-            "aspectRatio": "1.51:1",
-            "aspectMode": "fit"
-          },
-          "body": {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "text",
-                "text": "小油菊生茶 - WED.光合作用茶",
-                "size": "md",
-                "align": "center",
-                "weight": "bold",
-                "color": "#AF4B69"
-              },
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "spacer"
-                  },
-                  {
-                    "type": "text",
-                    "text": "NTD 200",
-                    "align": "center",
-                    "color": "#AF4B69"
-                  },
-                  {
-                    "type": "text",
-                    "text": "原料：",
-                    "margin": "md",
-                    "color": "#CB7C8B"
-                  },
-                  {
-                    "type": "text",
-                    "text": "花蓮吉安油菊、南投民間烏龍生茶（內含茶包五入）",
-                    "color": "#CB7C8B",
-                    "wrap": true
-                  },
-                  {
-                    "type": "text",
-                    "text": "小油菊，學名 Guizotia abyssinica，香氣濃郁優雅，一大壺熱水只需要少少幾朵香氣就非常濃郁，自然栽種不使用任何農藥，有機驗證，加工過程完全不添加任何添加物。",
-                    "margin": "xl",
-                    "color": "#CB7C8B",
-                    "wrap": true
-                  }
-                ]
-              }
-            ]
-          },
-          "footer": {
-            "type": "box",
-            "layout": "horizontal",
-            "contents": [
-              {
-                "type": "button",
-                "action": {
-                  "type": "uri",
-                  "label": "立即購買",
-                  "uri": "https://linecorp.com"
+                {
+                  "type": "text",
+                  "text": "原料：苗栗銅鑼杭菊、宜蘭大同金萱茶 ",
+                  "margin": "md",
+                  "size": "xs",
+                  "color": "#575757",
+                  "wrap": true
                 },
-                "color": "#AF4B69",
-                "height": "sm",
-                "style": "primary"
-              }
-            ]
-          }
-        },
-        {
-          "type": "bubble",
-          "direction": "ltr",
-          "hero": {
-            "type": "image",
-            "url": "https://developers.line.biz/assets/images/services/bot-designer-icon.png",
-            "size": "full",
-            "aspectRatio": "1.51:1",
-            "aspectMode": "fit"
-          },
-          "body": {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "text",
-                "text": "桂花美人 - THU.養生持久茶",
-                "size": "md",
-                "align": "center",
-                "weight": "bold",
-                "color": "#AF4B69"
-              },
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "spacer"
-                  },
-                  {
-                    "type": "text",
-                    "text": "NTD 200",
-                    "align": "center",
-                    "color": "#AF4B69"
-                  },
-                  {
-                    "type": "text",
-                    "text": "原料：",
-                    "margin": "md",
-                    "color": "#CB7C8B"
-                  },
-                  {
-                    "type": "text",
-                    "text": "台北石碇桂花、台北木柵白毫烏龍（內含茶包五入）",
-                    "color": "#CB7C8B",
-                    "wrap": true
-                  },
-                  {
-                    "type": "text",
-                    "text": "十字身形橙黃桂花，一嗅似果香二嗅似紅茶香，佐東方美人茶工藝技法使蜜黃茶湯添上一抹赭紅，入喉口鼻流香，隨口飲下，隨口優雅。",
-                    "margin": "xl",
-                    "color": "#CB7C8B",
-                    "wrap": true
-                  }
-                ]
-              }
-            ]
-          },
-          "footer": {
-            "type": "box",
-            "layout": "horizontal",
-            "contents": [
-              {
-                "type": "button",
-                "action": {
-                  "type": "uri",
-                  "label": "立即購買",
-                  "uri": "https://linecorp.com"
+                {
+                  "type": "text",
+                  "text": "（內含茶包五入）  ",
+                  "size": "xs",
+                  "color": "#575757",
+                  "wrap": true
                 },
-                "color": "#AF4B69",
-                "height": "sm",
-                "style": "primary"
-              }
-            ]
-          }
+                {
+                  "type": "text",
+                  "text": "杭菊，秋末綻放的小毛球，氣息似薄荷也似野薑花，伴以金萱為人熟知的淡淡乳香，甘醇而芬芳，湯質甘潤順口，濃濃熟果蜜香漫延齒頰，清香滿溢。",
+                  "margin": "xl",
+                  "size": "xs",
+                  "color": "#575757",
+                  "wrap": true
+                }
+              ]
+            }
+          ]
         },
-        {
-          "type": "bubble",
-          "direction": "ltr",
-          "hero": {
-            "type": "image",
-            "url": "https://developers.line.biz/assets/images/services/bot-designer-icon.png",
-            "size": "full",
-            "aspectRatio": "1.51:1",
-            "aspectMode": "fit"
-          },
-          "body": {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "text",
-                "text": "玫瑰紅茶 - FRI.激情四射茶",
-                "size": "md",
-                "align": "center",
-                "weight": "bold",
-                "color": "#AF4B69"
+        "footer": {
+          "type": "box",
+          "layout": "horizontal",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "立即購買",
+                "uri": "line://app/1566408570-EraVRQx7"
               },
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "spacer"
-                  },
-                  {
-                    "type": "text",
-                    "text": "NTD 200",
-                    "align": "center",
-                    "color": "#AF4B69"
-                  },
-                  {
-                    "type": "text",
-                    "text": "原料：",
-                    "margin": "md",
-                    "color": "#CB7C8B"
-                  },
-                  {
-                    "type": "text",
-                    "text": "南投埔里玫瑰、南投日月潭紅茶（內含茶包五入）",
-                    "color": "#CB7C8B",
-                    "wrap": true
-                  },
-                  {
-                    "type": "text",
-                    "text": "湊近鼻尖才嗅見的清淡玫瑰花香，淡雅香甜，輔以日月潭紅玉，茶湯豐潤透紅，帶有熟果清香，入喉回甘悠久，舒爽宜人。",
-                    "margin": "xl",
-                    "color": "#CB7C8B",
-                    "wrap": true
-                  }
-                ]
-              }
-            ]
-          },
-          "footer": {
-            "type": "box",
-            "layout": "horizontal",
-            "contents": [
-              {
-                "type": "button",
-                "action": {
-                  "type": "uri",
-                  "label": "立即購買",
-                  "uri": "https://linecorp.com"
-                },
-                "color": "#AF4B69",
-                "height": "sm",
-                "style": "primary"
-              }
-            ]
-          }
+              "color": "#AF4B69",
+              "height": "sm",
+              "style": "primary"
+            }
+          ]
+        }
+      },
+      {
+        "type": "bubble",
+        "direction": "ltr",
+        "hero": {
+          "type": "image",
+          "url": "https://imgur.com/K4XzFFn.jpg",
+          "size": "full",
+          "aspectRatio": "1.51:1",
+          "aspectMode": "cover"
         },
-        {
-          "type": "bubble",
-          "direction": "ltr",
-          "hero": {
-            "type": "image",
-            "url": "https://developers.line.biz/assets/images/services/bot-designer-icon.png",
-            "size": "full",
-            "aspectRatio": "1.51:1",
-            "aspectMode": "fit"
-          },
-          "body": {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "text",
-                "text": "桂花烏龍 - SAT.東區下午茶",
-                "size": "md",
-                "align": "center",
-                "weight": "bold",
-                "color": "#AF4B69"
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": "紫錐菊花 - TUE.勇於挑戰茶",
+              "size": "md",
+              "align": "center",
+              "weight": "bold",
+              "color": "#AF4B69"
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "spacer"
+                },
+                {
+                  "type": "text",
+                  "text": "NTD 200",
+                  "align": "center",
+                  "weight": "regular",
+                  "color": "#AF4B69"
+                },
+                {
+                  "type": "text",
+                  "text": "原料：花蓮吉安紫錐花、花蓮吉安菊花",
+                  "margin": "md",
+                  "size": "xs",
+                  "color": "#575757"
+                },
+                {
+                  "type": "text",
+                  "text": "（內含茶包五入）",
+                  "size": "xs",
+                  "color": "#575757",
+                  "wrap": true
+                },
+                {
+                  "type": "text",
+                  "text": "花蓮吉安，中央山脈下，兄弟同心，一起栽種珍品紫錐菊，不用農藥與化肥，只用對故鄉土地的真誠；三合院稻埕日曬烘乾，用日光，保留紫錐菊的色澤與風味。",
+                  "margin": "xl",
+                  "size": "xs",
+                  "color": "#575757",
+                  "wrap": true
+                }
+              ]
+            }
+          ]
+        },
+        "footer": {
+          "type": "box",
+          "layout": "horizontal",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "立即購買",
+                "uri": "line://app/1566408570-yAd8vKNj"
               },
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "spacer"
-                  },
-                  {
-                    "type": "text",
-                    "text": "NTD 200",
-                    "align": "center",
-                    "color": "#AF4B69"
-                  },
-                  {
-                    "type": "text",
-                    "text": "原料：",
-                    "margin": "md",
-                    "color": "#CB7C8B"
-                  },
-                  {
-                    "type": "text",
-                    "text": "台北石碇桂花、嘉義阿里山生茶（內含茶包五入）",
-                    "color": "#CB7C8B",
-                    "wrap": true
-                  },
-                  {
-                    "type": "text",
-                    "text": "細碎金黃桂花，獨特花蜜香味，甘甜止渴，搭配較清爽的烏龍生茶，茶湯清澈碧綠，口感清爽恬淡，十分解暑，暢快。",
-                    "margin": "xl",
-                    "color": "#CB7C8B",
-                    "wrap": true
-                  }
-                ]
-              }
-            ]
-          },
-          "footer": {
-            "type": "box",
-            "layout": "horizontal",
-            "contents": [
-              {
-                "type": "button",
-                "action": {
-                  "type": "uri",
-                  "label": "立即購買",
-                  "uri": "https://linecorp.com"
-                },
-                "color": "#AF4B69",
-                "height": "sm",
-                "style": "primary"
-              }
-            ]
-          }
+              "color": "#AF4B69",
+              "height": "sm",
+              "style": "primary"
+            }
+          ]
+        }
+      },
+      {
+        "type": "bubble",
+        "direction": "ltr",
+        "hero": {
+          "type": "image",
+          "url": "https://imgur.com/dMBx3sd.jpg",
+          "size": "full",
+          "aspectRatio": "1.51:1",
+          "aspectMode": "cover"
         },
-        {
-          "type": "bubble",
-          "direction": "ltr",
-          "hero": {
-            "type": "image",
-            "url": "https://developers.line.biz/assets/images/services/bot-designer-icon.png",
-            "size": "full",
-            "aspectRatio": "1.51:1",
-            "aspectMode": "fit"
-          },
-          "body": {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "text",
-                "text": "柚花茶 - SUN.憂喜參半茶",
-                "size": "md",
-                "align": "center",
-                "weight": "bold",
-                "color": "#AF4B69"
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": "小油菊生茶 - WED.光合作用茶",
+              "size": "md",
+              "align": "center",
+              "weight": "bold",
+              "color": "#AF4B69"
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "spacer"
+                },
+                {
+                  "type": "text",
+                  "text": "NTD 200",
+                  "align": "center",
+                  "color": "#AF4B69"
+                },
+                {
+                  "type": "text",
+                  "text": "原料：花蓮吉安油菊、南投民間烏龍生茶",
+                  "margin": "md",
+                  "size": "xs",
+                  "color": "#575757"
+                },
+                {
+                  "type": "text",
+                  "text": "（內含茶包五入）",
+                  "size": "xs",
+                  "color": "#575757",
+                  "wrap": true
+                },
+                {
+                  "type": "text",
+                  "text": "小油菊，學名 Guizotia abyssinica，香氣濃郁優雅，一大壺熱水只需要少少幾朵香氣就非常濃郁，自然栽種不使用任何農藥，有機驗證，加工過程完全不添加任何添加物。",
+                  "margin": "xl",
+                  "size": "xs",
+                  "color": "#575757",
+                  "wrap": true
+                }
+              ]
+            }
+          ]
+        },
+        "footer": {
+          "type": "box",
+          "layout": "horizontal",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "立即購買",
+                "uri": "line://app/1566408570-1zyAPY43"
               },
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "spacer"
-                  },
-                  {
-                    "type": "text",
-                    "text": "NTD 200",
-                    "align": "center",
-                    "color": "#AF4B69"
-                  },
-                  {
-                    "type": "text",
-                    "text": "原料：",
-                    "margin": "md",
-                    "color": "#CB7C8B"
-                  },
-                  {
-                    "type": "text",
-                    "text": "花蓮玉里柚花、花蓮瑞穗天鶴茶",
-                    "color": "#CB7C8B"
-                  },
-                  {
-                    "type": "text",
-                    "text": "（內含茶包五入）",
-                    "color": "#CB7C8B"
-                  },
-                  {
-                    "type": "text",
-                    "text": "當柚花遇到瑞穗有名的天鶴茶，就成了香氣迷人的上品柚花茶，採擷一年才綻開一次的新鮮柚花與茶葉共同烘培而成，數量稀少珍貴，淡淡的柚花香及回甘的茶葉香蘊釀於口腔中柔和，創造出不同的神奇感受。",
-                    "margin": "xl",
-                    "color": "#CB7C8B",
-                    "wrap": true
-                  }
-                ]
-              }
-            ]
-          },
-          "footer": {
-            "type": "box",
-            "layout": "horizontal",
-            "contents": [
-              {
-                "type": "button",
-                "action": {
-                  "type": "uri",
-                  "label": "立即購買",
-                  "uri": "https://linecorp.com"
-                },
-                "color": "#AF4B69",
-                "height": "sm",
-                "style": "primary"
-              }
-            ]
-          }
+              "color": "#AF4B69",
+              "height": "sm",
+              "style": "primary"
+            }
+          ]
+        }
+      },
+      {
+        "type": "bubble",
+        "direction": "ltr",
+        "hero": {
+          "type": "image",
+          "url": "https://imgur.com/NBplSfp.jpg",
+          "size": "full",
+          "aspectRatio": "1.51:1",
+          "aspectMode": "cover"
         },
-        {
-          "type": "bubble",
-          "hero": {
-            "type": "image",
-            "url": "https://i.imgur.com/F1q7iUt.jpg",
-            "size": "full",
-            "aspectRatio": "20:13",
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": "桂花美人 - THU.養生持久茶",
+              "size": "md",
+              "align": "center",
+              "weight": "bold",
+              "color": "#AF4B69"
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "spacer"
+                },
+                {
+                  "type": "text",
+                  "text": "NTD 200",
+                  "align": "center",
+                  "color": "#AF4B69"
+                },
+                {
+                  "type": "text",
+                  "text": "原料：台北石碇桂花、台北木柵白毫烏龍",
+                  "margin": "md",
+                  "size": "xs",
+                  "color": "#575757"
+                },
+                {
+                  "type": "text",
+                  "text": "（內含茶包五入）",
+                  "size": "xs",
+                  "color": "#575757",
+                  "wrap": true
+                },
+                {
+                  "type": "text",
+                  "text": "十字身形橙黃桂花，一嗅似果香二嗅似紅茶香，佐東方美人茶工藝技法使蜜黃茶湯添上一抹赭紅，入喉口鼻流香，隨口飲下，隨口優雅。",
+                  "margin": "xl",
+                  "size": "xs",
+                  "color": "#575757",
+                  "wrap": true
+                }
+              ]
+            }
+          ]
+        },
+        "footer": {
+          "type": "box",
+          "layout": "horizontal",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "立即購買",
+                "uri": "line://app/1566408570-xoy9XwPv"
+              },
+              "color": "#AF4B69",
+              "height": "sm",
+              "style": "primary"
+            }
+          ]
+        }
+      },
+      {
+        "type": "bubble",
+        "direction": "ltr",
+        "hero": {
+          "type": "image",
+          "url": "https://imgur.com/RlPZKhz.jpg",
+          "size": "full",
+          "aspectRatio": "1.51:1",
+          "aspectMode": "cover"
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": "玫瑰紅茶 - FRI.激情四射茶",
+              "size": "md",
+              "align": "center",
+              "weight": "bold",
+              "color": "#AF4B69"
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "spacer"
+                },
+                {
+                  "type": "text",
+                  "text": "NTD 200",
+                  "align": "center",
+                  "color": "#AF4B69"
+                },
+                {
+                  "type": "text",
+                  "text": "原料：南投埔里玫瑰、南投日月潭紅茶",
+                  "margin": "md",
+                  "size": "xs",
+                  "color": "#575757"
+                },
+                {
+                  "type": "text",
+                  "text": "（內含茶包五入）",
+                  "size": "xs",
+                  "color": "#575757",
+                  "wrap": true
+                },
+                {
+                  "type": "text",
+                  "text": "湊近鼻尖才嗅見的清淡玫瑰花香，淡雅香甜，輔以日月潭紅玉，茶湯豐潤透紅，帶有熟果清香，入喉回甘悠久，舒爽宜人。",
+                  "margin": "xl",
+                  "size": "xs",
+                  "color": "#575757",
+                  "wrap": true
+                }
+              ]
+            }
+          ]
+        },
+        "footer": {
+          "type": "box",
+          "layout": "horizontal",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "立即購買",
+                "uri": "line://app/1566408570-Vp91J8xN"
+              },
+              "color": "#AF4B69",
+              "height": "sm",
+              "style": "primary"
+            }
+          ]
+        }
+      },
+      {
+        "type": "bubble",
+        "direction": "ltr",
+        "hero": {
+          "type": "image",
+          "url": "https://imgur.com/eVf3NIk.jpg",
+          "size": "full",
+          "aspectRatio": "1.51:1",
+          "aspectMode": "cover"
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": "桂花烏龍 - SAT.東區下午茶",
+              "size": "md",
+              "align": "center",
+              "weight": "bold",
+              "color": "#AF4B69"
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "spacer"
+                },
+                {
+                  "type": "text",
+                  "text": "NTD 200",
+                  "align": "center",
+                  "color": "#AF4B69"
+                },
+                {
+                  "type": "text",
+                  "text": "原料：台北石碇桂花、嘉義阿里山生茶",
+                  "margin": "md",
+                  "size": "xs",
+                  "color": "#575757"
+                },
+                {
+                  "type": "text",
+                  "text": "（內含茶包五入）",
+                  "size": "xs",
+                  "color": "#575757",
+                  "wrap": true
+                },
+                {
+                  "type": "text",
+                  "text": "細碎金黃桂花，獨特花蜜香味，甘甜止渴，搭配較清爽的烏龍生茶，茶湯清澈碧綠，口感清爽恬淡，十分解暑，暢快。",
+                  "margin": "xl",
+                  "size": "xs",
+                  "color": "#575757",
+                  "wrap": true
+                }
+              ]
+            }
+          ]
+        },
+        "footer": {
+          "type": "box",
+          "layout": "horizontal",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "立即購買",
+                "uri": "line://app/1566408570-xKrG2y0v"
+              },
+              "color": "#AF4B69",
+              "height": "sm",
+              "style": "primary"
+            }
+          ]
+        }
+      },
+      {
+        "type": "bubble",
+        "direction": "ltr",
+        "hero": {
+          "type": "image",
+          "url": "https://imgur.com/ZWRjfAj.jpg",
+          "size": "full",
+          "aspectRatio": "1.51:1",
+          "aspectMode": "cover"
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": "柚花茶 - SUN.憂喜參半茶",
+              "size": "md",
+              "align": "center",
+              "weight": "bold",
+              "color": "#AF4B69"
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "spacer"
+                },
+                {
+                  "type": "text",
+                  "text": "NTD 200",
+                  "align": "center",
+                  "color": "#AF4B69"
+                },
+                {
+                  "type": "text",
+                  "text": "原料：花蓮玉里柚花、花蓮瑞穗天鶴茶",
+                  "margin": "md",
+                  "size": "xs",
+                  "color": "#575757"
+                },
+                {
+                  "type": "text",
+                  "text": "（內含茶包五入）",
+                  "size": "xs",
+                  "color": "#575757"
+                },
+                {
+                  "type": "text",
+                  "text": "當柚花遇到瑞穗有名的天鶴茶，成了香氣迷人的上品柚花茶，採擷一年才綻開一次的新鮮柚花與茶葉共同烘培而成，淡淡柚花香及回甘茶葉香蘊釀於口腔中，創造出不同的神奇感受。",
+                  "margin": "xl",
+                  "size": "xs",
+                  "color": "#575757",
+                  "wrap": true
+                }
+              ]
+            }
+          ]
+        },
+        "footer": {
+          "type": "box",
+          "layout": "horizontal",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "立即購買",
+                "uri": "line://app/1566408570-D2vKgWjl"
+              },
+              "color": "#AF4B69",
+              "height": "sm",
+              "style": "primary"
+            }
+          ]
+        }
+      },
+      {
+        "type": "bubble",
+        "direction": "ltr",
+        "hero": {
+          "type": "image",
+          "url": "https://imgur.com/uhLFe2B.jpg",
+          "size": "full",
+          "aspectRatio": "1.51:1",
+          "aspectMode": "cover",
+          "backgroundColor": "#F8F4F4"
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": "【小花集】周而復始系列花茶",
+              "size": "md",
+              "align": "center",
+              "gravity": "top",
+              "weight": "bold",
+              "color": "#AF4B69",
+              "wrap": true
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "spacer"
+                },
+                {
+                  "type": "text",
+                  "text": "NTD 300",
+                  "size": "md",
+                  "align": "center",
+                  "color": "#AF4B69"
+                },
+                {
+                  "type": "text",
+                  "text": "【共7種花茶飲，一週輕保養】",
+                  "margin": "sm",
+                  "size": "xs",
+                  "align": "center",
+                  "color": "#575757"
+                },
+                {
+                  "type": "text",
+                  "text": "MON.去憂解膩茶、TUE.勇於挑戰茶、",
+                  "margin": "xs",
+                  "size": "xs",
+                  "color": "#575757"
+                },
+                {
+                  "type": "text",
+                  "text": "WED.光合作用茶、THU.養生持久茶、",
+                  "size": "xs",
+                  "color": "#575757"
+                },
+                {
+                  "type": "text",
+                  "text": "FRI.激情四射茶、SAT.東區下午茶、",
+                  "size": "xs",
+                  "color": "#575757"
+                },
+                {
+                  "type": "text",
+                  "text": "SUN.憂喜參半茶",
+                  "size": "xs",
+                  "color": "#575757"
+                }
+              ]
+            }
+          ]
+        },
+        "footer": {
+          "type": "box",
+          "layout": "horizontal",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "立即購買",
+                "uri": "line://app/1566408570-xLJ5jdzk"
+              },
+              "color": "#AF4B69",
+              "height": "sm",
+              "style": "primary"
+            }
+          ]
+        },
+        "styles": {
+          "body": {
             "backgroundColor": "#FFFFFF"
           },
-          "body": {
-            "type": "box",
-            "layout": "vertical",
-            "spacing": "sm",
-            "contents": [
-              {
-                "type": "button",
-                "action": {
-                  "type": "message",
-                  "label": "看更多",
-                  "text": "@購買商品@"
-                },
-                "color": "#A2A8A4",
-                "height": "sm",
-                "style": "primary"
-              }
-            ]
+          "footer": {
+            "backgroundColor": "#FFFFFF"
           }
         }
-      ]
-    }
+      }
+    ]
   }
+}

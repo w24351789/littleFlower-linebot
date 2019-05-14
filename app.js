@@ -1,13 +1,12 @@
 //以下的三列require裡的內容，請確認是否已經用npm裝進node.js
 const linebot = require('linebot');
+const line = require('@line/bot-sdk');
 const express = require('express');
 const { google } = require('googleapis');
 //用於製入金鑰beta
 const myClientSecret = require('./user_data/credentials.json');
 const sheetsAuth = require('./user_data/sheetsapi.json');
 const lineInfo = require('./user_data/linebot_info');
-//用於製入location
-let mapLocation = require('./js_modules/location');
 //引入line模板
 let giftCard = require('./bot_templates/giftCard.json');
 let questionChosen = require('./bot_templates/quickreply.json');
@@ -25,28 +24,34 @@ let chooseTea = require('./bot_templates/chooseTea.json');
 let teaFlavor = require('./bot_templates/teaFlavor.json');
 let confirmCustom = require('./bot_templates/confirmCustom.json');
 let customLink = require('./bot_templates/customLink.json');
+let chooseError = require('./bot_templates/chooseError.json');
+let moreWeekTea = require('./bot_templates/moreWeekTea.json');
+let moreTaiwanTea = require('./bot_templates/moreTaiwanTea.json');
+let moreBadMood = require('./bot_templates/moreBadMood.json');
 // 用於辨識Line Channel的資訊
 const bot = linebot(lineInfo);
-
+const client = new line.Client({
+   channelAccessToken: lineInfo.channelAccessToken
+ });
+ 
 const oauth2Client = new google.auth.OAuth2(myClientSecret.installed.client_id,myClientSecret.installed.client_secret, myClientSecret.installed.redirect_uris[0]);
 //底下輸入sheetsapi.json檔案的內容
 oauth2Client.credentials = sheetsAuth;
 //試算表的ID，引號不能刪掉
-//const mySheetId='1VLX79AlBmlkqIJgDK2BRDkxK3venpoL1jselGGIhmc4';
-const questionSheetId='13lzb_GiuEVYaJxJmE8nQyEwBw-zeijeV5HtELCHzmdk';
-var myQuestions=[];
-var users=[];
-var totalSteps = 0;
-var questionnaireKey = 0;
-var customteaKey = 0;
-var customteaStep = 4;
+const questionSheetId = '13lzb_GiuEVYaJxJmE8nQyEwBw-zeijeV5HtELCHzmdk';
+const customSheetId = '1-QfBSutaowKE7H-NQBQVs39wsQ9_4I3lnwDM9aMm1iI'
+let myQuestions=[];
+let users=[];
+let totalSteps = 0;
+let questionnaireKey = 0;
+let customteaKey = 0;
+let customteaStep = 4;
 //這是讀取問題的函式
 function getQuestions(){
   const sheets = google.sheets('v4');
   sheets.spreadsheets.values.get({
      auth: oauth2Client,
      spreadsheetId: questionSheetId,
-     //range:encodeURI('question1'),
      range: 'question1!A1:M2',
      majorDimension: 'ROWS'
   }, function(err, response) {
@@ -70,10 +75,10 @@ function getQuestions(){
 getQuestions();
 
 //這是將取得的資料儲存進試算表的函式
-function appendMyRow(userId) {
-   var request = {
+function appendMyRow(userId, sheetId) {
+   const request = {
       auth: oauth2Client,
-      spreadsheetId: questionSheetId,
+      spreadsheetId: sheetId,
       range:'reponse1',
       insertDataOption: 'INSERT_ROWS',
       valueInputOption: 'RAW',
@@ -83,7 +88,7 @@ function appendMyRow(userId) {
         ]
       }
    };
-   var sheets = google.sheets('v4');
+   const sheets = google.sheets('v4');
    sheets.spreadsheets.values.append(request, function(err, response) {
       if (err) {
          console.log('The API returned an error: ' + err);
@@ -91,40 +96,44 @@ function appendMyRow(userId) {
       }
    });
 }
-
+//判斷訊息是否符合條件
+function adjustMessage(adjustSuccess, customerChoose, customProduct) {
+   for (let i = 0; i < customProduct.length; i++){
+      if (customerChoose === customProduct[i].action.text){
+         adjustSuccess += 1;
+      }
+   }
+   console.log(adjustSuccess);
+   return adjustSuccess;
+}
 //LineBot收到user的文字訊息時的處理函式
 bot.on('message', function(event) {
+   const myId=event.source.userId;
+            client.getProfile(myId)
+               .then((profile) => {
+                  console.log(profile.displayName);
+                  console.log(profile.pictureUrl);
+                  userName = profile.displayName;
+               })
+               .catch((err) => {
+                  // error handling
+                  console.log(err);
+               });
    switch (event.message.type) {
       case 'text':
-         switch (event.message.text) {
-            case '@購買商品@':
-               event.reply(teaShop);
-            break;
-            case '購買周而復始系列花茶':
-               event.reply(weekTeaShop);
-            break;
-            case '進一步了解負能量系列花茶':
-               event.reply(badMoodTea);
-            break;
-            case '看更多負能量茶飲':
-               event.reply(badMoodTea2);
-            break;
-            case '進一步了解台灣特色花茶':
-               event.reply(twFlowerTea);
-            break;
-            case '@品牌理念@':
-               event.reply(brandMind);
-            break;
-            case '@聯絡我們@':
-               event.reply(contactUs);
-            break;
-            case '@原料介紹@':
-               event.reply(rawMaterial);
-            break;
 
-         }
-         if (event.message.text === '@意見回饋@' || questionnaireKey !== 0) {
-            var myId=event.source.userId;
+         if (event.message.text === '@意見回饋@' || questionnaireKey !== 0 && customteaKey === 0) {
+            const myId=event.source.userId;
+            client.getProfile(myId)
+               .then((profile) => {
+                  console.log(profile.displayName);
+                  console.log(profile.pictureUrl);
+                  userName = profile.displayName;
+               })
+               .catch((err) => {
+                  // error handling
+                  console.log(err);
+               });
             if (users[myId]==undefined){
                users[myId]=[];
                users[myId].userId=myId;
@@ -133,33 +142,37 @@ bot.on('message', function(event) {
             }
          
             var myStep=users[myId].step;
+            let questionAns;
             let questionAns1;
             let questionAns2;
             console.log(myStep);
             //第一次觸發問卷
             if (myStep === -1) {
-               sendMessage(event,myQuestions[0][0]);
+               //questionAns1 = userName + myQuestions[0][0];
+               //questionText.text = questionAns1;
+               questionAns = myQuestions[0][0];
+               questionChosen.text = questionAns;
+               event.reply(questionChosen);
+               users[myId].replies[myStep+2]=event.message.text;
             }
             else{
                //最後一題答完後
                if (myStep==(totalSteps-1)) {
-                  //sendMessage(event,myQuestions[1][myStep]);
+                  //users[myId].replies[myStep+1]=event.message.text;
+                  //users[myId].replies[myStep+2] = userName;//自動讀取使用者的名字
                   event.reply(giftCard);
                }
-               else if (myStep > -1 && myStep < 4){
-                  questionAns1 = myQuestions[1][myStep]+'\n'+myQuestions[0][myStep+1];
-                  questionText.text = questionAns1;
-                  event.reply(questionText);
-                  
-                  console.log(questionText);
-                  users[myId].replies[myStep+1]=event.message.text;
-               }
-               else {
-                  questionAns2 = myQuestions[1][myStep]+'\n'+myQuestions[0][myStep+1];
+               else if (myStep > -1 && myStep < 7){//A至H
+                  questionAns2 = myQuestions[1][myStep]+myQuestions[0][myStep+1];
                   questionChosen.text = questionAns2;
                   event.reply(questionChosen);
-                  
-                  users[myId].replies[myStep+1]=event.message.text;
+                  users[myId].replies[myStep+2]=event.message.text;
+               }
+               else {
+                  questionAns1 = myQuestions[1][myStep]+myQuestions[0][myStep+1];
+                  questionText.text = questionAns1;
+                  event.reply(questionText);
+                  users[myId].replies[myStep+2]=event.message.text;
                }
             }
             myStep += 1;
@@ -168,14 +181,13 @@ bot.on('message', function(event) {
             if (myStep>=totalSteps){
                myStep = -1;
                questionnaireKey = 0;
-               users[myId].step=myStep;
-               users[myId].replies[0]=new Date();
-               //console.log(users[myId])
-               appendMyRow(myId);
+               users[myId].step = myStep;
+               users[myId].replies[0] = new Date();
+               appendMyRow(myId, questionSheetId);
             }
          }
          if (event.message.text === '@客製化花茶@' || customteaKey !== 0) {
-            var myId=event.source.userId;
+            const myId=event.source.userId;
             if (users[myId]==undefined){
                users[myId]=[];
                users[myId].userId=myId;
@@ -187,29 +199,45 @@ bot.on('message', function(event) {
                myStep = 5;
                event.reply({
                   "type": "text",
-                  "text": "取消成功"
+                  "text": "取消成功，再看看有沒有其他喜歡的花茶吧~~"
                })
             }
+            
             if (myStep === -1) {
+               chooseFlower.text = "您好請選擇您想要的花"
                event.reply(chooseFlower);//選花chooseFlower
-               //users[myId].replies[myStep+1]=event.message.text;
             }
             else{
                switch (myStep){
                   case 0:
-                     event.reply(chooseTea);//選茶
-                     users[myId].replies[myStep+1]=event.message.text;//花結果
+                     flowerProduct = chooseFlower.quickReply.items;
+                     let adjustResult = adjustMessage(0, event.message.text, flowerProduct);
+                     console.log(adjustResult);
+                     if(adjustResult === 0) {
+                        myStep = -2;
+                        event.reply(chooseError);
+                     }else{
+                        event.reply(chooseTea);//選茶
+                        users[myId].replies[myStep+1]=event.message.text;//花結果
+                     }
                   break;
                   case 1:
-                     event.reply(teaFlavor);//選風味
-                     users[myId].replies[myStep+1]=event.message.text;//茶結果
+                     teaProduct = chooseTea.quickReply.items;
+                     let adjustResult1 = adjustMessage(0, event.message.text, teaProduct);
+                     console.log(adjustResult1);
+                     if(adjustResult1 === 0) {
+                        myStep = -2;
+                        event.reply(chooseError);
+                     }else{
+                        event.reply(teaFlavor);//選風味
+                        users[myId].replies[myStep+1]=event.message.text;//茶結果
+                     }
                   break;
                   case 2:
                      users[myId].replies[myStep+1]=event.message.text;//風味結果
                      const confirmText = users[myId].replies[1] + users[myId].replies[2] +users[myId].replies[3]; 
                      confirmCustom.contents.body.contents[1].text = confirmText;
                      event.reply(confirmCustom);//確認or重選
-                     users[myId].replies[myStep+1]=event.message.text;
                   break;
                   // case 3:
                   //    event.reply({
@@ -222,7 +250,6 @@ bot.on('message', function(event) {
                      const customItem = users[myId].replies[1] + users[myId].replies[2] +users[myId].replies[3];;
                      customLink.contents.body.contents[3].text = customItem;
                      event.reply(customLink);//購買連結
-                     //users[myId].replies[myStep+1]=event.message.text;
                   break;
                   
                }
@@ -235,34 +262,58 @@ bot.on('message', function(event) {
                myStep = -1;
                customteaKey = 0;
                users[myId].step=myStep;
-               //users[myId].replies[0]=new Date();
-               //console.log(users[myId])
-               //appendMyRow(myId);
+               users[myId].replies[0]=new Date();
+               appendMyRow(myId, customSheetId);
             }
          }
-         
+         if (customteaKey === 0) {
+            switch (event.message.text) {
+               case '@購買商品@':
+                  event.reply(teaShop);
+               break;
+               case '購買周而復始系列花茶':
+                  event.reply(weekTeaShop);
+               break;
+               case '查看完整負能量系列花茶':
+                  event.reply(badMoodTea);
+               break;
+               case '看更多負能量茶飲':
+                  event.reply(badMoodTea2);
+               break;
+               case '查看完整台灣特色花茶':
+                  event.reply(twFlowerTea);
+               break;
+               case '@品牌理念@':
+                  event.reply(brandMind);
+               break;
+               case '@聯絡我們@':
+                  event.reply(contactUs);
+               break;
+               case '@原料介紹@':
+                  event.reply(rawMaterial);
+               break;
+               case '進一步了解周而復始系列花茶':
+                  event.reply(moreWeekTea);
+               break;
+               case '進一步了解台灣特色花茶':
+                  event.reply(moreTaiwanTea);
+               break;
+               case '進一步了解負能量花茶':
+                  event.reply(moreBadMood);
+               break;
+   
+            }
+         }
       break;
       case 'sticker':
          event.reply({
          type: 'sticker',
          packageId: 1,
-         stickerId: 1
+         stickerId: 9
          });
       break;
    }
 });
-
-
-//這是發送訊息給user的函式
-function sendMessage(eve,msg){
-   eve.reply(msg).then(function(data) {
-      // success 
-      return true;
-   }).catch(function(error) {
-      // error 
-      return false;
-   });
-}
 
 
 const app = express();

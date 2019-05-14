@@ -1,0 +1,56 @@
+{
+    "type": "flex",
+    "altText": "Flex Message",
+    "contents": {
+      "type": "bubble",
+      "direction": "ltr",
+      "hero": {
+        "type": "image",
+        "url": "https://imgur.com/rrndeXe.jpg",
+        "size": "full",
+        "aspectRatio": "1.51:1",
+        "aspectMode": "cover"
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "相傳，古巴比倫人將年分成星期來計算，使得生活規律且更有效率，周而復始的沿用至今。人的一生從求學到退休約五十年歲月，2600多個星期，除了鮮有的假期之外，都堅守在自己的崗位。於是小花集推出周而復始系列花茶，致力於陪伴所有為生活付出的人們，一週七天，每天都有不同功效與花香的天然在地花茶，期許所有品飲此花茶的人，在規律不變的星期中，每天都活得獨一無二。",
+            "align": "start",
+            "wrap": true
+          }
+        ]
+      },
+      "footer": {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "立即購買",
+              "text": "購買周而復始系列花茶"
+            },
+            "color": "#AF4B69",
+            "margin": "sm",
+            "height": "sm",
+            "style": "primary"
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "返回",
+              "text": "@購買商品@"
+            },
+            "margin": "sm",
+            "height": "sm",
+            "style": "secondary"
+          }
+        ]
+      }
+    }
+  }

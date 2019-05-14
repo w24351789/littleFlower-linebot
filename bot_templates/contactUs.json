@@ -1,84 +1,69 @@
 {
-    "type": "flex",
-    "altText": "Flex Message",
-    "contents": {
-      "type": "bubble",
-      "direction": "ltr",
-      "header": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "text",
-            "text": "聯絡我們",
-            "flex": 0,
-            "size": "md",
-            "align": "start",
-            "weight": "bold"
-          }
-        ]
-      },
-      "hero": {
-        "type": "image",
-        "url": "https://i.imgur.com/gUGRGRF.jpg",
-        "size": "full",
-        "aspectRatio": "1.51:1",
-        "aspectMode": "fit"
-      },
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "text",
-            "text": "指導教授：林義斌",
-            "align": "start"
-          },
-          {
-            "type": "text",
-            "text": "畢製指導教授："
-          },
-          {
-            "type": "text",
-            "text": "林義斌、林展立、王維元、朱盈樺"
-          },
-          {
-            "type": "text",
-            "text": "組長：李晉丞"
-          },
-          {
-            "type": "text",
-            "text": "組員：戴瑋德、林世昕",
-            "align": "start"
-          },
-          {
-            "type": "text",
-            "text": "服務時間：",
-            "wrap": true
-          },
-          {
-            "type": "text",
-            "text": " 週一 ~ 週五  9:00 AM ~ 20:00 PM        "
-          },
-          {
-            "type": "text",
-            "text": "週六  9:00 AM ~ 17:00 PM  ",
-            "wrap": true
-          },
-          {
-            "type": "text",
-            "text": "Text",
-            "color": "#FFFEFE"
-          },
-          {
-            "type": "text",
-            "text": "小花集 Since 2018",
-            "align": "center",
-            "weight": "bold",
-            "color": "#AF4B69",
-            "wrap": true
-          }
-        ]
-      }
+  "type": "flex",
+  "altText": "Flex Message",
+  "contents": {
+    "type": "bubble",
+    "direction": "ltr",
+    "hero": {
+      "type": "image",
+      "url": "https://imgur.com/FLIZF4R.jpg",
+      "size": "full",
+      "aspectRatio": "1.51:1",
+      "aspectMode": "cover"
+    },
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "指導教授：",
+          "size": "sm",
+          "align": "start",
+          "color": "#575757"
+        },
+        {
+          "type": "text",
+          "text": "林義斌、林展立、王維元、朱盈樺",
+          "size": "sm",
+          "color": "#575757"
+        },
+        {
+          "type": "text",
+          "text": "團隊成員：",
+          "margin": "sm",
+          "size": "sm",
+          "align": "start",
+          "color": "#575757"
+        },
+        {
+          "type": "text",
+          "text": "李晉丞、戴瑋德、林世昕",
+          "size": "sm",
+          "color": "#575757",
+          "wrap": true
+        },
+        {
+          "type": "text",
+          "text": "國立臺北教育大學  文化創意產業經營學系 ",
+          "margin": "sm",
+          "size": "xs"
+        },
+        {
+          "type": "text",
+          "text": "第十屆畢業製作",
+          "size": "xs"
+        },
+        {
+          "type": "text",
+          "text": "小花集 Since 2018",
+          "margin": "md",
+          "align": "center",
+          "weight": "bold",
+          "color": "#AF4B69",
+          "wrap": true
+        }
+      ]
     }
   }
+}
