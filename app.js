@@ -25,6 +25,9 @@ let teaFlavor = require('./bot_templates/teaFlavor.json');
 let confirmCustom = require('./bot_templates/confirmCustom.json');
 let customLink = require('./bot_templates/customLink.json');
 let chooseError = require('./bot_templates/chooseError.json');
+let moreWeekTea = require('./bot_templates/moreWeekTea.json');
+let moreTaiwanTea = require('./bot_templates/moreTaiwanTea.json');
+let moreBadMood = require('./bot_templates/moreBadMood.json');
 // 用於辨識Line Channel的資訊
 const bot = linebot(lineInfo);
 const client = new line.Client({
@@ -271,13 +274,13 @@ bot.on('message', function(event) {
                case '購買周而復始系列花茶':
                   event.reply(weekTeaShop);
                break;
-               case '進一步了解負能量系列花茶':
+               case '查看完整負能量系列花茶':
                   event.reply(badMoodTea);
                break;
                case '看更多負能量茶飲':
                   event.reply(badMoodTea2);
                break;
-               case '進一步了解台灣特色花茶':
+               case '查看完整台灣特色花茶':
                   event.reply(twFlowerTea);
                break;
                case '@品牌理念@':
@@ -288,6 +291,15 @@ bot.on('message', function(event) {
                break;
                case '@原料介紹@':
                   event.reply(rawMaterial);
+               break;
+               case '進一步了解周而復始系列花茶':
+                  event.reply(moreWeekTea);
+               break;
+               case '進一步了解台灣特色花茶':
+                  event.reply(moreTaiwanTea);
+               break;
+               case '進一步了解負能量花茶':
+                  event.reply(moreBadMood);
                break;
    
             }
