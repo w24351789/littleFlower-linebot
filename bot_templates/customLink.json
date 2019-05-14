@@ -53,7 +53,7 @@
           "action": {
             "type": "uri",
             "label": "立即購買",
-            "uri": "https://linecorp.com"
+            "uri": "line://app/1566408570-2aXo1RJO"
           },
           "color": "#AF4B69",
           "style": "primary"

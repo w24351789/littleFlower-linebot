@@ -76,7 +76,7 @@
               "action": {
                 "type": "uri",
                 "label": "立即購買",
-                "uri": "https://linecorp.com"
+                "uri": "line://app/1566408570-EraVRQx7"
               },
               "color": "#AF4B69",
               "height": "sm",
@@ -137,7 +137,7 @@
                 },
                 {
                   "type": "text",
-                  "text": "花蓮吉安，中央山脈下，兄弟同心，一起栽種珍品紫錐菊，不用農藥與化肥，只用對故鄉土地的真誠；三合院稻埕日曬烘乾，總要和夏日午後的雷雨躲貓貓，用日光，保留紫錐菊的色澤與風味。",
+                  "text": "花蓮吉安，中央山脈下，兄弟同心，一起栽種珍品紫錐菊，不用農藥與化肥，只用對故鄉土地的真誠；三合院稻埕日曬烘乾，用日光，保留紫錐菊的色澤與風味。",
                   "margin": "xl",
                   "size": "xs",
                   "color": "#575757",
@@ -156,7 +156,7 @@
               "action": {
                 "type": "uri",
                 "label": "立即購買",
-                "uri": "https://linecorp.com"
+                "uri": "line://app/1566408570-yAd8vKNj"
               },
               "color": "#AF4B69",
               "height": "sm",
@@ -235,7 +235,7 @@
               "action": {
                 "type": "uri",
                 "label": "立即購買",
-                "uri": "https://linecorp.com"
+                "uri": "line://app/1566408570-1zyAPY43"
               },
               "color": "#AF4B69",
               "height": "sm",
@@ -314,7 +314,7 @@
               "action": {
                 "type": "uri",
                 "label": "立即購買",
-                "uri": "https://linecorp.com"
+                "uri": "line://app/1566408570-xoy9XwPv"
               },
               "color": "#AF4B69",
               "height": "sm",
@@ -393,7 +393,7 @@
               "action": {
                 "type": "uri",
                 "label": "立即購買",
-                "uri": "https://linecorp.com"
+                "uri": "line://app/1566408570-Vp91J8xN"
               },
               "color": "#AF4B69",
               "height": "sm",
@@ -472,7 +472,7 @@
               "action": {
                 "type": "uri",
                 "label": "立即購買",
-                "uri": "https://linecorp.com"
+                "uri": "line://app/1566408570-xKrG2y0v"
               },
               "color": "#AF4B69",
               "height": "sm",
@@ -550,7 +550,7 @@
               "action": {
                 "type": "uri",
                 "label": "立即購買",
-                "uri": "https://linecorp.com"
+                "uri": "line://app/1566408570-D2vKgWjl"
               },
               "color": "#AF4B69",
               "height": "sm",
@@ -600,7 +600,7 @@
                 },
                 {
                   "type": "text",
-                  "text": "【七種花茶，各一包】",
+                  "text": "【共7種花茶飲，一週輕保養】",
                   "margin": "sm",
                   "size": "xs",
                   "align": "center",
@@ -608,44 +608,26 @@
                 },
                 {
                   "type": "text",
-                  "text": "去憂解膩茶－杭菊金萱",
+                  "text": "MON.去憂解膩茶、TUE.勇於挑戰茶、",
                   "margin": "xs",
                   "size": "xs",
                   "color": "#575757"
                 },
                 {
                   "type": "text",
-                  "text": "勇於挑戰茶－紫錐菊花",
+                  "text": "WED.光合作用茶、THU.養生持久茶、",
                   "size": "xs",
                   "color": "#575757"
                 },
                 {
                   "type": "text",
-                  "text": "光合作用茶－小油菊生茶",
+                  "text": "FRI.激情四射茶、SAT.東區下午茶、",
                   "size": "xs",
                   "color": "#575757"
                 },
                 {
                   "type": "text",
-                  "text": "養生持久茶－桂花美人",
-                  "size": "xs",
-                  "color": "#575757"
-                },
-                {
-                  "type": "text",
-                  "text": "激情四射茶－玫瑰紅茶",
-                  "size": "xs",
-                  "color": "#575757"
-                },
-                {
-                  "type": "text",
-                  "text": "東區下午茶－桂花烏龍",
-                  "size": "xs",
-                  "color": "#575757"
-                },
-                {
-                  "type": "text",
-                  "text": "憂喜參半茶－柚花茶 ",
+                  "text": "SUN.憂喜參半茶",
                   "size": "xs",
                   "color": "#575757"
                 }
@@ -662,7 +644,7 @@
               "action": {
                 "type": "uri",
                 "label": "立即購買",
-                "uri": "https://linecorp.com"
+                "uri": "line://app/1566408570-xLJ5jdzk"
               },
               "color": "#AF4B69",
               "height": "sm",
