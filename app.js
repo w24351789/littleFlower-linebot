@@ -155,16 +155,16 @@ bot.on('message', function(event) {
                   users[myId].replies[myStep+2] = userName;//自動讀取使用者的名字
                   event.reply(giftCard);
                }
-               else if (myStep > -1 && myStep < 4){
-                  questionAns1 = myQuestions[1][myStep]+'\n'+myQuestions[0][myStep+1];
-                  questionText.text = questionAns1;
-                  event.reply(questionText);
+               else if (myStep > -1 && myStep < 7){//A至H
+                  questionAns2 = myQuestions[1][myStep]+myQuestions[0][myStep+1];
+                  questionChosen.text = questionAns2;
+                  event.reply(questionChosen);
                   users[myId].replies[myStep+1]=event.message.text;
                }
                else {
-                  questionAns2 = myQuestions[1][myStep]+'\n'+myQuestions[0][myStep+1];
-                  questionChosen.text = questionAns2;
-                  event.reply(questionChosen);
+                  questionAns1 = myQuestions[1][myStep]+'\n'+myQuestions[0][myStep+1];
+                  questionText.text = questionAns1;
+                  event.reply(questionText);
                   users[myId].replies[myStep+1]=event.message.text;
                }
             }
