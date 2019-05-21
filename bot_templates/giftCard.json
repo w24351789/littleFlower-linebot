@@ -1,50 +1,90 @@
 {
-  "type": "flex",
-  "altText": "Flex Message",
-  "contents": {
-    "type": "bubble",
-    "direction": "ltr",
-    "hero": {
-      "type": "image",
-      "url": "https://imgur.com/acXn8qz.jpg",
-      "size": "full",
-      "aspectRatio": "1.51:1",
-      "aspectMode": "cover"
-    },
-    "body": {
-      "type": "box",
-      "layout": "vertical",
-      "contents": [
-        {
-          "type": "text",
-          "text": "贈品兌換卷",
-          "size": "lg",
-          "align": "center",
-          "weight": "bold",
-          "color": "#0C0B0B"
-        },
-        {
-          "type": "text",
-          "text": "您的寶貴意見小花集都聽到了！！",
-          "wrap": true
-        },
-        {
-          "type": "text",
-          "text": "請憑此卷向展場的夥伴兌換精美小禮物。",
-          "wrap": true
-        },
-        {
-          "type": "text",
-          "text": "Text",
-          "color": "#FFFFFF"
-        },
-        {
-          "type": "text",
-          "text": "此畫面限本人開啟，截圖無效",
-          "size": "xs",
-          "color": "#808080"
+    "type": "flex",
+    "altText": "Flex Message",
+    "contents": {
+      "type": "bubble",
+      "hero": {
+        "type": "image",
+        "url": "https://imgur.com/zOqxrrq.jpg",
+        "size": "full",
+        "aspectRatio": "4:3",
+        "aspectMode": "cover",
+        "action": {
+          "type": "uri",
+          "label": "Action",
+          "uri": "https://linecorp.com/"
         }
-      ]
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "md",
+        "contents": [
+          {
+            "type": "text",
+            "text": "贈品兌換卷",
+            "size": "xl",
+            "align": "center",
+            "gravity": "center",
+            "weight": "bold",
+            "wrap": true
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "margin": "lg",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "baseline",
+                "spacing": "sm",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "您的寶貴意見小花集都聽到了！！",
+                    "size": "sm",
+                    "color": "#666666",
+                    "wrap": true
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "spacing": "sm",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "請憑此卷向展場的夥伴兌換精美小禮物。",
+                    "flex": 4,
+                    "size": "sm",
+                    "color": "#666666",
+                    "wrap": true
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "margin": "xxl",
+                "contents": [
+                  {
+                    "type": "spacer"
+                  },
+                  {
+                    "type": "text",
+                    "text": "此畫面限本人開啟，截圖無效",
+                    "margin": "xxl",
+                    "size": "xs",
+                    "color": "#AAAAAA",
+                    "wrap": true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     }
   }
-}
