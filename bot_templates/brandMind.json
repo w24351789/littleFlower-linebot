@@ -1,46 +1,63 @@
 {
-    "type": "flex",
-    "altText": "Flex Message",
-    "contents": {
-      "type": "bubble",
-      "direction": "ltr",
-      "hero": {
-        "type": "image",
-        "url": "https://i.imgur.com/F1q7iUt.jpg",
-        "size": "full",
-        "aspectRatio": "20:13",
-        "aspectMode": "fit"
-      },
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "text",
-            "text": "小花集品牌理念",
-            "size": "lg",
-            "align": "center",
-            "weight": "bold"
+  "type": "flex",
+  "altText": "Flex Message",
+  "contents": {
+    "type": "bubble",
+    "direction": "ltr",
+    "hero": {
+      "type": "image",
+      "url": "https://i.imgur.com/F1q7iUt.jpg",
+      "size": "full",
+      "aspectRatio": "20:13",
+      "aspectMode": "fit"
+    },
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "小花集品牌理念",
+          "size": "lg",
+          "align": "center",
+          "weight": "bold"
+        },
+        {
+          "type": "separator",
+          "margin": "lg",
+          "color": "#FFFFFF"
+        },
+        {
+          "type": "text",
+          "text": "推廣花卉茶飲，輔以創意文案與包",
+          "align": "start"
+        },
+        {
+          "type": "text",
+          "text": "裝設計，讓喝花茶不再只是喝花茶"
+        },
+        {
+          "type": "text",
+          "text": "而能跟生活有更多的連結。"
+        }
+      ]
+    },
+    "footer": {
+      "type": "box",
+      "layout": "horizontal",
+      "contents": [
+        {
+          "type": "button",
+          "action": {
+            "type": "uri",
+            "label": "進入小花集官網",
+            "uri": "https://haveyoursense3.wixsite.com/processing-beyond/copy-of-2-snacky"
           },
-          {
-            "type": "separator",
-            "margin": "lg",
-            "color": "#FFFFFF"
-          },
-          {
-            "type": "text",
-            "text": "推廣花卉茶飲，輔以創意文案與包",
-            "align": "start"
-          },
-          {
-            "type": "text",
-            "text": "裝設計，讓喝花茶不再只是喝花茶"
-          },
-          {
-            "type": "text",
-            "text": "而能跟生活有更多的連結。"
-          }
-        ]
-      }
+          "color": "#AF4B69",
+          "height": "sm",
+          "style": "primary"
+        }
+      ]
     }
   }
+}
