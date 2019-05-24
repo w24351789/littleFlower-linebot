@@ -122,7 +122,7 @@ bot.on('message', function(event) {
    switch (event.message.type) {
       case 'text':
 
-         if (event.message.text === '@意見回饋@' || questionnaireKey !== 0 && customteaKey === 0) {
+         if (event.message.text === '@意見回饋@' || questionnaireKey !== 0) {
             const myId=event.source.userId;
             
             if (users[myId]==undefined){
