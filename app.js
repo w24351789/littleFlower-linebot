@@ -124,16 +124,7 @@ bot.on('message', function(event) {
 
          if (event.message.text === '@意見回饋@' || questionnaireKey !== 0 && customteaKey === 0) {
             const myId=event.source.userId;
-            client.getProfile(myId)
-               .then((profile) => {
-                  console.log(profile.displayName);
-                  console.log(profile.pictureUrl);
-                  userName = profile.displayName;
-               })
-               .catch((err) => {
-                  // error handling
-                  console.log(err);
-               });
+            
             if (users[myId]==undefined){
                users[myId]=[];
                users[myId].userId=myId;
@@ -153,26 +144,36 @@ bot.on('message', function(event) {
                questionAns = myQuestions[0][0];
                questionChosen.text = questionAns;
                event.reply(questionChosen);
-               users[myId].replies[myStep+2]=event.message.text;
+               //users[myId].replies[myStep+2]=event.message.text;
             }
             else{
                //最後一題答完後
                if (myStep==(totalSteps-1)) {
-                  //users[myId].replies[myStep+1]=event.message.text;
-                  //users[myId].replies[myStep+2] = userName;//自動讀取使用者的名字
+                  client.getProfile(myId)
+                  .then((profile) => {
+                     console.log(profile.displayName);
+                     console.log(profile.pictureUrl);
+                     userName = profile.displayName;
+                  })
+                  .catch((err) => {
+                     // error handling
+                     console.log(err);
+                  });
+                  users[myId].replies[myStep+1]=event.message.text;
+                  users[myId].replies[myStep+2] = userName;//自動讀取使用者的名字
                   event.reply(giftCard);
                }
                else if (myStep > -1 && myStep < 7){//A至H
                   questionAns2 = myQuestions[1][myStep]+myQuestions[0][myStep+1];
                   questionChosen.text = questionAns2;
                   event.reply(questionChosen);
-                  users[myId].replies[myStep+2]=event.message.text;
+                  users[myId].replies[myStep+1]=event.message.text;
                }
                else {
                   questionAns1 = myQuestions[1][myStep]+myQuestions[0][myStep+1];
                   questionText.text = questionAns1;
                   event.reply(questionText);
-                  users[myId].replies[myStep+2]=event.message.text;
+                  users[myId].replies[myStep+1]=event.message.text;
                }
             }
             myStep += 1;
