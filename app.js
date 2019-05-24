@@ -267,7 +267,7 @@ bot.on('message', function(event) {
                appendMyRow(myId, customSheetId);
             }
          }
-         if (customteaKey === 0) {
+         
             switch (event.message.text) {
                case '@購買商品@':
                   event.reply(teaShop);
@@ -304,7 +304,7 @@ bot.on('message', function(event) {
                break;
    
             }
-         }
+      
       break;
       case 'sticker':
          event.reply({
