@@ -166,13 +166,13 @@ bot.on('message', function(event) {
                   questionAns2 = myQuestions[1][myStep]+myQuestions[0][myStep+1];
                   questionChosen.text = questionAns2;
                   event.reply(questionChosen);
-                  users[myId].replies[myStep+2]=event.message.text;
+                  users[myId].replies[myStep+1]=event.message.text;
                }
                else {
                   questionAns1 = myQuestions[1][myStep]+myQuestions[0][myStep+1];
                   questionText.text = questionAns1;
                   event.reply(questionText);
-                  users[myId].replies[myStep+2]=event.message.text;
+                  users[myId].replies[myStep+1]=event.message.text;
                }
             }
             myStep += 1;
