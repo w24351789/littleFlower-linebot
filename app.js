@@ -113,7 +113,7 @@ bot.on('message', function(event) {
    switch (event.message.type) {
       case 'text':
 
-         if (event.message.text != '@客製化花茶@' && event.message.text === '@意見回饋@' || questionnaireKey !== 0) {
+         if (customteaKey == 0 && event.message.text === '@意見回饋@' || questionnaireKey !== 0) {
             const myId=event.source.userId;
             client.getProfile(myId)
                .then((profile) => {
@@ -177,7 +177,7 @@ bot.on('message', function(event) {
                appendMyRow(myId, questionSheetId);
             }
          }
-         if (event.message.text != '@意見回饋@' && event.message.text === '@客製化花茶@' || customteaKey !== 0) {
+         if (questionnaireKey == 0 && event.message.text === '@客製化花茶@' || customteaKey !== 0) {
             const myId=event.source.userId;
             if (users[myId]==undefined){
                users[myId]=[];
@@ -205,7 +205,7 @@ bot.on('message', function(event) {
                      let adjustResult = adjustMessage(0, event.message.text, flowerProduct);
                      console.log(adjustResult);
                      if(adjustResult === 0) {
-                        myStep = -2;
+                        myStep = 10;
                         event.reply(chooseError);
                      }else{
                         event.reply(chooseTea);//選茶
@@ -217,7 +217,7 @@ bot.on('message', function(event) {
                      let adjustResult1 = adjustMessage(0, event.message.text, teaProduct);
                      console.log(adjustResult1);
                      if(adjustResult1 === 0) {
-                        myStep = -2;
+                        myStep = 10;
                         event.reply(chooseError);
                      }else{
                         event.reply(teaFlavor);//選風味
