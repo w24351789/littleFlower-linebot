@@ -113,7 +113,7 @@ bot.on('message', function(event) {
    switch (event.message.type) {
       case 'text':
 
-         if (event.message.text !== '@客製化花茶@' && event.message.text === '@意見回饋@' || questionnaireKey !== 0) {
+         if (event.message.text != '@客製化花茶@' && event.message.text === '@意見回饋@' || questionnaireKey !== 0) {
             const myId=event.source.userId;
             client.getProfile(myId)
                .then((profile) => {
@@ -177,7 +177,7 @@ bot.on('message', function(event) {
                appendMyRow(myId, questionSheetId);
             }
          }
-         if (event.message.text !== '@意見回饋@' && event.message.text === '@客製化花茶@' || customteaKey !== 0) {
+         if (event.message.text != '@意見回饋@' && event.message.text === '@客製化花茶@' || customteaKey !== 0) {
             const myId=event.source.userId;
             if (users[myId]==undefined){
                users[myId]=[];
