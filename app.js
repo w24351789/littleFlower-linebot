@@ -109,16 +109,7 @@ function adjustMessage(adjustSuccess, customerChoose, customProduct) {
 //LineBot收到user的文字訊息時的處理函式
 bot.on('message', function(event) {
    const myId=event.source.userId;
-            client.getProfile(myId)
-               .then((profile) => {
-                  console.log(profile.displayName);
-                  console.log(profile.pictureUrl);
-                  userName = profile.displayName;
-               })
-               .catch((err) => {
-                  // error handling
-                  console.log(err);
-               });
+                  
    switch (event.message.type) {
       case 'text':
 
@@ -266,43 +257,43 @@ bot.on('message', function(event) {
                appendMyRow(myId, customSheetId);
             }
          }
-         
-            switch (event.message.text) {
-               case '@購買商品@':
-                  event.reply(teaShop);
-               break;
-               case '購買周而復始系列花茶':
-                  event.reply(weekTeaShop);
-               break;
-               case '查看完整負能量系列花茶':
-                  event.reply(badMoodTea);
-               break;
-               case '看更多負能量茶飲':
-                  event.reply(badMoodTea2);
-               break;
-               case '查看完整台灣特色花茶':
-                  event.reply(twFlowerTea);
-               break;
-               case '@品牌理念@':
-                  event.reply(brandMind);
-               break;
-               case '@聯絡我們@':
-                  event.reply(contactUs);
-               break;
-               case '@原料介紹@':
-                  event.reply(rawMaterial);
-               break;
-               case '進一步了解周而復始系列花茶':
-                  event.reply(moreWeekTea);
-               break;
-               case '進一步了解台灣特色花茶':
-                  event.reply(moreTaiwanTea);
-               break;
-               case '進一步了解負能量花茶':
-                  event.reply(moreBadMood);
-               break;
-   
-            }
+         switch (event.message.text) {
+            case '@購買商品@':
+               event.reply(teaShop);
+            break;
+            case '購買周而復始系列花茶':
+               event.reply(weekTeaShop);
+            break;
+            case '查看完整負能量系列花茶':
+               event.reply(badMoodTea);
+            break;
+            case '看更多負能量茶飲':
+               event.reply(badMoodTea2);
+            break;
+            case '查看完整台灣特色花茶':
+               event.reply(twFlowerTea);
+            break;
+            case '@品牌理念@':
+               event.reply(brandMind);
+            break;
+            case '@聯絡我們@':
+               event.reply(contactUs);
+            break;
+            case '@原料介紹@':
+               event.reply(rawMaterial);
+            break;
+            case '進一步了解周而復始系列花茶':
+               event.reply(moreWeekTea);
+            break;
+            case '進一步了解台灣特色花茶':
+               event.reply(moreTaiwanTea);
+            break;
+            case '進一步了解負能量花茶':
+               event.reply(moreBadMood);
+            break;
+
+         }
+            
       
       break;
       case 'sticker':
