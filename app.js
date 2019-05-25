@@ -108,12 +108,12 @@ function adjustMessage(adjustSuccess, customerChoose, customProduct) {
 }
 //LineBot收到user的文字訊息時的處理函式
 bot.on('message', function(event) {
-   const myId=event.source.userId;
+   
                   
    switch (event.message.type) {
       case 'text':
 
-         if (event.message.text === '@意見回饋@' || questionnaireKey !== 0) {
+         if (event.message.text !== '@客製化花茶@' && event.message.text === '@意見回饋@' || questionnaireKey !== 0) {
             const myId=event.source.userId;
             client.getProfile(myId)
                .then((profile) => {
@@ -132,13 +132,13 @@ bot.on('message', function(event) {
                users[myId].replies=[];
             }
          
-            var myStep=users[myId].step;
+            var qStep=users[myId].step;
             let questionAns;
             let questionAns1;
             let questionAns2;
-            console.log(myStep);
+            console.log(qStep);
             //第一次觸發問卷
-            if (myStep === -1) {
+            if (qStep === -1) {
                //questionAns1 = userName + myQuestions[0][0];
                //questionText.text = questionAns1;
                questionAns = myQuestions[0][0];
@@ -148,36 +148,36 @@ bot.on('message', function(event) {
             }
             else{
                //最後一題答完後
-               if (myStep==(totalSteps-1)) {
-                  users[myId].replies[myStep+1]=event.message.text;
-                  users[myId].replies[myStep+2] = userName;//自動讀取使用者的名字
+               if (qStep==(totalSteps-1)) {
+                  users[myId].replies[qStep+1]=event.message.text;
+                  users[myId].replies[qStep+2] = userName;//自動讀取使用者的名字
                   event.reply(giftCard);
                }
-               else if (myStep > -1 && myStep < 7){//A至H
-                  questionAns2 = myQuestions[1][myStep]+myQuestions[0][myStep+1];
+               else if (qStep > -1 && qStep < 7){//A至H
+                  questionAns2 = myQuestions[1][qStep]+myQuestions[0][qStep+1];
                   questionChosen.text = questionAns2;
                   event.reply(questionChosen);
-                  users[myId].replies[myStep+1]=event.message.text;
+                  users[myId].replies[qStep+1]=event.message.text;
                }
                else {
-                  questionAns1 = myQuestions[1][myStep]+myQuestions[0][myStep+1];
+                  questionAns1 = myQuestions[1][qStep]+myQuestions[0][qStep+1];
                   questionText.text = questionAns1;
                   event.reply(questionText);
-                  users[myId].replies[myStep+1]=event.message.text;
+                  users[myId].replies[qStep+1]=event.message.text;
                }
             }
-            myStep += 1;
-            questionnaireKey = myStep + 100;
-            users[myId].step=myStep;
-            if (myStep>=totalSteps){
-               myStep = -1;
+            qStep += 1;
+            questionnaireKey = qStep + 100;
+            users[myId].step=qStep;
+            if (qStep>=totalSteps){
+               qStep = -1;
                questionnaireKey = 0;
-               users[myId].step = myStep;
+               users[myId].step = qStep;
                users[myId].replies[0] = new Date();
                appendMyRow(myId, questionSheetId);
             }
          }
-         if (event.message.text === '@客製化花茶@' || customteaKey !== 0) {
+         if (event.message.text !== '@意見回饋@' && event.message.text === '@客製化花茶@' || customteaKey !== 0) {
             const myId=event.source.userId;
             if (users[myId]==undefined){
                users[myId]=[];
